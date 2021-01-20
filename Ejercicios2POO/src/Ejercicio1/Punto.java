@@ -34,7 +34,36 @@ public class Punto {
         this.y = y;
     }
     
-    public void mostrarCoordenadas() {
+    public void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    public void desplaza(int dx, int dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+    
+    public int distancia(Punto p) {
+        int contarX = 0;
+        int contarY = 0;
+        
+        if (this.x >= p.x) {
+            contarX = this.x - p.x;
+        } else {            
+            contarX = p.x - this.x;
+        }
+        
+        if (this.y >= p.y) {
+            contarY = this.y - p.y;
+        } else {            
+            contarY = p.y - this.y;
+        }
+        
+        return contarX + contarY;
+    }
+    
+    public void imprime() {
         System.out.println("##########");
         System.out.println("X: " + this.getX());
         System.out.println("Y: " + this.getY());

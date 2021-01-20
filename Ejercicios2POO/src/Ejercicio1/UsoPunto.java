@@ -15,9 +15,12 @@ public class UsoPunto {
         Punto p2 = new Punto(10,10);
         Punto p3 = new Punto(-3,7);
         
-        p1.mostrarCoordenadas();
-        p2.mostrarCoordenadas();
-        p3.mostrarCoordenadas();
+        System.out.println("Punto 1");
+        p1.imprime();
+        System.out.println("Punto 2");
+        p2.imprime();
+        System.out.println("Punto 3");
+        p3.imprime();
         
         p1.setX(p1.getX() + 5);
         p1.setY(7);
@@ -30,8 +33,32 @@ public class UsoPunto {
         
         System.out.println("-------------------------\n");
         
-        p1.mostrarCoordenadas();
-        p2.mostrarCoordenadas();
-        p3.mostrarCoordenadas();
+        System.out.println("Punto 1");
+        p1.imprime();
+        System.out.println("Punto 2");
+        p2.imprime();
+        System.out.println("Punto 3");
+        p3.imprime();
+        
+        System.out.println("-------------------------\n");
+        
+        System.out.println("Punto 1");
+        p1.setXY(7, -5);
+        p1.imprime();
+        
+        System.out.println("-------------------------\n");
+        
+        System.out.println("Punto 2");
+        p2.desplaza(5, 10);
+        p2.imprime();
+        
+        System.out.println("-------------------------\n");
+        
+        
+        System.out.println("Punto 3");
+        p3.imprime();  
+        System.out.println("Punto 2");
+        p2.imprime();      
+        System.out.println("Distancia entre p3 y p2: " + p3.distancia(p2));
     }
 }
