@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ApartadoA.Ejercicio2;
+package Ejercicio2;
 
 /**
  *
@@ -21,4 +21,20 @@ public class Persona {
         this.apellidos = apellidos;
         this.edad = edad;
     }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }   
 }
