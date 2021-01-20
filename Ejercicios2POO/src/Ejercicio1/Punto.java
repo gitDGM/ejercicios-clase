@@ -44,23 +44,8 @@ public class Punto {
         this.y += dy;
     }
     
-    public int distancia(Punto p) {
-        int contarX = 0;
-        int contarY = 0;
-        
-        if (this.x >= p.x) {
-            contarX = this.x - p.x;
-        } else {            
-            contarX = p.x - this.x;
-        }
-        
-        if (this.y >= p.y) {
-            contarY = this.y - p.y;
-        } else {            
-            contarY = p.y - this.y;
-        }
-        
-        return contarX + contarY;
+    public double distancia(Punto p) {
+        return Math.sqrt(Math.pow(p.getX() - this.getX(), 2) + Math.pow(p.getY() - this.getY(), 2));
     }
     
     public void imprime() {
