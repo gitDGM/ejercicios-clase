@@ -54,11 +54,15 @@ public class UsoPunto {
         
         System.out.println("-------------------------\n");
         
-        
         System.out.println("Punto 3");
         p3.imprime();  
         System.out.println("Punto 2");
         p2.imprime();      
         System.out.println("Distancia entre p3 y p2: " + p3.distancia(p2));
+        
+        System.out.println("-------------------------\n");
+        
+        Punto p4 = Punto.creaPuntoAleatorio();
+        p4.imprime();
     }
 }

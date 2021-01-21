@@ -54,4 +54,13 @@ public class Punto {
         System.out.println("Y: " + this.getY());
         System.out.println("##########\n");
     }
+    
+    public static Punto creaPuntoAleatorio() {
+        int x = (int) (Math.random() * (101 - (-100)) + (-100));
+        int y = (int) (Math.random() * (101 - (-100)) + (-100));
+        
+        Punto p = new Punto(x, y);
+        
+        return p;
+    }
 }
