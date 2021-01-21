@@ -23,8 +23,9 @@ public class UsoRectangulo {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        // Rectangulo r5 = crearRectangulo();
         
-        Rectangulo r5 = crearRectangulo();
+        Rectangulo r5 = Rectangulo.crearRectanguloAleatorio();
         
         System.out.println("Rectangulo 1");
         r1.imprimir();
@@ -57,6 +58,10 @@ public class UsoRectangulo {
         r4.imprimir();
         r4.getPerimetro();
         r4.getArea();
+        
+        System.out.println("\n----------------------\n");
+        
+        r5.imprimir();
     }
     
     public static Rectangulo crearRectangulo() {

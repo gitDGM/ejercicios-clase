@@ -39,7 +39,6 @@ public class Rectangulo {
             throw new Exception("Rectangulo no válido.");
         }
     }
-    
 
     public int getX1() {
         return x1;
@@ -113,5 +112,22 @@ public class Rectangulo {
         System.out.println("(X1, Y1): (" + this.getX1() + ", " + this.getY1() + ")");
         System.out.println("(X2, Y2): (" + this.getX2() + ", " + this.getY2() + ")");
         System.out.println("###############");
+    }
+    
+    public static Rectangulo crearRectanguloAleatorio() {
+        int x1 = (int) (Math.random() * 100 + 1);
+        int y1 = (int) (Math.random() * 100 + 1);
+        int x2 = (int) (Math.random() * 100 + 1);
+        int y2 = (int) (Math.random() * 100 + 1);
+        
+        Rectangulo r = null;
+        try {
+            r = new Rectangulo(x1, y1, x2, y2);  
+        } catch (Exception e) {
+            System.err.println("Error");
+        }
+        
+        return r;
+        
     }
 }
