@@ -19,14 +19,22 @@ public class UsoPersona {
         Persona[] personas = new Persona[2];
         
         for (int i = 0; i < personas.length; i++) {
-            System.out.println("Introduce DNI: ");
-            String dni = sc.next();
-            System.out.println("Introduce nombre: ");
-            String nombre = sc.next();
-            System.out.println("Introduce apellidos: ");
-            String apellidos = sc.next();
-            int edad = introducirNumero("Introduce edad: ");      
-            personas[i] = new Persona(dni, nombre, apellidos, edad);            
+            boolean creado = false;
+                System.out.println("Introduce nombre: ");
+                String nombre = sc.next();
+                System.out.println("Introduce apellidos: ");
+                String apellidos = sc.next();
+                int edad = introducirNumero("Introduce edad: "); 
+            do {
+                System.out.println("Introduce DNI: ");
+                String dni = sc.next();
+                try {
+                    personas[i] = new Persona(dni, nombre, apellidos, edad);
+                    creado = true;
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }                    
+            } while (!creado);
         }
         
         personas[0].imprime();
@@ -43,6 +51,8 @@ public class UsoPersona {
         }
         
         System.out.println("La diferencia de edades es: " + personas[0].diferenciaEdad(personas[1]));
+        
+        System.out.println(Persona.validarDNI("15862394H"));
     }
     
     static int introducirNumero(String msg) {

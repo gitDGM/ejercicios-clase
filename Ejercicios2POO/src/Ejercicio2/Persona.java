@@ -5,21 +5,30 @@
  */
 package Ejercicio2;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author alumno
  */
 public class Persona {
-    private String dni;
+    private final String dni;
     private String nombre;
     private String apellidos;
     private int edad;
+    private static final int mayoriaEdad = 18;
     
-    public Persona(String dni, String nombre, String apellidos, int edad) {
-        this.dni = dni;
+    public Persona(String dni, String nombre, String apellidos, int edad) throws Exception {        
+        if (validarDNI(dni)) {
+            this.dni = dni;
+        } else {
+            throw new Exception("DNI no válido.");
+        }
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
+        
     }
 
     public String getDni() {
@@ -36,7 +45,19 @@ public class Persona {
 
     public int getEdad() {
         return edad;
-    }   
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
     
     public void imprime() {
         System.out.println("#####################################");
@@ -48,7 +69,7 @@ public class Persona {
     }
     
     public boolean esMayorEdad() {
-        return this.edad >= 18;
+        return this.edad >= Persona.mayoriaEdad;
     }
     
     public boolean esJubilado() {
@@ -62,5 +83,14 @@ public class Persona {
         result = result < 0 ? result * (-1) : result;
         
         return result;
+    }
+    
+    static boolean validarDNI(String dni) {
+        
+        
+        String regex = "[0-9]{8}[A-HJ-NP-TV-Z]";        
+        
+        
+        return Pattern.matches(regex, dni);
     }
 }
