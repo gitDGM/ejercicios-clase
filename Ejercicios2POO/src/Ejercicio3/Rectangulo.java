@@ -11,13 +11,35 @@ package Ejercicio3;
  */
 public class Rectangulo {
     private int x1, x2, y1, y2;
+    private static final int min = 0;
+    private static final int max = 100;
 
-    public Rectangulo(int x1, int x2, int y1, int y2) {
-        this.x1 = x1;
-        this.x2 = x2;
-        this.y1 = y1;
-        this.y2 = y2;
+    public Rectangulo(int x1, int x2, int y1, int y2) throws Exception {
+        if (x1 >= min && x1 <= max) {
+            this.x1 = x1;            
+        } else {
+            throw new Exception("Rectangulo no válido.");
+        }
+        
+        if (y1 >= min && y1 <= max) {
+            this.y1 = y1;            
+        } else {
+            throw new Exception("Rectangulo no válido.");
+        }
+        
+        if (x2 >= min && x2 <= max) {
+            this.x2 = x2;            
+        } else {
+            throw new Exception("Rectangulo no válido.");
+        }
+        
+        if (y2 >= min && y2 <= max) {
+            this.y2 = y2;            
+        } else {
+            throw new Exception("Rectangulo no válido.");
+        }
     }
+    
 
     public int getX1() {
         return x1;

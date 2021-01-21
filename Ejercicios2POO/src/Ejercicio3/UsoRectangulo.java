@@ -5,16 +5,26 @@
  */
 package Ejercicio3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author alumno
  */
 public class UsoRectangulo {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Rectangulo r1 = new Rectangulo(1, 5, 10, 7);
-        Rectangulo r2 = new Rectangulo(0, 0, 0, 0);
-        Rectangulo r3 = new Rectangulo(0, 0, 0, 0);
-        Rectangulo r4 = new Rectangulo(0, 0, 0, 0);
+        Rectangulo r1 = null, r2 = null, r3 = null, r4 = null;
+        try {
+            r1 = new Rectangulo(1, 5, 10, 7);
+            r2 = new Rectangulo(0, 0, 0, 0);
+            r3 = new Rectangulo(0, 0, 0, 0);
+            r4 = new Rectangulo(0, 0, 0, 0);        
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        Rectangulo r5 = crearRectangulo();
         
         System.out.println("Rectangulo 1");
         r1.imprimir();
@@ -47,5 +57,32 @@ public class UsoRectangulo {
         r4.imprimir();
         r4.getPerimetro();
         r4.getArea();
+    }
+    
+    public static Rectangulo crearRectangulo() {
+        boolean creado = false;
+        Rectangulo r = null;
+        do {            
+            try {
+                System.out.println("Introduce X1:");
+                int x1 = sc.nextInt();
+                
+                System.out.println("Introduce Y1:");
+                int y1 = sc.nextInt();
+                
+                System.out.println("Introduce X2:");
+                int x2 = sc.nextInt();
+                
+                System.out.println("Introduce Y2:");
+                int y2 = sc.nextInt();                
+                r = new Rectangulo(x1, y1, x2, y2);
+                
+                creado = true;
+            } catch (Exception e) {
+                System.err.println("Debes introducir valores entre 0 y 100");
+            }
+        } while (!creado);        
+        
+        return r;
     }
 }
