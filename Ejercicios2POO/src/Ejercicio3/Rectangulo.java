@@ -74,7 +74,7 @@ public class Rectangulo {
         ancho = this.x1 > this.x2 ? this.x1 - this.x2 : this.x2 - this.x1;
         alto = this.y1 > this.y2 ? this.y1 - this.y2 : this.y2 - this.y1; 
         
-        System.out.println("Perímetro: " + (ancho * 2) + (alto * 2));
+        System.out.println("Perímetro: " + ((ancho * 2) + (alto * 2)));
     }
     
     public void getArea() {
