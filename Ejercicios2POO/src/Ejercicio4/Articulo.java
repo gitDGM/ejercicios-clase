@@ -5,9 +5,6 @@
  */
 package Ejercicio4;
 
-import java.util.regex.Pattern;
-import java.util.Arrays;
-
 /**
  *
  * @author alumno
@@ -15,11 +12,11 @@ import java.util.Arrays;
 public class Articulo {
     private String nombre;
     private double precio;
-    private int iva;
+    private final int iva;
     private int cuantosQuedan;
 
     public Articulo(String nombre, double precio, int iva, int cuantosQuedan) throws Exception {
-        if (verificarDatos(nombre, precio, iva, cuantosQuedan)) {
+        if (verificarDatos(precio, iva, cuantosQuedan)) {
             this.nombre = nombre;
             this.precio = precio;
             this.iva = iva;
@@ -29,12 +26,8 @@ public class Articulo {
         }
     }
     
-    private boolean verificarDatos(String nombre, double precio, int iva, int cuantosQuedan) {
+    private boolean verificarDatos(double precio, int iva, int cuantosQuedan) {
         boolean result = true;
-        String regex = "[a-zA-Z]";   
-        if (!Pattern.matches(regex, nombre) && result) {
-            result = false;
-        }
         if (precio < 0 && result) {
             result = false;
         }
@@ -68,22 +61,61 @@ public class Articulo {
         this.nombre = nombre;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecio(double precio) throws Exception {
+        if (precio < 0) {
+            throw new Exception("Precio inválido.");
+        } else {
+            this.precio = precio;            
+        }
     }
 
-    public void setIva(int iva) {
-        this.iva = iva;
-    }
-
-    public void setCuantosQuedan(int cuantosQuedan) {
-        this.cuantosQuedan = cuantosQuedan;
+    public void setCuantosQuedan(int cuantosQuedan) throws Exception {        
+        if (cuantosQuedan < 0) {
+            throw new Exception("Cantidad inválida.");
+        } else {
+            this.cuantosQuedan = cuantosQuedan;         
+        }
+        
     }
     
     public void imprimir() {
         System.out.println("####################");
-        
+        System.out.println("Nombre: " + this.nombre);
+        System.out.println("Precio: " + this.precio);
+        System.out.println("IVA: " + this.iva + "%");
+        System.out.println("Cantidad: " + this.cuantosQuedan);
         System.out.println("####################");
+    }
+    
+    public double getPVP() {        
+        return this.precio + (this.precio * (this.iva / 100));
+    }
+    
+    public double getPVPDescuento(int descuento) {        
+        double pvp = getPVP();
+        return pvp - (pvp * ((double)descuento / 100));
+    }
+    
+    public boolean vender(int cantidad) {
+        boolean result;
+        
+        result = this.cuantosQuedan - cantidad >= 0 && cantidad >= 0;
+        
+        if (result) {
+            this.cuantosQuedan -= cantidad;
+        }
+        return result;
+    }
+    
+    public boolean almacenar(int cantidad) {
+        boolean result;
+        if (cantidad < 0) {
+            result = false;
+        } else {
+            result = true;
+            this.cuantosQuedan += cantidad;
+        }
+        return result;        
     }
             
 }
