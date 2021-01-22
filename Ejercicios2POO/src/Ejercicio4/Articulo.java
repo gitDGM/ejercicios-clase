@@ -5,6 +5,9 @@
  */
 package Ejercicio4;
 
+import java.util.regex.Pattern;
+import java.util.Arrays;
+
 /**
  *
  * @author alumno
@@ -13,13 +16,36 @@ public class Articulo {
     private String nombre;
     private double precio;
     private int iva;
-    private int cuantosQueda;
+    private int cuantosQuedan;
 
-    public Articulo(String nombre, double precio, int iva, int cuantosQueda) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.iva = iva;
-        this.cuantosQueda = cuantosQueda;
+    public Articulo(String nombre, double precio, int iva, int cuantosQuedan) throws Exception {
+        if (verificarDatos(nombre, precio, iva, cuantosQuedan)) {
+            this.nombre = nombre;
+            this.precio = precio;
+            this.iva = iva;
+            this.cuantosQuedan = cuantosQuedan;               
+        } else {
+            throw new Exception("Objecto no creado, datos inválidos.");
+        }
+    }
+    
+    private boolean verificarDatos(String nombre, double precio, int iva, int cuantosQuedan) {
+        boolean result = true;
+        String regex = "[a-zA-Z]";   
+        if (!Pattern.matches(regex, nombre) && result) {
+            result = false;
+        }
+        if (precio < 0 && result) {
+            result = false;
+        }
+        if (!(iva == 21 || iva == 10 || iva == 4) && result) {
+            result = false;
+        }
+        if (cuantosQuedan < 0 && result) {
+            result = false;
+        }
+        
+        return result;
     }
 
     public String getNombre() {
@@ -34,8 +60,8 @@ public class Articulo {
         return iva;
     }
 
-    public int getCuantosQueda() {
-        return cuantosQueda;
+    public int getCuantosQuedan() {
+        return cuantosQuedan;
     }
 
     public void setNombre(String nombre) {
@@ -50,10 +76,14 @@ public class Articulo {
         this.iva = iva;
     }
 
-    public void setCuantosQueda(int cuantosQueda) {
-        this.cuantosQueda = cuantosQueda;
+    public void setCuantosQuedan(int cuantosQuedan) {
+        this.cuantosQuedan = cuantosQuedan;
     }
     
-    
+    public void imprimir() {
+        System.out.println("####################");
+        
+        System.out.println("####################");
+    }
             
 }

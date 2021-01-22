@@ -10,5 +10,11 @@ package Ejercicio4;
  * @author alumno
  */
 public class UsoArticulo {
-    
+    public static void main(String[] args) {
+        try {            
+            Articulo a1 = new Articulo("Diego", 5.0, 21, 10);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }
