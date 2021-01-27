@@ -46,13 +46,13 @@ public class Libreria {
         return opcion;
     }
     
-    static double introducirNumero(String msg) {
-         double numero = 0;        
+    static int introducirNumero(String msg) {
+         int numero = 0;        
          boolean noValido;
          do {
              System.out.println(msg);
              try {
-                 numero = sc.nextDouble();
+                 numero = sc.nextInt();
                  noValido = false;
              } catch (InputMismatchException ex) {
                  System.err.println("Debe ser un número decimal.");
