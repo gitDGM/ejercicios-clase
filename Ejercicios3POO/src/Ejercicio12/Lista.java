@@ -84,6 +84,7 @@ public class Lista {
         if (indice < this.numeroElementos) {  
             retrocederTodosUnaPosicionDesdeIndice(indice);                
             this.lista[this.numeroElementos - 1] = 0;
+            numeroElementos--;
         } else {
             System.err.println("Fuera de rango de la lista.");
         }
