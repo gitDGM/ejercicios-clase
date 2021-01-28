@@ -26,6 +26,15 @@ public class Lista {
         this.lista = new int[capacidad];
     }
     
+    public int getNumeroElementos() {
+        return this.numeroElementos;
+    }
+    
+    public int getLongitudLista() {
+        return this.lista.length;
+    }
+    
+    
     public void mostrarLista() {
         System.out.println(Arrays.toString(this.lista));
     }
@@ -33,25 +42,23 @@ public class Lista {
     public void insertarNumeroAlFinal(int numero) {
         if (this.numeroElementos <= this.lista.length - 1) {
             this.lista[this.numeroElementos] = numero;
-            numeroElementos++;
         } else {
             this.lista = Arrays.copyOf(this.lista, this.lista.length + 1);
             this.lista[this.numeroElementos] = numero;
-            numeroElementos++;
         }
+        numeroElementos++;
     }
     
     public void insertarNumeroAlPrincipio(int numero) {
         if (this.numeroElementos <= this.lista.length - 1) {
             avanzarTodosUnaPosicion();
             this.lista[0] = numero;
-            numeroElementos++;
         } else {
             this.lista = Arrays.copyOf(this.lista, this.lista.length + 1);
             avanzarTodosUnaPosicion();
             this.lista[0] = numero;
-            numeroElementos++;
         }
+        numeroElementos++;
     }
     
     public void insertarNumeroEnIndice(int numero, int indice) {
@@ -59,25 +66,22 @@ public class Lista {
             if (this.numeroElementos <= this.lista.length - 1) {
                 avanzarTodosUnaPosicionDesdeIndice(indice);
                 this.lista[indice] = numero;
-                numeroElementos++;
             } else {
                 this.lista = Arrays.copyOf(this.lista, this.lista.length + 1);
                 avanzarTodosUnaPosicionDesdeIndice(indice);
                 this.lista[indice] = numero;
-                numeroElementos++;
-            }            
+            }      
+            numeroElementos++;      
         } else {
             System.err.println("Fuera de rango de la lista.");
         }
     }
     
-    public void insertarListaAlFinal(Lista listaParametro) {
-        int capacidadAnterior = this.numeroElementos;
+    public void insertarListaAlFinal(Lista listaParametro) {        
         this.lista = Arrays.copyOf(this.lista, this.numeroElementos + listaParametro.numeroElementos);
         for (int i = 0; i < listaParametro.numeroElementos; i++) {
-            this.lista[capacidadAnterior + i] = listaParametro.lista[i];
+            insertarNumeroAlFinal(listaParametro.lista[i]);
         }
-        numeroElementos = numeroElementos + listaParametro.numeroElementos;
     }
     
     public void eliminarNumeroEnIndice(int indice) {
@@ -85,6 +89,7 @@ public class Lista {
             retrocederTodosUnaPosicionDesdeIndice(indice);                
             this.lista[this.numeroElementos - 1] = 0;
             numeroElementos--;
+            this.lista = Arrays.copyOf(this.lista, numeroElementos);
         } else {
             System.err.println("Fuera de rango de la lista.");
         }

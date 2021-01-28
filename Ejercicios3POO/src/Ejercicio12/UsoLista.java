@@ -43,6 +43,7 @@ public class UsoLista {
         milista.mostrarLista();
         
         milista.insertarNumeroEnIndice(99, 11);
+        milista.insertarNumeroAlFinal(66);
         milista.mostrarLista();
     }
 }
