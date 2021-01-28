@@ -10,5 +10,18 @@ package Ejercicio15;
  * @author alumno
  */
 public class UsoColaTabla {
-    
+    public static void main(String[] args) {
+        ColaTabla miColaTabla = new ColaTabla();
+        
+        miColaTabla.desencolar();
+        miColaTabla.encolar(7);
+        miColaTabla.mostrarCola();
+        miColaTabla.encolar(76);
+        miColaTabla.encolar(45);
+        miColaTabla.encolar(31);
+        miColaTabla.mostrarCola();
+        miColaTabla.desencolar();
+        miColaTabla.desencolar();
+        miColaTabla.mostrarCola();
+    }
 }
