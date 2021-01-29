@@ -47,7 +47,7 @@ public class ColaTabla {
     private void avanzarTodosEnLaCola() {
         for (int i = 0; i < this.cantidadElementos; i++) {
             if (i + 1 < this.cantidadElementos) {
-                this.elementos[i] = this.elementos[i + 1];         
+                this.elementos[i] = this.elementos[i + 1];
             }
         }
     }
