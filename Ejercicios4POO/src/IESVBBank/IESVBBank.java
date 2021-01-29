@@ -18,9 +18,9 @@ public class IESVBBank {
     private ArrayList<Integer> movimientos;
     
     public IESVBBank(String iban, String titular) throws Exception {
-        if (verificarIBAN(iban)) {
+        if (verificarIBAN(iban) && verificarTitular(titular)) {
             this.iban = iban.toUpperCase();
-            this.titular = titular;
+            this.titular = titular.toUpperCase();
             this.saldo = 0;
             this.movimientos = new ArrayList();
         } else {
@@ -108,12 +108,16 @@ public class IESVBBank {
     }
     
     private boolean verificarIBAN(String iban) {
+        String regex = "[A-Z]{2}[0-9]{22}";      
         
+        return Pattern.matches(regex, iban.toUpperCase());
+    }
+    
+    private boolean verificarTitular(String titular) {
+        String regex = "[A-Z][][A-Z]";      
         
-        String regex = "[A-Z]{2}[0-9]{22}";        
-        
-        
-        return Pattern.matches(regex, iban);
+        System.out.println(Pattern.matches(regex, titular.toUpperCase()));
+        return Pattern.matches(regex, titular.toUpperCase());
     }
     
 }
