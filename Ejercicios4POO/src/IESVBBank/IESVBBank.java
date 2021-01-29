@@ -6,6 +6,7 @@
 package IESVBBank;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 /**
  *
  * @author alumno
@@ -16,11 +17,15 @@ public class IESVBBank {
     private int saldo;
     private ArrayList<Integer> movimientos;
     
-    public IESVBBank(String iban, String titular) {
-        this.iban = iban;
-        this.titular = titular;
-        this.saldo = 0;
-        this.movimientos = new ArrayList();
+    public IESVBBank(String iban, String titular) throws Exception {
+        if (verificarIBAN(iban)) {
+            this.iban = iban.toUpperCase();
+            this.titular = titular;
+            this.saldo = 0;
+            this.movimientos = new ArrayList();
+        } else {
+            throw new Exception("Objeto no creado - IBAN inválido.");
+        }
     }
     
     public String getIBAN() {
@@ -33,6 +38,10 @@ public class IESVBBank {
 
     public int getSaldo() {
         return saldo;
+    }
+    
+    public String getTitular() {
+        return titular;
     }
 
     public void getMovimientos() {
@@ -51,23 +60,43 @@ public class IESVBBank {
         System.out.println("Saldo: " + this.saldo);
     }
 
-    public void setSaldo(int saldoMovimiento) {
-        if (esPosibleHacerElMovimiento(saldoMovimiento)) {
+    public boolean ingresar(int saldoMovimiento) {
+        boolean transaccionEstado = true;
+        if (esPosibleHacerElMovimientoIngreso(saldoMovimiento)) {
             int saldoAnterior = this.saldo;
             this.saldo += saldoMovimiento;
             nuevoMovimiento(saldoAnterior);
             mostrarPosiblesAvisos(saldoMovimiento);
         } else {
-            System.err.println("Cantidad de saldo inválida.");
+            transaccionEstado = false;
         }
+        
+        return transaccionEstado;
+    }
+    
+    public boolean retirar(int saldoMovimiento) {
+        boolean transaccionEstado = true;
+        if (esPosibleHacerElMovimientoRetirada(saldoMovimiento)) {
+            int saldoAnterior = this.saldo;
+            this.saldo -= saldoMovimiento;
+            nuevoMovimiento(saldoAnterior);
+            mostrarPosiblesAvisos(saldoMovimiento);
+        } else {
+            transaccionEstado = false;
+        }
+        
+        return transaccionEstado;
     }
     
     private void nuevoMovimiento(int saldoAnterior) {
         this.movimientos.add(this.saldo - saldoAnterior);
     }
     
-    private boolean esPosibleHacerElMovimiento(int saldo) {
-        return this.saldo + saldo < (-50) && saldo > 0;
+    private boolean esPosibleHacerElMovimientoIngreso(int saldo) {
+        return saldo > 0;
+    }
+    private boolean esPosibleHacerElMovimientoRetirada(int saldo) {
+        return this.saldo - saldo > (-50) && saldo > 0;
     }
     
     private void mostrarPosiblesAvisos(int saldoMovimiento) {
@@ -76,6 +105,15 @@ public class IESVBBank {
         } else if (this.saldo < 0) {
             System.out.println("AVISO: Saldo negativo.");
         }
+    }
+    
+    private boolean verificarIBAN(String iban) {
+        
+        
+        String regex = "[A-Z]{2}[0-9]{22}";        
+        
+        
+        return Pattern.matches(regex, iban);
     }
     
 }
