@@ -114,10 +114,17 @@ public class IESVBBank {
     }
     
     private boolean verificarTitular(String titular) {
-        String regex = "[A-Z][][A-Z]";      
+        String[] nombreApellidos = titular.split(" ");
+        boolean result = true;
+        for (int i = 0; i < nombreApellidos.length && result; i++) {
+            String regex = "[A-Z]{" + nombreApellidos[i].split("").length + "}";
+            
+            if (!Pattern.matches(regex, nombreApellidos[i].toUpperCase())) {
+                result = false;
+            }
+        }
         
-        System.out.println(Pattern.matches(regex, titular.toUpperCase()));
-        return Pattern.matches(regex, titular.toUpperCase());
+        return result && titular.split(" ").length > 1;
     }
     
 }

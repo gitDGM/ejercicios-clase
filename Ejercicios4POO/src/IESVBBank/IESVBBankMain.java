@@ -12,7 +12,7 @@ package IESVBBank;
 public class IESVBBankMain {
     public static void main(String[] args) {
         try {
-            IESVBBank cuenta = new IESVBBank("ES2609000728501234567890", "Diego Gómez Moreno"); 
+            IESVBBank cuenta = new IESVBBank("ES2609000728501234567890", "Diego Gomez Moreno"); 
             int cantidadOpciones = 8;
             for (int opcion = 1; opcion <= cantidadOpciones; opcion++) {
                 System.out.println("\n###################################");
