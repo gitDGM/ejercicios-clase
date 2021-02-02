@@ -18,123 +18,42 @@ public class FechaHora {
     private int hour;
     private int minutes;
     private int seconds;
-
-    public static FechaHora fechaActualLocalDate() {
-        LocalDate fechaActual = LocalDate.now();
-        FechaHora fechaActualInstance = new FechaHora();
-
-        fechaActualInstance.year = fechaActual.getYear();
-        fechaActualInstance.month = fechaActual.getMonthValue();
-        fechaActualInstance.day = fechaActual.getDayOfMonth();
-        fechaActualInstance.hour = 0;
-        fechaActualInstance.minutes = 0;
-        fechaActualInstance.seconds = 0;
-
-        return fechaActualInstance;
-    }
-
-    public static FechaHora fechaActualLocalTime() {
-        LocalTime fechaActual = LocalTime.now();
-        FechaHora fechaActualInstance = new FechaHora();
-
-        fechaActualInstance.year = 0;
-        fechaActualInstance.month = 1;
-        fechaActualInstance.day = 1;
-        fechaActualInstance.hour = fechaActual.getHour();
-        fechaActualInstance.minutes = fechaActual.getMinute();
-        fechaActualInstance.seconds = fechaActual.getSecond();
-
-        return fechaActualInstance;
-    }
-
-    public static FechaHora fechaActualLocalDateTime() {
+    
+    
+    // CONSTRUCTOR DE FECHA ACTUAL
+    public FechaHora() {
         LocalDateTime fechaActual = LocalDateTime.now();
-        FechaHora fechaActualInstance = new FechaHora();
-
-        fechaActualInstance.year = fechaActual.getYear();
-        fechaActualInstance.month = fechaActual.getMonthValue();
-        fechaActualInstance.day = fechaActual.getDayOfMonth();
-        fechaActualInstance.hour = fechaActual.getHour();
-        fechaActualInstance.minutes = fechaActual.getMinute();
-        fechaActualInstance.seconds = fechaActual.getSecond();
-
-        return fechaActualInstance;
+        year = fechaActual.getYear();
+        month = fechaActual.getMonthValue();
+        day = fechaActual.getDayOfMonth();
+        hour = fechaActual.getHour();
+        minutes = fechaActual.getMinute();
+        seconds = fechaActual.getSecond();
     }
-
-    public static FechaHora fechaAleatoriaLocalDate() {
-        FechaHora fechaAleatoria = new FechaHora();
-        fechaAleatoria.year = FechaHora.generarYearAleatorio();
-        fechaAleatoria.month = FechaHora.generarMonthAleatorio();
-        fechaAleatoria.day = FechaHora.generarDayAleatorio(fechaAleatoria.month, fechaAleatoria.year);
-        fechaAleatoria.hour = 0;
-        fechaAleatoria.minutes = 0;
-        fechaAleatoria.seconds = 0;
-
-        return fechaAleatoria;
+    
+    
+    // CONSTRUCTOR DE FECHA ALEATORIA ENTRE DOS AÑOS
+    public FechaHora(int yearMin, int yearMax) {
+        year = generarYearAleatorio(yearMin, yearMax);
+        month = generarMonthAleatorio();
+        day = generarDayAleatorio(this.month, this.year);
+        hour = generarHoraAleatorio();
+        minutes = generarMinutoAleatorio();
+        seconds = generarSegundoAleatorio();
+        
     }
-
-    public static FechaHora fechaAleatoriaLocalTime() {
-        FechaHora fechaAleatoria = new FechaHora();
-        fechaAleatoria.year = 0;
-        fechaAleatoria.month = 1;
-        fechaAleatoria.day = 1;
-        fechaAleatoria.hour = FechaHora.generarHoraAleatorio();
-        fechaAleatoria.minutes = FechaHora.generarMinutoAleatorio();
-        fechaAleatoria.seconds = FechaHora.generarSegundoAleatorio();
-
-        return fechaAleatoria;
-    }
-
-    public static FechaHora fechaAleatoriaLocalDateTime() {
-        FechaHora fechaAleatoria = new FechaHora();
-        fechaAleatoria.year = FechaHora.generarYearAleatorio();
-        fechaAleatoria.month = FechaHora.generarMonthAleatorio();
-        fechaAleatoria.day = FechaHora.generarDayAleatorio(fechaAleatoria.month, fechaAleatoria.year);
-        fechaAleatoria.hour = FechaHora.generarHoraAleatorio();
-        fechaAleatoria.minutes = FechaHora.generarMinutoAleatorio();
-        fechaAleatoria.seconds = FechaHora.generarSegundoAleatorio();
-
-        return fechaAleatoria;
-    }
-
-    public static FechaHora fechaStringLocalDate(String cadena) {
-        LocalDate fechaString = LocalDate.parse(cadena);
-        FechaHora fecha = new FechaHora();
-        fecha.year = fechaString.getYear();
-        fecha.month = fechaString.getMonthValue();
-        fecha.day = fechaString.getDayOfMonth();
-        fecha.hour = 0;
-        fecha.minutes = 0;
-        fecha.seconds = 0;
-
-        return fecha;
-    }
-
-    public static FechaHora fechaStringLocalTime(String cadena) {
-        LocalTime fechaString = LocalTime.parse(cadena);
-        FechaHora fecha = new FechaHora();
-        fecha.year = 0;
-        fecha.month = 1;
-        fecha.day = 1;
-        fecha.hour = fechaString.getHour();
-        fecha.minutes = fechaString.getMinute();
-        fecha.seconds = fechaString.getSecond();
-
-        return fecha;
-    }
-
-    public static FechaHora fechaStringLocalDateTime(String cadena) {
-        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime fechaString = LocalDateTime.parse(cadena, formateador);
-        FechaHora fecha = new FechaHora();
-        fecha.year = fechaString.getYear();
-        fecha.month = fechaString.getMonthValue();
-        fecha.day = fechaString.getDayOfMonth();
-        fecha.hour = fechaString.getHour();
-        fecha.minutes = fechaString.getMinute();
-        fecha.seconds = fechaString.getSecond();
-
-        return fecha;
+    
+    // CONSTRUCTOR DE FECHA DADA COMO STRING Y CON SU FORMATO
+    public FechaHora(String fechaString, String formato) {
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern(formato);
+        LocalDateTime fecha = LocalDateTime.parse(fechaString, formateador);    
+        
+        year = fecha.getYear();
+        month = fecha.getMonthValue();
+        day = fecha.getDayOfMonth();
+        hour = fecha.getHour();
+        minutes = fecha.getMinute();
+        seconds = fecha.getSecond();
     }
 
     public int getDay() {
@@ -225,10 +144,15 @@ public class FechaHora {
         return this.day + "-" + this.month + "-" + this.year + " " + this.hour + ":" + this.minutes + ":" + this.seconds;
     }
 
-    private static int generarYearAleatorio() {
-        int maxYear = 2900;
-        int minYear = 1500;
-        int year = (int) ((Math.random() * (maxYear - minYear + 1) + minYear));
+    private static int generarYearAleatorio(int yearMin, int yearMax) {
+        
+        if (yearMin > yearMax) {
+            int temp = yearMin;
+            yearMin = yearMax;
+            yearMax = temp;
+        }
+        
+        int year = (int) ((Math.random() * (yearMax - yearMin + 1) + yearMin));
 
         return year;
     }
