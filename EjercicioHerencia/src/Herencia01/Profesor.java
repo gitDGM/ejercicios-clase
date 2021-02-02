@@ -67,10 +67,7 @@ public class Profesor extends Persona{
     
     @Override
     public void mostrarDatos() {
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("DNI: " + getDni());
-        System.out.println("Dirección: " + getDireccion());
-        System.out.println("Teléfono: " + getTelefono());    
+        super.mostrarDatos();
         System.out.println("Código profesor: " + codProfesor);    
         System.out.println("Departamento: " + departamento);    
         System.out.println("Horario: " + horario);    

@@ -66,10 +66,7 @@ public class Alumno extends Persona {
     
     @Override
     public void mostrarDatos() {
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("DNI: " + getDni());
-        System.out.println("Dirección: " + getDireccion());
-        System.out.println("Teléfono: " + getTelefono());    
+        super.mostrarDatos();   
         System.out.println("Nº Expediente: " + numExpediente);    
         System.out.println("Ciclo: " + ciclo);    
         System.out.println("Curso: " + curso);    
