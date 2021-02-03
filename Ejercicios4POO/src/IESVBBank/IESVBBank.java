@@ -82,6 +82,7 @@ public class IESVBBank {
             nuevoMovimiento(saldoAnterior);
             mostrarPosiblesAvisos(saldoMovimiento);
         } else {
+            System.err.println("ERROR: No se ha realizado la retirada por falta de saldo.");
             transaccionEstado = false;
         }
         

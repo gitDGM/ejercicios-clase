@@ -58,7 +58,7 @@ public class Alumno extends Persona {
     }    
     
     public double calcularMedia(ArrayList<Integer> notas) {
-        double result = 0;
+        double result;
         
         result = sumarNotas(notas);
         
