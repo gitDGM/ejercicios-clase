@@ -57,6 +57,14 @@ public class Alumno extends Persona {
         this.notas = notas;
     }    
     
+    public double calcularMedia(ArrayList<Integer> notas) {
+        double result = 0;
+        
+        result = sumarNotas(notas);
+        
+        return result / notas.size();
+    }
+    
     public void mostrarNotas() {
         System.out.println("Notas: ");
         for (int i = 0; i < notas.size(); i++) {
@@ -73,5 +81,14 @@ public class Alumno extends Persona {
         mostrarNotas();
     }
     
+    private double sumarNotas(ArrayList<Integer> notas) {
+        double result = 0;
+        
+        for (int i = 0; i < notas.size(); i++) {
+            result += notas.get(i);
+        }
+        
+        return result;
+    }
     
 }
