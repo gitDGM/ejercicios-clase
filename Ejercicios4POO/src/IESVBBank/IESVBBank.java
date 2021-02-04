@@ -12,10 +12,14 @@ import java.util.regex.Pattern;
  * @author alumno
  */
 public class IESVBBank {
+    private static final double MAX_INGRESO_SIN_AVISO = 3000;
+    private static final double MIN_SALDO_NEGATIVO = -50;
+    private static final int MAX_MOVIMIENTOS_MOSTRAR = 100;
+    
     private final String iban;
     private final String titular;
-    private int saldo;
-    private ArrayList<Integer> movimientos;
+    private double saldo;
+    private ArrayList<Double> movimientos;
     
     public IESVBBank(String iban, String titular) throws Exception {
         if (verificarIBAN(iban) && verificarTitular(titular)) {
@@ -40,7 +44,7 @@ public class IESVBBank {
         return iban;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
     
@@ -49,7 +53,7 @@ public class IESVBBank {
     }
 
     public void getMovimientos() {
-        for (int i = 0; i < this.movimientos.size(); i++) {
+        for (int i = 0; i < this.movimientos.size() && i < MAX_MOVIMIENTOS_MOSTRAR; i++) {
             if (this.movimientos.get(i) < 0) {
                 System.out.println("RETIRADA: " + this.movimientos.get(i));
             } else {
@@ -64,10 +68,10 @@ public class IESVBBank {
         System.out.println("Saldo: " + this.saldo);
     }
 
-    public boolean ingresar(int saldoMovimiento) {
+    public boolean ingresar(double saldoMovimiento) {
         boolean transaccionEstado = true;
-        if (esPosibleHacerElMovimientoIngreso(saldoMovimiento)) {
-            int saldoAnterior = this.saldo;
+        if (esPosibleIngresar(saldoMovimiento)) {
+            double saldoAnterior = this.saldo;
             this.saldo += saldoMovimiento;
             nuevoMovimiento(saldoAnterior);
             mostrarPosiblesAvisos(saldoMovimiento);
@@ -78,10 +82,10 @@ public class IESVBBank {
         return transaccionEstado;
     }
     
-    public boolean retirar(int saldoMovimiento) {
+    public boolean retirar(double saldoMovimiento) {
         boolean transaccionEstado = true;
-        if (esPosibleHacerElMovimientoRetirada(saldoMovimiento)) {
-            int saldoAnterior = this.saldo;
+        if (esPosibleRetirar(saldoMovimiento)) {
+            double saldoAnterior = this.saldo;
             this.saldo -= saldoMovimiento;
             nuevoMovimiento(saldoAnterior);
             mostrarPosiblesAvisos(saldoMovimiento);
@@ -93,19 +97,19 @@ public class IESVBBank {
         return transaccionEstado;
     }
     
-    private void nuevoMovimiento(int saldoAnterior) {
+    private void nuevoMovimiento(double saldoAnterior) {
         this.movimientos.add(this.saldo - saldoAnterior);
     }
     
-    private boolean esPosibleHacerElMovimientoIngreso(int saldo) {
+    private boolean esPosibleIngresar(double saldo) {
         return saldo > 0;
     }
-    private boolean esPosibleHacerElMovimientoRetirada(int saldo) {
-        return this.saldo - saldo > (-50) && saldo > 0;
+    private boolean esPosibleRetirar(double saldo) {
+        return this.saldo - saldo > MIN_SALDO_NEGATIVO && saldo > 0;
     }
     
-    private void mostrarPosiblesAvisos(int saldoMovimiento) {
-        if (saldoMovimiento > 3000) {
+    private void mostrarPosiblesAvisos(double saldoMovimiento) {
+        if (saldoMovimiento > MAX_INGRESO_SIN_AVISO) {
             System.out.println("AVISO: Notificar a hacienda.");
         } else if (this.saldo < 0) {
             System.out.println("AVISO: Saldo negativo.");
