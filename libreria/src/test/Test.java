@@ -11,8 +11,16 @@ package test;
  */
 public class Test {
     public static void main(String[] args) {
+        /*
         for (int i = 0; i < 500; i++) {
             System.out.println(i + " - " + (char)i  );
+        }
+*/
+        while (true) {   
+            int num = (int) (Math.random() * 101);
+            if (num == 0 || num == 100) {
+                System.out.println(num);
+            }
         }
     }
 }

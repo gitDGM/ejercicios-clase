@@ -19,7 +19,11 @@ public class Rectangulo2 {
             this.p1 = p1;
             this.p2 = p2;
         } else {
-            throw new Exception("ERROR: Rectángulo mal creado.");
+            if (comprobarSiCoordenadasEnRango(p1, p2)) {
+                throw new Exception("ERROR: Rectángulo mal creado - Puntos fuera de rango (0 - 100)");
+            } else {
+                throw new Exception("ERROR: Rectángulo mal creado - P1 mayor que P2");                
+            }
         }
     }
 
@@ -35,7 +39,7 @@ public class Rectangulo2 {
         if (comprobarSiP1Menor(p1, this.p2)) {
             this.p1 = p1;
         } else {
-            System.err.println("Punto 1 inválido");
+            System.err.println("ERROR: Nuevo P1 inválido");
         }
     }
 
@@ -43,7 +47,7 @@ public class Rectangulo2 {
         if (comprobarSiP1Menor(this.p1, p2)) {
             this.p2 = p2;
         } else {
-            System.err.println("Punto 2 inválido");
+            System.err.println("ERROR: Nuevo P2 inválido");
         }
     }
     
@@ -74,17 +78,28 @@ public class Rectangulo2 {
     
     
     private boolean comprobarSiP1Menor(Punto p1, Punto p2) {
-        return p1.getX() <= p2.getX() && p1.getY() <= p2.getY();
+        return p1.getX() <= p2.getX() && p1.getY() <= p2.getY() && comprobarSiCoordenadasEnRango(p1, p2);
+    }
+    
+    private boolean comprobarSiCoordenadasEnRango(Punto p1, Punto p2) {
+        boolean result = true;
+        
+        result = p1.getX() <= 100 && p1.getX() >= 0 && result;
+        result = p1.getY() <= 100 && p1.getY() >= 0 && result;
+        result = p2.getX() <= 100 && p2.getX() >= 0 && result;
+        result = p2.getY() <= 100 && p2.getY() >= 0 && result;
+        
+        return result;
     }
     
     public static Rectangulo2 crearRectanguloAleatorio() {
         boolean creado;
         Rectangulo2 r = null;
         do {           
-            int x1 = (int) (Math.random() * 100 + 1);
-            int y1 = (int) (Math.random() * 100 + 1);
-            int x2 = (int) (Math.random() * 100 + 1);
-            int y2 = (int) (Math.random() * 100 + 1); 
+            int x1 = (int) (Math.random() * (100 + 1));
+            int y1 = (int) (Math.random() * (100 + 1));
+            int x2 = (int) (Math.random() * (100 + 1));
+            int y2 = (int) (Math.random() * (100 + 1));
             
             Punto p1 = new Punto(x1, y1);
             Punto p2 = new Punto(x2, y2);
