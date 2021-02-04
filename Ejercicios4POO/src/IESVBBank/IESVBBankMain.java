@@ -44,7 +44,7 @@ public class IESVBBankMain {
                         break;
                     case 5:
                         System.out.println("\nINGRESO\n");
-                        int saldoIngreso = 240;
+                        int saldoIngreso = 5540;
                         if (cuenta.ingresar(saldoIngreso)) {
                             System.out.println("Has ingresado " + saldoIngreso);
                         } else {
@@ -53,7 +53,7 @@ public class IESVBBankMain {
                         break;
                     case 6:
                         System.out.println("\nRETIRADA\n");
-                        int saldoRetiro = 250;
+                        int saldoRetiro = 3000;
                         if (cuenta.retirar(saldoRetiro)) {
                             System.out.println("Has retirado " + saldoRetiro);
                         } else {

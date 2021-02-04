@@ -109,10 +109,10 @@ public class IESVBBank {
     }
     
     private void mostrarPosiblesAvisos(double saldoMovimiento) {
-        if (saldoMovimiento > MAX_INGRESO_SIN_AVISO) {
-            System.out.println("AVISO: Notificar a hacienda.");
+        if (saldoMovimiento >= MAX_INGRESO_SIN_AVISO) {
+            System.err.println("AVISO: Notificar a hacienda.");
         } else if (this.saldo < 0) {
-            System.out.println("AVISO: Saldo negativo.");
+            System.err.println("AVISO: Saldo negativo.");
         }
     }
     
