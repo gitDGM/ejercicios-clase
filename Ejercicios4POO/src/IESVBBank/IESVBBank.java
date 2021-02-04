@@ -24,7 +24,11 @@ public class IESVBBank {
             this.saldo = 0;
             this.movimientos = new ArrayList();
         } else {
-            throw new Exception("Objeto no creado - IBAN inválido.");
+            if (verificarIBAN(iban)) {
+                throw new Exception("Objeto no creado - IBAN inválido.");            
+            } else {
+                throw new Exception("Objeto no creado - Titular inválido.");                 
+            }
         }
     }
     
