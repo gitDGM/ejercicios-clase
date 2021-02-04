@@ -35,7 +35,19 @@ public class Contacto {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (validarNombre(nombre)) {
+            this.nombre = nombre;            
+        } else {
+            System.out.println("ERROR: Nombre no añadido - Inválido");            
+        }
+    }    
+    
+    public void setUnTelefono(String telefono) {
+        if (validarTelefono(telefono)) {
+            telefonos.add(telefono);
+        } else {
+            System.out.println("ERROR: Teléfono no añadido - Inválido");
+        }
     }
     
     private boolean validar(String nombre, ArrayList<String> telefonos) {
@@ -55,5 +67,9 @@ public class Contacto {
         }
         
         return validos;
+    }
+    
+    private boolean validarTelefono(String telefono) {        
+        return telefono.matches("[0-9]{9}");
     }
 }
