@@ -16,14 +16,26 @@ public class Libreria {
     static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
-        
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción");
+            switch(opcion) {
+                case 0:
+                    break;
+                default:
+                    break;
+            }
+        } while (opcion != 0);       
     }
     
     static boolean elegirOpcionContinuar(String msg) {
         boolean opcion = true; 
         boolean noValido;
         
-        do {      
+        do {
             System.out.println(msg);
             char letra = sc.next().charAt(0);
             

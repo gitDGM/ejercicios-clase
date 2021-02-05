@@ -19,7 +19,11 @@ public class Contacto {
             this.nombre = nombre;
             this.telefonos = telefonos;            
         } else {
-            throw new Exception("ERROR: Contacto no creado.");
+            if (!validarNombre(nombre)) {
+                throw new Exception("ERROR: Contacto no creado - Nombre inválido.");
+            } else if (!validarTelefonos(telefonos)) {
+                throw new Exception("ERROR: Contacto no creado - Teléfonos inválido.");
+            }
         }
     }
 
@@ -30,7 +34,7 @@ public class Contacto {
     public void getTelefono() {
         System.out.println("Teléfonos:");
         for (int i = 0; i < telefonos.size(); i++) {            
-            System.out.println(i + ".- " + telefonos.get(i));
+            System.out.println((i + 1) + ".- " + telefonos.get(i));
         }
     }
 
@@ -38,7 +42,7 @@ public class Contacto {
         if (validarNombre(nombre)) {
             this.nombre = nombre;            
         } else {
-            System.out.println("ERROR: Nombre no añadido - Inválido");            
+            System.err.println("ERROR: Nombre no añadido - Inválido");            
         }
     }    
     
@@ -46,7 +50,7 @@ public class Contacto {
         if (validarTelefono(telefono)) {
             telefonos.add(telefono);
         } else {
-            System.out.println("ERROR: Teléfono no añadido - Inválido");
+            System.err.println("ERROR: Teléfono no añadido - Inválido");
         }
     }
     
@@ -55,13 +59,13 @@ public class Contacto {
     }
 
     private boolean validarNombre(String nombre) {        
-        return nombre.replace(" ","").matches("[a-zA-Z]");
+        return nombre.toLowerCase().replace(" ","").matches("[a-z]{" + nombre.replace(" ","").split("").length + "}");
     }
     
     private boolean validarTelefonos(ArrayList<String> telefonos) {
         boolean validos = true;
         for (int i = 0; i < telefonos.size() && validos; i++) {
-            if (!telefonos.get(i).matches("[0-9]{9}")) {
+            if (!validarTelefono(telefonos.get(i))) {
                 validos = false;
             }
         }
