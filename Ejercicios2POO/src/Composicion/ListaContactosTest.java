@@ -92,10 +92,9 @@ public class ListaContactosTest {
     static void sumarContacto() {
         boolean creado;
         do {
-            String nombre;
             try {
                 System.out.println("Introduce el nombre:");
-                nombre = sc.nextLine();
+                String nombre = sc.nextLine();
 //                String nombre = "Diego Gomez";
                 ArrayList<String> telefonos = new ArrayList();                
                 do {
@@ -110,7 +109,7 @@ public class ListaContactosTest {
                 creado = true;
                 
             } catch (Exception e) {
-                
+                sc.nextLine();
                 System.err.println(e.getMessage());
                 creado = false;
                 
