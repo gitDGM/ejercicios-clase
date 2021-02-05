@@ -101,6 +101,7 @@ public class ListaContactosTest {
                 do {
                     System.out.println("Introduce un número de teléfono:");
                     telefonos.add(sc.next());
+//                    telefonos.add("12345679");
                 } while (elegirOpcionContinuar("Quieres introducir otro número? (S/N):"));
                 
                 Contacto nuevoContacto = new Contacto(nombre, telefonos);
