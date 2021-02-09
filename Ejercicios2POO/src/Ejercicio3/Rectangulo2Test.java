@@ -21,15 +21,19 @@ public class Rectangulo2Test {
         int opcion, x, y;
         do {
             System.out.println("####################################");
-            System.out.println("1. Crear P1.");
-            System.out.println("2. Crear P2.");
-            System.out.println("3. Crear rectángulo.");
-            System.out.println("4. Actualizar P1.");
-            System.out.println("5. Actualizar P2.");
-            System.out.println("6. Area.");
-            System.out.println("7. Perímetro");
-            System.out.println("8. Mostrar datos");
-            System.out.println("9. Generarlo Aleatorio.");
+            System.out.println("1.\tCrear P1.");
+            System.out.println("2.\tCrear P2.");
+            System.out.println("3.\tCrear rectángulo.");
+            System.out.println("4.\tActualizar P1.");
+            System.out.println("5.\tActualizar P2.");
+            System.out.println("6.\tArea.");
+            System.out.println("7.\tPerímetro");
+            System.out.println("8.\tMostrar datos");
+            System.out.println("9.\tGenerarlo Aleatorio.");
+            System.out.println("10.\tActualizar X1");
+            System.out.println("11.\tActualizar X2");
+            System.out.println("12.\tActualizar Y1");
+            System.out.println("13.\tActualizar Y2");
             System.out.println("0. Salir");
             System.out.println("####################################");            
             opcion = introducirNumero("Elige una opción: ");
@@ -72,6 +76,22 @@ public class Rectangulo2Test {
                     break;
                 case 9:
                     r2 = Rectangulo2.crearRectanguloAleatorio();
+                    break;
+                case 10:
+                    x = introducirNumero("Introduce el valor de X1:");
+                    r2.setX1(x);
+                    break;
+                case 11:
+                    x = introducirNumero("Introduce el valor de X2:");
+                    r2.setX2(x);
+                    break;
+                case 12:
+                    y = introducirNumero("Introduce el valor de Y1:");
+                    r2.setY1(y);
+                    break;
+                case 13:
+                    y = introducirNumero("Introduce el valor de Y2:");
+                    r2.setY2(y);
                     break;
                 case 0:
                     System.out.println("Hasta la próxima!");

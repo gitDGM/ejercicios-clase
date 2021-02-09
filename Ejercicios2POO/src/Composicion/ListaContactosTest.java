@@ -30,7 +30,7 @@ public class ListaContactosTest {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    sumarContacto();
+                    crearContacto();
                     break;
                 case 2:
                     buscarSiExisteContacto();
@@ -89,7 +89,7 @@ public class ListaContactosTest {
         }
     }
     
-    static void sumarContacto() {
+    static void crearContacto() {
         boolean creado;
         do {
             try {
@@ -100,7 +100,7 @@ public class ListaContactosTest {
                 do {
                     System.out.println("Introduce un número de teléfono:");
                     telefonos.add(sc.next());
-//                    telefonos.add("12345679");
+//                    telefonos.add("123456789");
                 } while (elegirOpcionContinuar("Quieres introducir otro número? (S/N):"));
                 
                 Contacto nuevoContacto = new Contacto(nombre, telefonos);

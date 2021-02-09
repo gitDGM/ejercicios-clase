@@ -34,6 +34,54 @@ public class Rectangulo2 {
     public Punto getP2() {
         return p2;
     }
+    
+    public int getX1() {
+        return p1.getX();
+    }
+    
+    public int getY1() {
+        return p1.getY();
+    }
+    
+    public int getX2() {
+        return p2.getX();
+    }
+    
+    public int getY2() {
+        return p2.getY();
+    }
+    
+    public void setX1(int x1) {
+        if (comprobarSiP1Menor(new Punto(x1, p1.getY()), p2)) {
+            p1 = new Punto(x1, p1.getY());
+        } else {
+            System.err.println("ERROR: Nuevo X1 inválido");
+        }
+    }
+    
+    public void setX2(int x2) {
+        if (comprobarSiP1Menor(p1, new Punto(x2, p2.getY()))) {
+            p2 = new Punto(x2, p2.getY());
+        } else {
+            System.err.println("ERROR: Nuevo X2 inválido");
+        }
+    }
+    
+    public void setY1(int y1) {
+        if (comprobarSiP1Menor(new Punto(p1.getX(), y1), p2)) {
+            p1 = new Punto(p1.getX(), y1);
+        } else {
+            System.err.println("ERROR: Nuevo Y1 inválido");
+        }
+    }
+    
+    public void setY2(int y2) {
+        if (comprobarSiP1Menor(p1, new Punto(p2.getX(), y2))) {
+            p2 = new Punto(p2.getX(), y2);
+        } else {
+            System.err.println("ERROR: Nuevo Y2 inválido");
+        }
+    }
 
     public void setP1(Punto p1) {
         if (comprobarSiP1Menor(p1, this.p2)) {
