@@ -106,15 +106,14 @@ public class ListaContactosTest {
                 Contacto nuevoContacto = new Contacto(nombre, telefonos);
                 
                 contactos.addContacto(nuevoContacto);
-                creado = true;
+                creado = true;  
                 
             } catch (Exception e) {
                 sc.nextLine();
                 System.err.println(e.getMessage());
                 creado = false;
                 
-            }
-            
+            }            
         } while (!creado);
     } 
     
