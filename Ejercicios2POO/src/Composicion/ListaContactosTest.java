@@ -54,6 +54,7 @@ public class ListaContactosTest {
     }
     
     static void eliminarContacto() {
+        
         System.out.println("Introduce el nombre del contacto:");
         String nombreContactoBuscado = sc.nextLine();
         
@@ -102,7 +103,7 @@ public class ListaContactosTest {
                     telefonos.add(sc.next());
 //                    telefonos.add("123456789");
                 } while (elegirOpcionContinuar("Quieres introducir otro número? (S/N):"));
-                
+               
                 Contacto nuevoContacto = new Contacto(nombre, telefonos);
                 
                 contactos.addContacto(nuevoContacto);
