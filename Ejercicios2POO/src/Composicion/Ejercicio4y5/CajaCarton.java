@@ -24,7 +24,7 @@ public class CajaCarton extends Caja {
     }
     
     private void sumarSuperficeUsada() {        
-        superficieTotal += ((super.getAncho() + super.getFondo()) * 2) + ((super.getAncho() + super.getAlto()) * 4);
+        superficieTotal += (((super.getAncho() * super.getFondo()) * 2) + ((super.getAncho() * super.getAlto()) * 4));
     }
 
     @Override
