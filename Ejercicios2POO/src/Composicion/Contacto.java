@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author alumno
  */
-public class Contacto {
+public abstract class Contacto {
     private String nombre;
     private ArrayList<String> telefonos;
     
@@ -34,7 +34,7 @@ public class Contacto {
     public void getTelefono() {
         System.out.println("Teléfonos:");
         for (int i = 0; i < telefonos.size(); i++) {            
-            System.out.println((i + 1) + ".- " + telefonos.get(i));
+            System.out.println("\t" + (i + 1) + ".- " + telefonos.get(i));
         }
     }
 
@@ -53,6 +53,8 @@ public class Contacto {
             System.err.println("ERROR: Teléfono no añadido - Inválido");
         }
     }
+    
+    public abstract void mostrar();
     
     private boolean validar(String nombre, ArrayList<String> telefonos) {
         return validarNombre(nombre) && validarTelefonos(telefonos);

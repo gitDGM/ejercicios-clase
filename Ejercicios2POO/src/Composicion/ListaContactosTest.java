@@ -5,6 +5,8 @@
  */
 package Composicion;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -103,10 +105,19 @@ public class ListaContactosTest {
                     telefonos.add(sc.next());
 //                    telefonos.add("123456789");
                 } while (elegirOpcionContinuar("Quieres introducir otro número? (S/N):"));
-               
-                Contacto nuevoContacto = new Contacto(nombre, telefonos);
+                if (elegirEmpresaPersona("Es una empresa o una persona (EMPRESA / PERSONA):")) {
+                    System.out.println("Introduce la página web:");
+                    String web = sc.next();
+                    Contacto nuevoContacto = new ContactoEmpresa(web, nombre, telefonos);                
+                    contactos.addContacto(nuevoContacto); 
+                } else {
+                    int year = introducirNumero("Introduce el año de nacimiento:");
+                    int month = introducirNumero("Introduce el mes de nacimiento:");
+                    int day = introducirNumero("Introduce el dia de nacimiento:");
+                    Contacto nuevoContacto = new ContactoPersona(LocalDate.of(year, month, day),nombre, telefonos);   
+                    contactos.addContacto(nuevoContacto);
+                }
                 
-                contactos.addContacto(nuevoContacto);
                 creado = true;  
                 
             } catch (Exception e) {
@@ -152,6 +163,33 @@ public class ListaContactosTest {
                     break;
                 case 'S':
                     opcion = true;
+                    noValido = false;
+                    break;
+                default:
+                    System.err.println("Opción no valida.");
+                    noValido = true;
+                    break;
+            }
+        } while (noValido);     
+        
+        return opcion;
+    }
+    
+    static boolean elegirEmpresaPersona(String msg) {
+        boolean opcion = true; 
+        boolean noValido;
+        
+        do {      
+            System.out.println(msg);
+            String letra = sc.next();
+            
+            switch (letra.toUpperCase()) {
+                case "EMPRESA":
+                    opcion = true;
+                    noValido = false;
+                    break;
+                case "PERSONA":
+                    opcion = false;
                     noValido = false;
                     break;
                 default:

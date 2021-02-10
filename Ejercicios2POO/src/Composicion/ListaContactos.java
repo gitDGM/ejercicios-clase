@@ -44,20 +44,14 @@ public class ListaContactos {
     
     public void mostrarContactos() {
         for(Contacto contacto : contactos) {
-            System.out.println("########################################");
-            System.out.println("Nombre: " + contacto.getNombre());
-            contacto.getTelefono();
-            System.out.println("########################################");
+            contacto.mostrar();
         }
     }
     
     public void mostrarContacto(String nombreContactoBuscado) {
         if (buscarSiExisteContacto(nombreContactoBuscado)) { 
             int index = getIndexContacto(nombreContactoBuscado);
-            System.out.println("########################################");
-            System.out.println("Nombre: " + this.contactos.get(index).getNombre());
-            this.contactos.get(index).getTelefono();
-            System.out.println("########################################");
+            this.contactos.get(index).mostrar();
         } else {
             System.err.println("ERROR: El contacto no existe");
         }   
@@ -87,5 +81,4 @@ public class ListaContactos {
         
         return noExiste;
     }
-    
 }
