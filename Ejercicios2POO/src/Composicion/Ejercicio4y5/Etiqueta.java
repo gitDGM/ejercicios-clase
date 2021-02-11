@@ -33,5 +33,24 @@ public class Etiqueta {
     public String getDireccion() {
         return direccion;
     }
-    
+
+    public static int getNumEtiquetas() {
+        return numEtiquetas;
+    }
+
+    public int getIdEtiqueta() {
+        return idEtiqueta;
+    }
+
+    public void setIdEtiqueta(int idEtiqueta) {
+        this.idEtiqueta = idEtiqueta;
+    }
+
+    public void setDestinatario(String destinatario) {
+        this.destinatario = destinatario;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }  
 }

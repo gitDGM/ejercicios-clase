@@ -16,14 +16,14 @@ public class CajaCarton extends Caja {
     public CajaCarton(int idEtiqueta, int ancho, int alto, int fondo) {
         super(ancho, alto, fondo, new Unidad("cm"));
         this.idEtiqueta = idEtiqueta;
-        sumarSuperficeUsada();
+        sumarSuperficeTotal();
     }    
     
     public static double getSuperficieTotal() {
         return superficieTotal;
     }
     
-    private void sumarSuperficeUsada() {        
+    private void sumarSuperficeTotal() {        
         superficieTotal += ((super.getAncho() * super.getFondo()) * 2) + ((super.getAncho() * super.getAlto()) * 4);
     }
 
@@ -31,6 +31,4 @@ public class CajaCarton extends Caja {
     public double getVolumen() {
         return super.getVolumen() * 0.8;
     }
-    
-    
 }

@@ -13,6 +13,6 @@ public class CajaTest {
     public static void main(String[] args) {
         CajaCarton cc1 = new CajaCarton(Etiqueta.getNextID(), 100, 200, 50);
         
-        System.out.println(CajaCarton.getSuperficieTotal());
+        System.out.println(CajaCarton.getSuperficieTotal() + " " + cc1.getValueUnidad() + "^2");
     }
 }

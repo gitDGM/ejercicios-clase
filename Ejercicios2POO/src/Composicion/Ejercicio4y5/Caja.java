@@ -42,8 +42,10 @@ public class Caja {
     public int getFondo() {
         return fondo;
     }
-    
-    
+
+    public String getValueUnidad() {
+        return unidad.getValue();
+    }
     
     public double getVolumen() {
         return (double)ancho * (double)alto * (double)fondo;
@@ -53,7 +55,4 @@ public class Caja {
     public String toString() {
         return "Ancho: " + ancho + " Alto: " + alto + " Fondo: " + fondo + " Unidad: " + unidad.getValue() + " Destinatario: " + etiqueta.getDestinatario() + " Dirección: " + etiqueta.getDireccion();
     }
-    
-    
-    
 }
