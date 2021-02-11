@@ -27,7 +27,7 @@ public class AstroTest {
         
         // ****
         // DISTANCIA AL SOL *
-        
+        double distanciaSol = 3000;
         // ORBITA AL SOL *
         
         // TIENE SATÉLITES *

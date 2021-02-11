@@ -11,8 +11,12 @@ package Composicion.Ejercicio4y5;
  */
 public class CajaTest {
     public static void main(String[] args) {
-        CajaCarton cc1 = new CajaCarton(Etiqueta.getNextID(), 100, 200, 50);
-        
-        System.out.println(CajaCarton.getSuperficieTotal() + " " + cc1.getValueUnidad() + "^2");
+        CajaCarton cc1 = new CajaCarton(100, 200, 50);
+        CajaCarton cc2 = new CajaCarton(100, 200, 50);
+        Caja c3 = new Caja(100, 200, 50, new Unidad("m"), new Etiqueta("aaaa", "Calle aaaa"));
+            // System.out.println(CajaCarton.getSuperficieTotal() + " " + cc1.getValueUnidad() + "^2");
+        System.out.println(cc1.getIdEtiqueta());
+        System.out.println(cc2.getIdEtiqueta());
+        System.out.println(c3.getEtiqueta().getIdEtiqueta());
     }
 }

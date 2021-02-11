@@ -11,11 +11,11 @@ package Composicion.Ejercicio4y5;
  */
 public class CajaCarton extends Caja {
     private static double superficieTotal = 0;
-    private int idEtiqueta;
+    private final int idEtiqueta;
 
-    public CajaCarton(int idEtiqueta, int ancho, int alto, int fondo) {
+    public CajaCarton(int ancho, int alto, int fondo) {        
         super(ancho, alto, fondo, new Unidad("cm"));
-        this.idEtiqueta = idEtiqueta;
+        this.idEtiqueta = Etiqueta.getNextID();
         sumarSuperficeTotal();
     }    
     

@@ -23,7 +23,8 @@ public class Etiqueta {
     }
     
     public static int getNextID() {
-        return numEtiquetas + 1;
+        numEtiquetas++;
+        return numEtiquetas;
     }
 
     public String getDestinatario() {

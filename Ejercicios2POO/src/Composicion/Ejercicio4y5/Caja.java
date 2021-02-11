@@ -20,15 +20,25 @@ public class Caja {
         this.ancho = ancho;
         this.alto = alto;
         this.fondo = fondo;
-        this.unidad = unidad;
-        this.etiqueta = etiqueta;
+        this.etiqueta = etiqueta;  
+        if (validarUnidad(unidad)) {
+            this.unidad = unidad;
+        } else {
+            System.err.println("ERROR: Unidad no válida - Por defecto se ha puesto en metros");
+            this.unidad = new Unidad("m");
+        }      
     }
     
     public Caja(int ancho, int alto, int fondo, Unidad unidad) {
         this.ancho = ancho;
         this.alto = alto;
         this.fondo = fondo;
-        this.unidad = unidad;
+        if (validarUnidad(unidad)) {
+            this.unidad = unidad;
+        } else {
+            System.err.println("ERROR: Unidad no válida - Por defecto se ha puesto en metros");
+            this.unidad = new Unidad("m");
+        }  
     }
 
     public int getAncho() {
@@ -53,6 +63,14 @@ public class Caja {
     
     public double getVolumen() {
         return (double)ancho * (double)alto * (double)fondo;
+    }
+    
+    private boolean validarUnidad(Unidad unidad) {
+        boolean valida = false;
+        if (unidad.getValue().equals("cm") || unidad.getValue().equals("m")) {
+            valida = true;
+        }  
+        return valida;
     }
 
     @Override
