@@ -47,6 +47,20 @@ public class Planeta extends Astro {
 
     @Override
     public void muestra() {
-        System.out.println("...");
+        System.out.println("########################");
+        System.out.println("Radio ecuatorial: " + super.getRadioEcuatorial());
+        System.out.println("Rotación sobre su eje: " + super.getRotacionSobreEje());
+        System.out.println("Masa: " + super.getMasa());
+        System.out.println("Temperatura Media: " + super.getTemperatura());
+        System.out.println("Gravedad: " + super.getGravedad());
+        System.out.println("Distancia al sol: " + getDistanciaSol());
+        System.out.println("Órbita al sol: " + getOrbitaSol());
+        System.out.print("Satélites: ");
+        if (isSatelites()) {
+            System.out.println("Sí");            
+        } else {
+            System.out.println("No");  
+        }
+        System.out.println("########################");
     }    
 }

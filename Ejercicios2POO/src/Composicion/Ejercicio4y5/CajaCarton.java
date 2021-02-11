@@ -19,6 +19,10 @@ public class CajaCarton extends Caja {
         sumarSuperficeTotal();
     }    
     
+    public int getIdEtiqueta() {
+        return idEtiqueta;
+    }
+    
     public static double getSuperficieTotal() {
         return superficieTotal;
     }

@@ -47,6 +47,10 @@ public class Caja {
         return unidad.getValue();
     }
     
+    public Etiqueta getEtiqueta() {
+        return etiqueta;
+    }
+    
     public double getVolumen() {
         return (double)ancho * (double)alto * (double)fondo;
     }
