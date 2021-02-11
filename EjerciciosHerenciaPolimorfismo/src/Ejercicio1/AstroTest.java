@@ -14,32 +14,25 @@ public class AstroTest {
     
     private static ArrayList<Astro> astros = new ArrayList<Astro>();
     public static void main(String[] args) {
-        // RADIO ECUATORIAL
         double radioEcuatorial = 2000;
-        // ROTACIÓN SOBRE SU EJE
-        double rotacionSobreEje = 30;        
-        // MASA
+        double rotacionSobreEje = 30;     
         double masa = 3000;        
-        // TEMPERATURA MEDIA
-        double temperatura = 25;        
-        // GRAVEDAD
+        double temperatura = 25;      
         double gravedad = 10;   
-        
-        // ****
-        // DISTANCIA AL SOL *
         double distanciaSol = 3000;
-        // ORBITA AL SOL *
+        double orbitaSol = 3000;        
+        double distanciaPlaneta = 3000;      
+        double orbitaPlanetaria = 3000;  
         
-        // TIENE SATÉLITES *
-        // ****
         
-        // ****
-        // DISTANCIA AL PLANETA *
+        Planeta p1 = new Planeta("Tierra", distanciaSol, orbitaSol, radioEcuatorial, rotacionSobreEje, masa, temperatura, gravedad);  
+        p1.muestra();
         
-        // ORBITA PLANETARIA *
+        ///
+        Satelite s1 = new Satelite("Luna", distanciaPlaneta, orbitaPlanetaria, p1, radioEcuatorial, rotacionSobreEje, masa, temperatura, gravedad);
         
-        // PLANETA AL QUE PERTENECE *
-        // ****
+        s1.muestra();
+        p1.muestra();
         
     }
 }

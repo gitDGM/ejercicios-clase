@@ -14,11 +14,11 @@ public class Planeta extends Astro {
     private double orbitaSol;
     private boolean satelites;
 
-    public Planeta(double distanciaSol, double orbitaSol, boolean tieneSatelites, double radioEcuatorial, double rotacionSobreEje, double masa, double temperatura, double gravedad) {
-        super(radioEcuatorial, rotacionSobreEje, masa, temperatura, gravedad);
+    public Planeta(String nombre, double distanciaSol, double orbitaSol, double radioEcuatorial, double rotacionSobreEje, double masa, double temperatura, double gravedad) {
+        super(nombre, radioEcuatorial, rotacionSobreEje, masa, temperatura, gravedad);
         this.distanciaSol = distanciaSol;
         this.orbitaSol = orbitaSol;
-        this.satelites = tieneSatelites;
+        this.satelites = false;
     }
 
     public double getDistanciaSol() {
@@ -48,6 +48,7 @@ public class Planeta extends Astro {
     @Override
     public void muestra() {
         System.out.println("########################");
+        System.out.println("Nombre: " + super.getNombre());
         System.out.println("Radio ecuatorial: " + super.getRadioEcuatorial());
         System.out.println("Rotación sobre su eje: " + super.getRotacionSobreEje());
         System.out.println("Masa: " + super.getMasa());

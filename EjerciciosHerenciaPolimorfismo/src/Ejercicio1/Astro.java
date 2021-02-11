@@ -10,18 +10,24 @@ package Ejercicio1;
  * @author alumno
  */
 public abstract class Astro {
+    private String nombre;
     private double radioEcuatorial;
     private double rotacionSobreEje;
     private double masa;
     private double temperatura;
     private double gravedad;
 
-    public Astro(double radioEcuatorial, double rotacionSobreEje, double masa, double temperatura, double gravedad) {
+    public Astro(String nombre, double radioEcuatorial, double rotacionSobreEje, double masa, double temperatura, double gravedad) {
+        this.nombre = nombre;
         this.radioEcuatorial = radioEcuatorial;
         this.rotacionSobreEje = rotacionSobreEje;
         this.masa = masa;
         this.temperatura = temperatura;
         this.gravedad = gravedad;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public double getRadioEcuatorial() {
@@ -42,6 +48,10 @@ public abstract class Astro {
 
     public double getGravedad() {
         return gravedad;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setRadioEcuatorial(double radioEcuatorial) {

@@ -12,12 +12,13 @@ package Ejercicio1;
 public class Satelite extends Astro {
     private double distanciaPlaneta;
     private double orbitaPlanetaria;
-    private String planeta;
+    private Planeta planeta;
 
-    public Satelite(double distanciaPlaneta, double orbitaPlanetaria, String planeta, double radioEcuatorial, double rotacionSobreEje, double masa, double temperatura, double gravedad) {
-        super(radioEcuatorial, rotacionSobreEje, masa, temperatura, gravedad);
+    public Satelite(String nombre, double distanciaPlaneta, double orbitaPlanetaria, Planeta planeta, double radioEcuatorial, double rotacionSobreEje, double masa, double temperatura, double gravedad) {
+        super(nombre, radioEcuatorial, rotacionSobreEje, masa, temperatura, gravedad);
         this.distanciaPlaneta = distanciaPlaneta;
         this.orbitaPlanetaria = orbitaPlanetaria;
+        planeta.setSatelites(true);
         this.planeta = planeta;
     }
 
@@ -29,7 +30,7 @@ public class Satelite extends Astro {
         return orbitaPlanetaria;
     }
 
-    public String getPlaneta() {
+    public Planeta getPlaneta() {
         return planeta;
     }
 
@@ -41,13 +42,14 @@ public class Satelite extends Astro {
         this.orbitaPlanetaria = orbitaPlanetaria;
     }
 
-    public void setPlaneta(String planeta) {
+    public void setPlaneta(Planeta planeta) {
         this.planeta = planeta;
     }
     
     @Override
     public void muestra() {
         System.out.println("########################");
+        System.out.println("Nombre: " + super.getNombre());
         System.out.println("Radio ecuatorial: " + super.getRadioEcuatorial());
         System.out.println("Rotación sobre su eje: " + super.getRotacionSobreEje());
         System.out.println("Masa: " + super.getMasa());
@@ -55,7 +57,7 @@ public class Satelite extends Astro {
         System.out.println("Gravedad: " + super.getGravedad());
         System.out.println("Distancia al sol: " + getDistanciaPlaneta());
         System.out.println("Órbita al sol: " + getOrbitaPlanetaria());
-        System.out.println("Pertenece a: " + getPlaneta());        
+        System.out.println("Pertenece a: " + getPlaneta().getNombre());        
         System.out.println("########################");
     }
     
