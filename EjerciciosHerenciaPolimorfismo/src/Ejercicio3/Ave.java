@@ -38,6 +38,8 @@ public abstract class Ave extends Mascota {
         this.vuela = vuela;
     }
     
+    public abstract void volar();
+    
     @Override
     public abstract void hablar();
     

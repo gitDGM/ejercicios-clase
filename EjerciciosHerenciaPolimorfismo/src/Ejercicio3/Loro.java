@@ -36,6 +36,11 @@ public class Loro extends Ave {
     public void setHabla(boolean habla) {
         this.habla = habla;
     }
+
+    @Override
+    public void volar() {
+        System.out.println(this.getNombre() + "no vuela.");
+    }
     
     @Override
     public void hablar() {

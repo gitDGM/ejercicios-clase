@@ -40,10 +40,6 @@ public abstract class Mascota {
         return fechaNacimiento;
     }
     
-    public LocalDate birthday() {
-        return fechaNacimiento;
-    }
-    
     public void morir() {
         this.vivo = false;
     }

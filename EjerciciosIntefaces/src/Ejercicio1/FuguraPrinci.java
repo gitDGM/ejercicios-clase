@@ -17,18 +17,27 @@ public class FuguraPrinci {
         // 1.
         ArrayList<IFigura> figuras = new ArrayList();
         
+        
+        // 2.
         figuras.add(new Cuadrado(12));
         figuras.add(new Rectangulo(8, 14));
         figuras.add(new Triangulo(15, 22));
         figuras.add(new Circulo(7));
         
+        
+        // 3.
         mostrarFiguras(figuras);
         
+        
+        // 4.
         figuras = escalarFiguras(figuras, 2);
+        // 5.
         mostrarFiguras(figuras);
         
         
+        // 6.
         figuras = escalarFiguras(figuras, 0.1);
+        // 7.
         mostrarFiguras(figuras);        
     }
     

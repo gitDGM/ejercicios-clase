@@ -28,10 +28,10 @@ public class Inventario {
     }
     
     public void vaciarInventario() {
-        mascotas = new ArrayList();
+        mascotas.clear();
     }
     
-    public void mostrarConcreto(String nombre) {
+    public void mostrarUno(String nombre) {
         int index = getIndex(nombre);
         mascotas.get(index).muestra();
     }

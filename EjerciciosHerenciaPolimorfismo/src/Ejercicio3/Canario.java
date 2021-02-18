@@ -38,6 +38,11 @@ public class Canario extends Ave {
     }
     
     @Override
+    public void volar() {
+        System.out.println(this.getNombre() + " vuela bajo.");
+    }
+    
+    @Override
     public void hablar() {
         System.out.println("*Pio, Pio!*");
     }
