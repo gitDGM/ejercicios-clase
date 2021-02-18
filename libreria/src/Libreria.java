@@ -13,7 +13,8 @@ import java.util.Scanner;
  * @author alumno
  */
 public class Libreria {
-    static Scanner sc = new Scanner(System.in);
+    
+    private static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
         int opcion;
