@@ -22,7 +22,7 @@ public class Libreria {
             System.out.println("##########################");
             System.out.println("0.- Salir");
             System.out.println("##########################");
-            opcion = introducirNumero("Elige una opción");
+            opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 0:
                     break;

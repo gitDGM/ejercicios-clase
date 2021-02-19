@@ -53,11 +53,9 @@ public abstract class CuentaBancaria {
     }
     
     public void mostrar() {
-        System.out.println("#########################");
-        System.out.println("IBA: " + iban);
+        System.out.println("\nIBAN: " + iban);
         System.out.println("Saldo: " + saldo);
-        System.out.println("Interes Anual Básico: " + interesAnualBasico);
-        System.out.println("#########################");
+        System.out.println("Interes Anual Básico: " + interesAnualBasico + "\n");
     }
     
     public abstract void calcularIntereses();

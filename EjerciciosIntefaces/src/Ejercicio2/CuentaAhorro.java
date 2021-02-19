@@ -18,7 +18,7 @@ public class CuentaAhorro extends CuentaBancaria {
 
     @Override
     public void calcularIntereses() {
-        double interesAnualBasico = getInteresAnualBasico();
+        double interesAnualBasico = getInteresAnualBasico() / 100;
         double saldoActual = getSaldo();
         
         if (getSaldo() < saldoMinimo) {

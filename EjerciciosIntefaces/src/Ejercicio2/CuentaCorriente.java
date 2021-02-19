@@ -18,7 +18,7 @@ public class CuentaCorriente extends CuentaBancaria {
     @Override
     public void calcularIntereses() {
         double saldoActual = getSaldo();
-        setSaldo(saldoActual + (saldoActual * getInteresAnualBasico()));
+        setSaldo(saldoActual + (saldoActual * (getInteresAnualBasico() / 100)));
     }
     
 }
