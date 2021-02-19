@@ -12,11 +12,11 @@ package Ejercicio2;
 public abstract class CuentaBancaria {
     private final String iban;
     private double saldo;
-    private final double interesAnualBasico = 2.5;
+    private double interesAnualBasico = 2.5;
 
     public CuentaBancaria(String iban, double saldo) {
         this.iban = iban;
-        this.saldo = 0;
+        this.saldo = saldo;
     }
 
     public String getIban() {
@@ -34,6 +34,10 @@ public abstract class CuentaBancaria {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    public void setInteresAnualBasico(double interesAnualBasico) {
+        this.interesAnualBasico = interesAnualBasico;
+    }
     
     public void ingresar(double cantidadIngresada) {
         saldo += cantidadIngresada;
@@ -41,6 +45,11 @@ public abstract class CuentaBancaria {
     
     public void retirar(double cantidadRetirada) {
         saldo -= cantidadRetirada;
+    }
+    
+    public void traspasar(CuentaBancaria cuentaAjena, double saldoTraspasado) {
+        retirar(saldoTraspasado);
+        cuentaAjena.ingresar(saldoTraspasado);
     }
     
     public void mostrar() {
@@ -51,6 +60,6 @@ public abstract class CuentaBancaria {
         System.out.println("#########################");
     }
     
-    public abstract double calcularIntereses();
+    public abstract void calcularIntereses();
     
 }
