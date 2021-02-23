@@ -22,6 +22,7 @@ public class Programa {
         do {
             System.out.println("##########################");
             System.out.println("1.- Crear vehiculo");
+            System.out.println("2.- Mostrar vehiculos");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -29,9 +30,13 @@ public class Programa {
                 case 1:
                     crearVehiculo();
                     break;
+                case 2:
+                    mostrarVehiculos();
+                    break;
                 case 0:
                     break;
                 default:
+                    System.err.println("ERROR: Fuera de rango");
                     break;
             }
         } while (opcion != 0);       
@@ -245,6 +250,14 @@ public class Programa {
         
         vehiculos.add(new VehiculoAcuatico(matricula, modelo, eslora));
     } 
+    
+    static void mostrarVehiculos() {
+        int contador = 1;
+        for (Vehiculo vehiculo : vehiculos) {
+            System.out.print(contador +  ".- ");
+            vehiculo.imprimir();
+        }
+    }
     
     static boolean elegirOpcionContinuar(String msg) {
         boolean opcion = true; 
