@@ -12,8 +12,8 @@ package Ejercicio3;
 public class Coche extends VehiculoTerrestre {
     private boolean aireAcondicionado;
 
-    public Coche(boolean aireAcondicionado, String matricula, String modelo, int numRuedas) {
-        super(matricula, modelo, numRuedas);
+    public Coche(boolean aireAcondicionado, String matricula, String modelo) {
+        super(matricula, modelo, 4);
         this.aireAcondicionado = aireAcondicionado;
     }
 

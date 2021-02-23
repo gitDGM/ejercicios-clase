@@ -12,8 +12,8 @@ package Ejercicio3;
 public class Moto extends VehiculoTerrestre {
     private String color;
 
-    public Moto(String color, String matricula, String modelo, int numRuedas) {
-        super(matricula, modelo, numRuedas);
+    public Moto(String color, String matricula, String modelo) {
+        super(matricula, modelo, 2);
         this.color = color;
     }
 
