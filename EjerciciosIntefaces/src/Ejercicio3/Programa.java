@@ -96,8 +96,8 @@ public class Programa {
     
     static void crearVehiculoAereo() {
         System.out.println("##########################");
-        System.out.println("1.- Coche");
-        System.out.println("2.- Moto");
+        System.out.println("1.- Avion");
+        System.out.println("2.- Helicoptero");
         System.out.println("3.- Generico");
         System.out.println("0.- Salir");
         System.out.println("##########################");
@@ -256,7 +256,9 @@ public class Programa {
         for (Vehiculo vehiculo : vehiculos) {
             System.out.print(contador +  ".- ");
             vehiculo.imprimir();
+            contador++;
         }
+        System.out.println();
     }
     
     static boolean elegirOpcionContinuar(String msg) {
