@@ -60,20 +60,20 @@ public class Libreria {
     }
     
     static int introducirNumero(String msg) {
-         int numero = 0;        
-         boolean noValido;
-         do {
-             System.out.println(msg);
-             try {
-                 numero = sc.nextInt();
-                 noValido = false;
-             } catch (InputMismatchException ex) {
-                 System.err.println("Debe ser un número decimal.");
-                 noValido = true;
-                 sc.next();
-             }
-         } while (noValido);
+        int numero = 0;        
+        boolean noValido;
+        do {
+            System.out.println(msg);
+            try {
+                numero = sc.nextInt();
+                noValido = false;
+            } catch (InputMismatchException ex) {
+                System.err.println("Debe ser un número decimal.");
+                noValido = true;
+                sc.next();
+            }
+        } while (noValido);
 
-         return numero;
-     }
+        return numero;
+    }
 }
