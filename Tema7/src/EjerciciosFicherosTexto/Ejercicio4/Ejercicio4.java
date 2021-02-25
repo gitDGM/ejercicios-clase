@@ -21,8 +21,6 @@ public class Ejercicio4 {
         
         String carta = leerCarta(fichero);
         
-        
-        System.out.println(carta);
         int numLineas = contarLineas(fichero);
         int numPalabras = carta.split(" ").length;
         int numLetras = contarLetras(carta.split(" "));
