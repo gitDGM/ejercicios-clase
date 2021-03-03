@@ -57,9 +57,10 @@ public class Comando {
                     cantidadLetrasFichero2 += letrasPalabraFichero2.length;   
                     iguales = letrasPalabraFichero1[k].equals(letrasPalabraFichero2[k]);
                     if (!iguales) {
+                        System.out.println("DIFERENCIA ENCONTRADA EN:");
                         System.out.println("LINEA: " + (i + 1));
                         System.out.println("PALABRA: " + (j + 1));
-                        System.out.println("CARACTER: " + (k + 1));
+                        System.out.println("CARACTER: " + (k + 1) + "\n");
                     }
                 }
             }
