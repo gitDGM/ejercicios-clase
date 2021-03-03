@@ -20,5 +20,6 @@ public class Ejercicio9 {
         File fichero = new File(RUTA_ACTUAL + "todos.txt");
         
         encrypt.encriptarFichero(fichero);
+        System.out.println("El fichero todos.txt ha sido cifrado en cifrado.txt");
     }
 }

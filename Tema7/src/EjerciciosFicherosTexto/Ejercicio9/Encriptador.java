@@ -49,16 +49,17 @@ public class Encriptador {
     
     private String intercambiarLetraCifrada(String letra) {
         String[] alfabeto = "abcdefghijklmnopqrstuvwxyz".split("");
-        String letraCifrada = "";
-        
         letra = letra.toLowerCase();
         
-        for (int i = 0; i < alfabeto.length && !alfabeto[i].equals(letra); i++) {
+        String letraCifrada = "";
+        boolean cifrada = false;        
+        
+        for (int i = 0; i < alfabeto.length && !cifrada; i++) {
             if (alfabeto[i].equals(letra)) { 
                 letraCifrada = getCifrado().split("")[i];
+                cifrada = true;
             }
         }          
-                System.err.println("Encontrada: " + letraCifrada);
         
         return letraCifrada;
     }
