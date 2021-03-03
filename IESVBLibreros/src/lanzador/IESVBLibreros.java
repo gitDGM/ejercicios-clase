@@ -3,6 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
+    TODO: 
+    salida.txt con (nombre - precio - existencias),
+    Si el fichero ya existe, los datos se añaden.
+*/ 
+
 package lanzador;
 
 import iesvblibreros.Agenda;
