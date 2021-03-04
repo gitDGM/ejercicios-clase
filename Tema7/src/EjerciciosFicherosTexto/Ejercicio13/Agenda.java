@@ -36,10 +36,14 @@ public class Agenda {
     }
     
     public void addContacto(String nombre, String telefono) {
-        if (contactos.size() < CONTACTOS_MAX) {
+        if (contactos.size() < CONTACTOS_MAX && !comprobarSiExiste(nombre)) {
             contactos.add(new Contacto(nombre, telefono));
         } else {
-            System.err.println("ATENCIÓN: Has llegado al límite y no se añadió.");
+            if (contactos.size() == CONTACTOS_MAX) {
+                System.err.println("ATENCIÓN: Has llegado al límite y no se añadió.");
+            } else {
+                System.err.println("ATENCIÓN: Has añadido un contacto que ya existe.");
+            }
         }
     }
     
@@ -47,6 +51,30 @@ public class Agenda {
         for (int i = 0; i < contactos.size(); i++) {
             escribirContacto(contactos.get(i));
         }
+    }
+    
+    public void mostrarContactos() {
+        for (int i = 0; i < contactos.size(); i++) {
+            contactos.get(i).mostrar();
+        }
+    }
+    
+    public void mostrarContactosCadena(String cadena) {
+        for (int i = 0; i < contactos.size(); i++) {
+            if (contactos.get(i).getNombre().startsWith(cadena)) {
+                contactos.get(i).mostrar();
+            }
+        }
+    }
+    
+    private boolean comprobarSiExiste(String nombre) {
+        boolean repetido = false;
+        
+        for (int i = 0; i < contactos.size() && !repetido; i++) {
+            repetido = contactos.get(i).getNombre().equals(nombre);
+        }
+        
+        return repetido;
     }
     
     private void escribirContacto(Contacto contacto) {

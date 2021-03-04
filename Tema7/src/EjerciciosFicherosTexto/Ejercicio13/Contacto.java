@@ -35,6 +35,9 @@ public class Contacto {
     }
     
     public void mostrar() {
-        System.out.println("Nombre: " + nombre + "\t||\tTeléfono: " + telefono);
+        System.out.println("######################");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Teléfono: " + telefono);
+        System.out.println("######################");
     }
 }
