@@ -33,4 +33,8 @@ public class Contacto {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+    
+    public void mostrar() {
+        System.out.println("Nombre: " + nombre + "\t||\tTeléfono: " + telefono);
+    }
 }

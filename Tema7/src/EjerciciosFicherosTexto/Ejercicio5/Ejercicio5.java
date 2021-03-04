@@ -34,6 +34,7 @@ public class Ejercicio5 {
             System.out.println("##########################");
             System.out.println("1.- Generar numeros aleatorios");
             System.out.println("2.- Ordenar numeros");
+            System.out.println("3.- Mostrar menor y mayor");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -44,12 +45,36 @@ public class Ejercicio5 {
                 case 2:
                     ordenarNumerosFichero(ficheroNumeros);
                     break;
+                case 3:
+                    int[] numeros = getNumeros(ficheroNumeros);
+                    mostrarMenorMayor(numeros);
+                    break;
                 case 0:
                     break;
                 default:
                     break;
             }
         } while (opcion != 0);       
+    }
+    
+    static void mostrarMenorMayor(int[] numeros) {
+        int menor = 0;
+        int mayor = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            if (i == 0) {
+                menor = numeros[0];
+                mayor = numeros[0];
+            }     
+            
+            if (numeros[i] < menor) {
+                menor = numeros[i];
+            } else if (numeros[i] > mayor) {
+                mayor = numeros[i];                
+            }
+        }
+        
+        System.out.println("\nMenor: " + menor);
+        System.out.println("Mayor: " + mayor + "\n");
     }
     
     static void generarNumerosAleatorios(File fichero) {
@@ -107,13 +132,10 @@ public class Ejercicio5 {
                     System.out.println(ex.getMessage());                    
                 }
             }
-            
-            
         } else {
             System.err.println("ERROR: El fichero no existe.");
         }
-    }
-    
+    }    
     
     static int[] getNumeros(File fichero) {
         FileReader filereader = null;
@@ -140,33 +162,6 @@ public class Ejercicio5 {
         }
         
         return numeros;
-    }
-    
-    static boolean elegirOpcionContinuar(String msg) {
-        boolean opcion = true; 
-        boolean noValido;
-        
-        do {
-            System.out.println(msg);
-            char letra = sc.next().charAt(0);
-            
-            switch (Character.toUpperCase(letra)) {
-                case 'N':
-                    opcion = false;
-                    noValido = false;
-                    break;
-                case 'S':
-                    opcion = true;
-                    noValido = false;
-                    break;
-                default:
-                    System.err.println("Opción no valida.");
-                    noValido = true;
-                    break;
-            }
-        } while (noValido);     
-        
-        return opcion;
     }
     
     static int introducirNumero(String msg) {

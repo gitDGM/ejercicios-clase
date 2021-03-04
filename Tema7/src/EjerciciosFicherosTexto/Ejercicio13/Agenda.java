@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class Agenda {
+    private static final int CONTACTOS_MAX = 20;
     private final ArrayList<Contacto> contactos;
 
     public Agenda() {
@@ -24,7 +25,19 @@ public class Agenda {
         File datos = new File("src/EjerciciosFicherosTexto/Ejercicio13/agenda.txt");
         
         if (datos.exists() && comprobarSiHayDatosGuardados(datos)) {            
-            cargarDatosGuardados();
+            cargarDatosGuardados(datos);
+        }
+    }
+
+    public ArrayList<Contacto> getContactos() {
+        return contactos;
+    }
+    
+    public void addContacto(String nombre, String telefono) {
+        if (contactos.size() < CONTACTOS_MAX) {
+            contactos.add(new Contacto(nombre, telefono));
+        } else {
+            System.err.println("ATENCIÓN: Has llegado al límite y no se añadió.");
         }
     }
     
@@ -44,8 +57,19 @@ public class Agenda {
         return result;
     }
     
-    private void cargarDatosGuardados() {
-        String cadenaDatos = ficheroToString(fichero)
+    private void cargarDatosGuardados(File fichero) {
+        try {
+            String cadenaDatos = ficheroToString(fichero);  
+            String[] filasContactos = cadenaDatos.split("\n");
+            
+            for (int i = 0; i < filasContactos.length && i < CONTACTOS_MAX + 1; i++) {
+                String[] filaContacto = filasContactos[i].split(":");
+                addContacto(filaContacto[0], filaContacto[1]);
+            }
+            
+        } catch (Exception e) {
+            System.err.println("ERROR: " + e.getMessage());
+        }
     }
     
     private String ficheroToString(File fichero) throws Exception {        

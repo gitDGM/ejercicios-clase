@@ -12,5 +12,7 @@ package EjerciciosFicherosTexto.Ejercicio13;
 public class Ejercicio13 {
     public static void main(String[] args) {
         Agenda agenda = new Agenda();
+        
+        agenda.getContactos().get(0).mostrar();
     }
 }
