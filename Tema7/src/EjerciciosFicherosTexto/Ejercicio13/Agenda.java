@@ -8,7 +8,9 @@ package EjerciciosFicherosTexto.Ejercicio13;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -38,6 +40,39 @@ public class Agenda {
             contactos.add(new Contacto(nombre, telefono));
         } else {
             System.err.println("ATENCIÓN: Has llegado al límite y no se añadió.");
+        }
+    }
+    
+    public void guardarContactos() {
+        for (int i = 0; i < contactos.size(); i++) {
+            escribirContacto(contactos.get(i));
+        }
+    }
+    
+    private void escribirContacto(Contacto contacto) {
+        File fichero = new File("src/EjerciciosFicherosTexto/Ejercicio13/agenda.txt");
+        
+        if (fichero.exists()) {
+            fichero.delete();
+        }        
+        
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+        
+        try {         
+            filewriter = new FileWriter(fichero, true);
+            escritor = new PrintWriter(filewriter);
+            escritor.println(contacto.getNombre() + ":" + contacto.getTelefono());
+            
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) filewriter.close();
+                if (escritor != null) escritor.close();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());                    
+            }
         }
     }
     
