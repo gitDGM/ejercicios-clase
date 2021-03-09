@@ -29,7 +29,7 @@ public final class FicheroPersona {
         return fichero;
     }
     
-    public FicheroPersona fusionarConFicheroEnNuevo(String nombreNuevo, FicheroPersona ficheroFusion) {
+    public void fusionarConFicheroEnNuevo(String nombreNuevo, FicheroPersona ficheroFusion) {
         FicheroPersona ficheroNuevo = new FicheroPersona(nombreNuevo);
         
         if (ficheroNuevo.getFichero().exists()) {
@@ -43,39 +43,8 @@ public final class FicheroPersona {
         escribirArrayEnFicheroNuevo(lineasFichero2, ficheroNuevo);
         ficheroNuevo.ordenarAlfabeticamente();
         
-        return ficheroNuevo;
     }
     
-    public int contarLineas() {
-        
-        int contador = 0;        
-        FileReader filereader = null;
-        BufferedReader lector = null;
-        
-        try {
-            
-            filereader = new FileReader(this.fichero);
-            lector = new BufferedReader(filereader);
-            
-            String cadenaLeida = lector.readLine();
-            while (cadenaLeida != null) {
-                contador++;
-                cadenaLeida = lector.readLine();
-            }
-            
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } finally {
-            try {
-                if (filereader != null) filereader.close();
-                if (lector != null) lector.close();
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());                    
-            }
-        }
-        
-        return contador;
-    }
     
     private void ordenarAlfabeticamente() {
         

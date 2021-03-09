@@ -17,7 +17,7 @@ public class Ejercicio8 {
         FicheroPersona perso1 = new FicheroPersona("perso1.txt");
         FicheroPersona perso2 = new FicheroPersona("perso2.txt");
         
-        FicheroPersona perso3 = perso1.fusionarConFicheroEnNuevo("todos.txt", perso2);
+        perso1.fusionarConFicheroEnNuevo("todos.txt", perso2);
         
         System.out.println("Se han fusionado los archivos perso1.txt y perso2.txt en todos.txt");
         System.out.println("Están ordenados alfabéticamente.");
