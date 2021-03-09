@@ -28,10 +28,10 @@ public class Ejercicio13 {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    agenda.addContacto("maria", "123456789");
+                    nuevoContacto(agenda);
                     break;
                 case 2:
-                    agenda.mostrarContactosCadena("die");
+                    buscarContactoPorNombre(agenda);
                     break;
                 case 3:
                     agenda.mostrarContactos();
@@ -42,6 +42,22 @@ public class Ejercicio13 {
                     break;
             }
         } while (opcion != 0);       
+    }
+    
+    static void nuevoContacto(Agenda agenda) {
+        System.out.println("Introduce el nombre del contacto:");
+        String nombre = sc.nextLine();
+        System.out.println("Introduce el número de teléfono: ");
+        String numero = sc.nextLine();
+        
+        agenda.addContacto(nombre, numero);        
+    }
+    
+    static void buscarContactoPorNombre(Agenda agenda) {
+        System.out.println("Introduce el nombre del contacto:");
+        String nombre = sc.nextLine();
+        
+        agenda.mostrarContactosCadena(nombre);    
     }
     
     static int introducirNumero(String msg) {
