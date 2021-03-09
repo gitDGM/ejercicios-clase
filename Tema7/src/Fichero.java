@@ -8,7 +8,9 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -27,19 +29,27 @@ public class Fichero {
         return ruta;
     }
     
-    public String[] ficheroToArrayLetrasPalabra(int indexLinea, int indexPalabra) {
-        return ficheroToString().split("\n")[indexLinea].split(" ")[indexPalabra].split("");
+    public File getFichero() {
+        return fichero;
     }
     
-    public String[] ficheroToArrayPalabrasLinea(int index) {
-        return ficheroToString().split("\n")[index].split(" ");
+    public String[] convertToArrayLetrasPalabra(int indexLinea, int indexPalabra) {
+        return convertToString().split("\n")[indexLinea].split(" ")[indexPalabra].split("");
     }
     
-    public String[] ficheroToArrayLineas() {
-        return ficheroToString().split("\n");
+    public String[] convertToArrayPalabrasLinea(int index) {
+        return convertToString().split("\n")[index].split(" ");
     }
     
-    public String ficheroToString() {
+    public String[] convertToArrayLineas() {
+        return convertToString().split("\n");
+    }
+    
+    public boolean compararDosFicheros(Fichero ficheroExterno) {
+        return this.convertToString().equals(ficheroExterno.convertToString());
+    }
+    
+    public String convertToString() {
         String texto = ""; 
         if (fichero.exists()) {
             FileReader filereader = null;
@@ -69,5 +79,50 @@ public class Fichero {
         }
         
         return texto;
+    }
+    
+    public void copiarFichero(String nombreNuevoArchivo) {
+       Fichero nuevoFichero = new Fichero(nombreNuevoArchivo);
+       
+       if (!nuevoFichero.existeFichero()) {
+           String[] cadena = this.convertToString().split("\n");
+           nuevoFichero.escribirArrayEnFichero(cadena);
+       }
+    }
+    
+    public void escribirCadenaEnFichero(String cadena) {
+        insertarLineaEnFichero(cadena);
+    }
+    
+    public void escribirArrayEnFichero(String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            insertarLineaEnFichero(array[i]);
+        }
+    }
+    
+    public boolean existeFichero() {
+        return this.getFichero().exists();
+    }
+    
+    public void insertarLineaEnFichero(String linea) {
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+        
+        try {         
+            filewriter = new FileWriter(this.fichero, true);
+            escritor = new PrintWriter(filewriter);
+            
+            escritor.println(linea);
+            
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) filewriter.close();
+                if (escritor != null) escritor.close();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());                    
+            }
+        }
     }
 }

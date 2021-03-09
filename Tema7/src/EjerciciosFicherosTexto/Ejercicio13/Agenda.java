@@ -42,7 +42,7 @@ public class Agenda {
             if (contactos.size() == CONTACTOS_MAX) {
                 System.err.println("ATENCIÓN: Has llegado al límite y no se añadió.");
             } else {
-                System.err.println("ATENCIÓN: Has añadido un contacto que ya existe.");
+                System.err.println("ATENCIÓN: El contacto que ya existía y no se ha añadido.");
             }
         }
     }

@@ -22,7 +22,7 @@ public class Ejercicio13 {
             System.out.println("##########################");
             System.out.println("1.- Nuevo contacto");
             System.out.println("2.- Buscar por nombre");
-            System.out.println("3.- mostrar todos");
+            System.out.println("3.- Mostrar todos");
             System.out.println("4.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -44,20 +44,18 @@ public class Ejercicio13 {
         } while (opcion != 0);       
     }
     
-    static void nuevoContacto(Agenda agenda) {
-        System.out.println("Introduce el nombre del contacto:");
-        String nombre = sc.nextLine();
-        System.out.println("Introduce el número de teléfono: ");
-        String numero = sc.nextLine();
-        
-        agenda.addContacto(nombre, numero);        
+    static void nuevoContacto(Agenda agenda) {        
+        agenda.addContacto(introducirString("Introduce el nombre del contacto:"), introducirString("Introduce el número de teléfono: "));      
     }
     
-    static void buscarContactoPorNombre(Agenda agenda) {
-        System.out.println("Introduce el nombre del contacto:");
-        String nombre = sc.nextLine();
-        
-        agenda.mostrarContactosCadena(nombre);    
+    static void buscarContactoPorNombre(Agenda agenda) {        
+        agenda.mostrarContactosCadena(introducirString("Introduce el nombre del contacto:"));    
+    }
+    
+    static String introducirString(String msg) {
+        sc = new Scanner(System.in); 
+        System.out.println(msg);
+        return sc.nextLine();
     }
     
     static int introducirNumero(String msg) {
