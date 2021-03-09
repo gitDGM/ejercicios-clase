@@ -54,8 +54,14 @@ public class Comando {
                 
                 for (int k = 0; k < letrasPalabraFichero1.length && iguales; k++) {
                     cantidadLetrasFichero1 += letrasPalabraFichero1.length;
-                    cantidadLetrasFichero2 += letrasPalabraFichero2.length;   
-                    iguales = letrasPalabraFichero1[k].equals(letrasPalabraFichero2[k]);
+                    cantidadLetrasFichero2 += letrasPalabraFichero2.length;
+                    
+                    if ((k == letrasPalabraFichero1.length - 1 || k == letrasPalabraFichero2.length - 1) && comprobarCantidadLetras(letrasPalabraFichero1, letrasPalabraFichero2) && comprobarCantidadPalabras(palabrasLineaFichero1, palabrasLineaFichero2)) {
+                        iguales = false;
+                    } else {                        
+                        iguales = letrasPalabraFichero1[k].equals(letrasPalabraFichero2[k]);
+                    }
+                    
                     if (!iguales) {
                         System.out.println("DIFERENCIA ENCONTRADA EN:");
                         System.out.println("LINEA: " + (i + 1));
@@ -66,9 +72,9 @@ public class Comando {
             }
         }        
         
-        iguales = cantidadLetrasFichero1 == cantidadLetrasFichero2;
-        
-        
+        if (iguales) {
+            iguales = cantidadLetrasFichero1 == cantidadLetrasFichero2;
+        }
         
         return iguales;
     }
@@ -107,5 +113,13 @@ public class Comando {
         }
         
         return texto;
+    }
+    
+    private boolean comprobarCantidadPalabras(String[] palabras1, String[] palabras2) {
+        return palabras1.length != palabras2.length;
+    }
+    
+    private boolean comprobarCantidadLetras(String[] letras1, String[] letras2) {
+        return letras1.length != letras2.length;
     }
 }
