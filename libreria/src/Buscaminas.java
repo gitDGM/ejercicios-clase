@@ -77,6 +77,30 @@ public class Buscaminas {
         }
     }
     
+    private int contarMinasAlrededor(int posX, int posY) {
+        int minasAlrededor = 0;
+        
+        if (posY >= 1 && posX >= 1 && posY <= (tableroJuego.length - 2) && posX <= (tableroJuego[0].length - 2)) {
+            if (tableroJuego[posY - 1][posX - 1] == 1) {
+                minasAlrededor++;
+            } else if (tableroJuego[posY - 1][posX] == 1) {
+                minasAlrededor++;
+            } else if (tableroJuego[posY - 1][posX + 1] == 1) {
+                minasAlrededor++;
+            } else if (tableroJuego[posY][posX - 1] == 1) {
+                minasAlrededor++;
+            } else if (tableroJuego[posY][posX + 1] == 1) {
+                minasAlrededor++;
+            } else if (tableroJuego[posY + 1][posX - 1] == 1) {
+                minasAlrededor++;
+            } else if (tableroJuego[posY + 1][posX] == 1) {
+                minasAlrededor++;
+            }
+        }
+        
+        return minasAlrededor;
+    }
+    
     private int[][] generarTableroJuego(int ancho, int alto, int cantidadMinas) {
         int[][] tableroNuevo = new int[alto][ancho];
         
