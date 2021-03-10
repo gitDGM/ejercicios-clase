@@ -16,7 +16,6 @@ import java.io.IOException;
  */
 public class Comando {
     
-    
     public boolean comp(File fichero1, File fichero2) {
         boolean iguales = true;
         
@@ -36,44 +35,34 @@ public class Comando {
     
     private boolean logicaComp(String fichero1, String fichero2) {
         boolean iguales = true;
-        int cantidadLetrasFichero1 = 0;
-        int cantidadLetrasFichero2 = 0;
+        int contadorLetra = 1;
+        int contadorPalabra = 1;
+        int contadorLinea = 1;
         
-        String[] lineasFichero1 = fichero1.split("\n");
-        String[] lineasFichero2 = fichero2.split("\n");        
-        
-        for (int i = 0; i < lineasFichero1.length && iguales; i++) {
-            
-            String[] palabrasLineaFichero1 = lineasFichero1[i].split(" ");
-            String[] palabrasLineaFichero2 = lineasFichero2[i].split(" ");
-            
-            for (int j = 0; j < palabrasLineaFichero1.length && iguales; j++) {
-                
-            String[] letrasPalabraFichero1 = palabrasLineaFichero1[j].split("");
-            String[] letrasPalabraFichero2 = palabrasLineaFichero2[j].split("");
-                
-                for (int k = 0; k < letrasPalabraFichero1.length && iguales; k++) {
-                    cantidadLetrasFichero1 += letrasPalabraFichero1.length;
-                    cantidadLetrasFichero2 += letrasPalabraFichero2.length;
-                    
-                    if ((k == letrasPalabraFichero1.length - 1 || k == letrasPalabraFichero2.length - 1) && comprobarCantidadLetras(letrasPalabraFichero1, letrasPalabraFichero2) && comprobarCantidadPalabras(palabrasLineaFichero1, palabrasLineaFichero2)) {
-                        iguales = false;
-                    } else {                        
-                        iguales = letrasPalabraFichero1[k].equals(letrasPalabraFichero2[k]);
-                    }
-                    
-                    if (!iguales) {
-                        System.out.println("DIFERENCIA ENCONTRADA EN:");
-                        System.out.println("LINEA: " + (i + 1));
-                        System.out.println("PALABRA: " + (j + 1));
-                        System.out.println("CARACTER: " + (k + 1) + "\n");
-                    }
+        if (iguales || fichero1.length() != fichero1.length()) {
+            for (int i = 0; i < fichero1.length() && iguales; i++) {
+                if (fichero1.charAt(i) != fichero2.charAt(i)) {
+                    iguales = false;
+                } else {
+                    if (fichero1.charAt(i) == '\n') {
+                        contadorLinea++;
+                        contadorPalabra = 1;
+                        contadorLetra = 1;
+                    } else if (fichero1.charAt(i) == ' ') {
+                        contadorPalabra++;
+                        contadorLetra = 1;                        
+                    } else if (!("" + fichero1.charAt(i)).equals("\n") && fichero1.charAt(i) != ' ') {
+                        contadorLetra++;
+                    }                    
                 }
             }
-        }        
+        }
         
-        if (iguales) {
-            iguales = cantidadLetrasFichero1 == cantidadLetrasFichero2;
+        if (!iguales) {
+            System.out.println("DIFERENCIA ENCONTRADA EN:");
+            System.out.println("LINEA: " + contadorLinea);
+            System.out.println("PALABRA: " + contadorPalabra);
+            System.out.println("CARACTER: " + contadorLetra + "\n");
         }
         
         return iguales;
@@ -113,13 +102,5 @@ public class Comando {
         }
         
         return texto;
-    }
-    
-    private boolean comprobarCantidadPalabras(String[] palabras1, String[] palabras2) {
-        return palabras1.length != palabras2.length;
-    }
-    
-    private boolean comprobarCantidadLetras(String[] letras1, String[] letras2) {
-        return letras1.length != letras2.length;
     }
 }
