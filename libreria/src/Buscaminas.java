@@ -56,7 +56,7 @@ public class Buscaminas {
     }
     
     public void insertarCasilla(int posX, int posY) {
-        this.tableroJugador[posY][posX] = "O";
+        this.tableroJugador[posY][posX] = "" + contarMinasAlrededor(posX, posY);
     }
     
     public void mostrarTableroJuego() {
@@ -83,17 +83,26 @@ public class Buscaminas {
         if (posY >= 1 && posX >= 1 && posY <= (tableroJuego.length - 2) && posX <= (tableroJuego[0].length - 2)) {
             if (tableroJuego[posY - 1][posX - 1] == 1) {
                 minasAlrededor++;
-            } else if (tableroJuego[posY - 1][posX] == 1) {
+            }
+            if (tableroJuego[posY - 1][posX] == 1) {
                 minasAlrededor++;
-            } else if (tableroJuego[posY - 1][posX + 1] == 1) {
+            }
+            if (tableroJuego[posY - 1][posX + 1] == 1) {
                 minasAlrededor++;
-            } else if (tableroJuego[posY][posX - 1] == 1) {
+            }
+            if (tableroJuego[posY][posX - 1] == 1) {
                 minasAlrededor++;
-            } else if (tableroJuego[posY][posX + 1] == 1) {
+            }
+            if (tableroJuego[posY][posX + 1] == 1) {
                 minasAlrededor++;
-            } else if (tableroJuego[posY + 1][posX - 1] == 1) {
+            }
+            if (tableroJuego[posY + 1][posX - 1] == 1) {
                 minasAlrededor++;
-            } else if (tableroJuego[posY + 1][posX] == 1) {
+            } 
+            if (tableroJuego[posY + 1][posX] == 1) {
+                minasAlrededor++;
+            }
+            if (tableroJuego[posY + 1][posX + 1] == 1) {
                 minasAlrededor++;
             }
         }

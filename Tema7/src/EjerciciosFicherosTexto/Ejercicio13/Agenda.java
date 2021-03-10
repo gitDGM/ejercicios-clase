@@ -90,8 +90,7 @@ public class Agenda {
         try {         
             filewriter = new FileWriter(fichero, true);
             escritor = new PrintWriter(filewriter);
-            escritor.println(contacto.getNombre() + ":" + contacto.getTelefono());
-            
+            escritor.println(contacto.getNombre() + ":" + contacto.getTelefono());            
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         } finally {
@@ -140,9 +139,8 @@ public class Agenda {
         if (fichero.exists()) {
             FileReader filereader = null;
             BufferedReader lector = null;
-
+            
             try {
-
                 filereader = new FileReader(fichero);
                 lector = new BufferedReader(filereader);
 
@@ -154,7 +152,6 @@ public class Agenda {
 
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
-
             } finally {
                 try {
                     if (filereader != null) filereader.close();
