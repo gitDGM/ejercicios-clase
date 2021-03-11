@@ -96,7 +96,6 @@ public class Libreria {
     ///////////////
     
     
-    
     // METODO PARA CALCULAR EL INVENTARIO
     private double calcularInventario() {
         double inventario = 0;

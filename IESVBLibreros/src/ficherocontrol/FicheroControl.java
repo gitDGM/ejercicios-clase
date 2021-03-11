@@ -6,10 +6,7 @@
 package ficherocontrol;
 
 import iesvblibreros.Articulo;
-import iesvblibreros.Libreria;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,11 +17,11 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class FicheroControl {
-    private static final String ruta = "src/lanzador/";
+    private static final String RUTA = "src/lanzador/";
     private final File fichero;
 
     public FicheroControl(String nombreFichero) {
-        this.fichero = new File(ruta + nombreFichero);
+        this.fichero = new File(RUTA + nombreFichero);
     }    
 
     public File getFichero() {
