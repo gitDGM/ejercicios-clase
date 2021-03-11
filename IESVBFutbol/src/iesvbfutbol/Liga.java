@@ -51,4 +51,30 @@ public class Liga {
                 }
             }   
     }
+    
+    private void cargarJornadas() { // NO ESTÁ HECHO
+        File fileJornadas = new File("src/datafutbol/jornadas.txt");
+        
+        FileReader filereader = null;
+        BufferedReader lector = null;   
+            try {            
+                filereader = new FileReader(fileEquipos);
+                lector = new BufferedReader(filereader);  
+                String cadenaLeida = lector.readLine();
+                
+                while (cadenaLeida != null && !cadenaLeida.equals("")) {
+                    equipos.add(new Equipo(cadenaLeida));
+                    cadenaLeida = lector.readLine();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            } finally {
+                try {
+                    if (filereader != null) filereader.close();
+                    if (lector != null) lector.close();
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());                    
+                }
+            }   
+    }
 }
