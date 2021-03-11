@@ -60,7 +60,9 @@ public class Buscaminas {
     }
     
     public void mostrarTableroJuego() {
+        filaSuperior();
         for(int i = 0; i < tableroJuego.length; i++) {
+            System.out.print(i + "\t");
             for (int k = 0; k < tableroJuego[i].length; k++) {
                 System.out.print(tableroJuego[i][k] + " ");
             }
@@ -69,7 +71,9 @@ public class Buscaminas {
     }
     
     public void mostrarTableroJugador() {
+        filaSuperior();
         for(int i = 0; i < tableroJugador.length; i++) {
+            System.out.print(i + "\t");
             for (int k = 0; k < tableroJugador[i].length; k++) {
                 System.out.print(tableroJugador[i][k] + " ");
             }
@@ -124,6 +128,14 @@ public class Buscaminas {
         }
         
         return tableroNuevo;
+    }
+    
+    private void filaSuperior() {        
+        System.out.print("\t");
+        for (int i = 0; i < tableroJuego[0].length; i++){
+            System.out.print(i + " ");
+        }
+        System.out.println("\n");
     }
     
     private String[][] generarTableroJugador(int ancho, int alto) {
