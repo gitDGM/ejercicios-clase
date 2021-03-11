@@ -84,32 +84,14 @@ public class Buscaminas {
     private int contarMinasAlrededor(int posX, int posY) {
         int minasAlrededor = 0;
         
-        if (posY >= 1 && posX >= 1 && posY <= (tableroJuego.length - 2) && posX <= (tableroJuego[0].length - 2)) {
-            if (tableroJuego[posY - 1][posX - 1] == 1) {
-                minasAlrededor++;
-            }
-            if (tableroJuego[posY - 1][posX] == 1) {
-                minasAlrededor++;
-            }
-            if (tableroJuego[posY - 1][posX + 1] == 1) {
-                minasAlrededor++;
-            }
-            if (tableroJuego[posY][posX - 1] == 1) {
-                minasAlrededor++;
-            }
-            if (tableroJuego[posY][posX + 1] == 1) {
-                minasAlrededor++;
-            }
-            if (tableroJuego[posY + 1][posX - 1] == 1) {
-                minasAlrededor++;
-            } 
-            if (tableroJuego[posY + 1][posX] == 1) {
-                minasAlrededor++;
-            }
-            if (tableroJuego[posY + 1][posX + 1] == 1) {
-                minasAlrededor++;
-            }
-        }
+        minasAlrededor += comprobarPosicion(posY - 1, posX - 1);        
+        minasAlrededor += comprobarPosicion(posY - 1, posX);
+        minasAlrededor += comprobarPosicion(posY - 1, posX + 1);
+        minasAlrededor += comprobarPosicion(posY, posX - 1);
+        minasAlrededor += comprobarPosicion(posY, posX + 1);
+        minasAlrededor += comprobarPosicion(posY + 1, posX - 1);
+        minasAlrededor += comprobarPosicion(posY + 1, posX);
+        minasAlrededor += comprobarPosicion(posY + 1, posX + 1);
         
         return minasAlrededor;
     }
@@ -128,6 +110,18 @@ public class Buscaminas {
         }
         
         return tableroNuevo;
+    }
+    
+    private int comprobarPosicion(int posX, int posY) {
+        int mina = 0;
+        
+        try {
+            if (tableroJuego[posY][posX] == 1) {
+                mina = 1;
+            }            
+        } catch (Exception e) {}
+        
+        return mina;        
     }
     
     private void filaSuperior() {        

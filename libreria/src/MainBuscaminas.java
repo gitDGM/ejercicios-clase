@@ -23,6 +23,7 @@ public class MainBuscaminas {
             System.out.println("1. Mostrar tablero jugador");
             System.out.println("2. Mostrar tablero juego");
             System.out.println("3. Insertar casilla");
+            System.out.println("4. Desactivar mina");
             System.out.println("0. Salir");
             System.out.println("######################");
             opcion = introducirNumero("Elige una opción: ");
