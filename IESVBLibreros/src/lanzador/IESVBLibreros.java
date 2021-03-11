@@ -39,6 +39,7 @@ public class IESVBLibreros {
             System.out.println("3.- Mostrar un articulo");
             System.out.println("4.- Mostrar todos los articulos");
             System.out.println("5.- Mostrar inventario");
+            System.out.println("6.- Guardar articulos");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -57,6 +58,9 @@ public class IESVBLibreros {
                     break;
                 case 5:
                     libreria.mostrarInventario();
+                    break;
+                case 6:
+                    libreria.guardarArticulos();
                     break;
                 case 0:
                     libreria.borrarTodos();

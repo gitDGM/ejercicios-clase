@@ -6,6 +6,7 @@
 package iesvblibreros;
 
 
+import ficherocontrol.FicheroControl;
 import java.util.ArrayList;
 /**
  *
@@ -82,7 +83,19 @@ public class Libreria {
     // METODO PARA MOSTRAR EL INVENTARIO
     public void mostrarInventario() {
         System.out.println("Inventario: " + calcularInventario() + "\n");
-    }    
+    }
+    
+    
+    // EJERCICIO 14    
+    
+    public void guardarArticulos() {
+        FicheroControl fileController = new FicheroControl("salida.txt");        
+        fileController.guardarArticulos(articulos);
+    }
+    
+    ///////////////
+    
+    
     
     // METODO PARA CALCULAR EL INVENTARIO
     private double calcularInventario() {
