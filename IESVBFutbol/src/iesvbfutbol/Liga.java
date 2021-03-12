@@ -17,11 +17,11 @@ import java.util.ArrayList;
  */
 public class Liga {
     private final ArrayList<Equipo> equipos;
-    private final ArrayList<Jornada> jornadas;
+    private final ArrayList<Partido> partidos;
 
     public Liga() {
         this.equipos = new ArrayList();
-        this.jornadas = new ArrayList();
+        this.partidos = new ArrayList();
         
         cargarEquipos();
     }
@@ -29,11 +29,11 @@ public class Liga {
     private void cargarEquipos() {
         File fileEquipos = new File("src/datafutbol/equipos.txt");
         
-        FileReader filereader = null;
+        FileReader fr = null;
         BufferedReader lector = null;   
             try {            
-                filereader = new FileReader(fileEquipos);
-                lector = new BufferedReader(filereader);  
+                fr = new FileReader(fileEquipos);
+                lector = new BufferedReader(fr);  
                 String cadenaLeida = lector.readLine();
                 
                 while (cadenaLeida != null && !cadenaLeida.equals("")) {
@@ -44,7 +44,7 @@ public class Liga {
                 System.out.println(ex.getMessage());
             } finally {
                 try {
-                    if (filereader != null) filereader.close();
+                    if (fr != null) fr.close();
                     if (lector != null) lector.close();
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());                    
@@ -52,25 +52,25 @@ public class Liga {
             }   
     }
     
-    private void cargarJornadas() { // NO ESTÁ HECHO
-        File fileJornadas = new File("src/datafutbol/jornadas.txt");
+    private void cargarPartidos() { // NO ESTÁ HECHO
+        File filePartidos = new File("src/datafutbol/partidos.txt");
         
-        FileReader filereader = null;
+        FileReader fr = null;
         BufferedReader lector = null;   
             try {            
-                filereader = new FileReader(fileEquipos);
-                lector = new BufferedReader(filereader);  
+                fr = new FileReader(filePartidos);
+                lector = new BufferedReader(fr);  
                 String cadenaLeida = lector.readLine();
                 
                 while (cadenaLeida != null && !cadenaLeida.equals("")) {
-                    equipos.add(new Equipo(cadenaLeida));
+                    //partidos.add(new Partido(cadenaLeida));
                     cadenaLeida = lector.readLine();
                 }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             } finally {
                 try {
-                    if (filereader != null) filereader.close();
+                    if (fr != null) fr.close();
                     if (lector != null) lector.close();
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());                    

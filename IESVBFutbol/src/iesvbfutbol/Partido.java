@@ -9,13 +9,13 @@ package iesvbfutbol;
  *
  * @author alumno
  */
-public class Jornada {
+public class Partido {
     private final Equipo equipoLocal;
     private final Equipo equipoVisitante;
     private final int golesLocal;
     private final int golesVisitante;
 
-    public Jornada(Equipo equipoLocal, Equipo equipoVisitante, int golesLocal, int golesVisitante) {
+    public Partido(Equipo equipoLocal, Equipo equipoVisitante, int golesLocal, int golesVisitante) {
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.golesLocal = golesLocal;

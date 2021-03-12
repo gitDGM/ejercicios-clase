@@ -1,0 +1,380 @@
+Athletic Club:Atlético de Madrid:4:1
+Athletic Club:C. D. Leganés:1:4
+Athletic Club:C. A. Osasuna:4:4
+Athletic Club:Deportivo Alavés:1:0
+Athletic Club:F. C. Barcelona:1:3
+Athletic Club:Getafe C. F.:0:4
+Athletic Club:Granada C. F.:3:0
+Athletic Club:Levante U. D.:2:4
+Athletic Club:R. C. D. Mallorca:2:4
+Athletic Club:R. C. Celta de Vigo:0:2
+Athletic Club:R. C. D. Espanyol:4:1
+Athletic Club:Real Betis Balompié:1:4
+Athletic Club:Real Madrid C. F.:2:0
+Athletic Club:Real Sociedad:3:4
+Athletic Club:Real Valladolid:3:1
+Athletic Club:S. D. Eibar:3:4
+Athletic Club:Sevilla F. C.:4:4
+Athletic Club:Valencia C. F.:3:2
+Athletic Club:Villarreal C. F.:2:2
+Atlético de Madrid:Athletic Club:2:0
+Atlético de Madrid:C. D. Leganés:4:3
+Atlético de Madrid:C. A. Osasuna:4:1
+Atlético de Madrid:Deportivo Alavés:0:3
+Atlético de Madrid:F. C. Barcelona:0:4
+Atlético de Madrid:Getafe C. F.:4:2
+Atlético de Madrid:Granada C. F.:1:1
+Atlético de Madrid:Levante U. D.:4:0
+Atlético de Madrid:R. C. D. Mallorca:1:0
+Atlético de Madrid:R. C. Celta de Vigo:0:4
+Atlético de Madrid:R. C. D. Espanyol:3:4
+Atlético de Madrid:Real Betis Balompié:1:3
+Atlético de Madrid:Real Madrid C. F.:2:3
+Atlético de Madrid:Real Sociedad:3:1
+Atlético de Madrid:Real Valladolid:1:2
+Atlético de Madrid:S. D. Eibar:1:1
+Atlético de Madrid:Sevilla F. C.:3:0
+Atlético de Madrid:Valencia C. F.:1:2
+Atlético de Madrid:Villarreal C. F.:1:1
+C. D. Leganés:Athletic Club:0:2
+C. D. Leganés:Atlético de Madrid:1:3
+C. D. Leganés:C. A. Osasuna:2:4
+C. D. Leganés:Deportivo Alavés:3:0
+C. D. Leganés:F. C. Barcelona:4:3
+C. D. Leganés:Getafe C. F.:1:0
+C. D. Leganés:Granada C. F.:1:4
+C. D. Leganés:Levante U. D.:0:0
+C. D. Leganés:R. C. D. Mallorca:3:0
+C. D. Leganés:R. C. Celta de Vigo:3:1
+C. D. Leganés:R. C. D. Espanyol:1:4
+C. D. Leganés:Real Betis Balompié:3:2
+C. D. Leganés:Real Madrid C. F.:2:1
+C. D. Leganés:Real Sociedad:0:2
+C. D. Leganés:Real Valladolid:0:3
+C. D. Leganés:S. D. Eibar:0:2
+C. D. Leganés:Sevilla F. C.:3:3
+C. D. Leganés:Valencia C. F.:3:4
+C. D. Leganés:Villarreal C. F.:2:0
+C. A. Osasuna:Athletic Club:4:0
+C. A. Osasuna:Atlético de Madrid:2:0
+C. A. Osasuna:C. D. Leganés:2:0
+C. A. Osasuna:Deportivo Alavés:0:2
+C. A. Osasuna:F. C. Barcelona:1:3
+C. A. Osasuna:Getafe C. F.:2:2
+C. A. Osasuna:Granada C. F.:0:3
+C. A. Osasuna:Levante U. D.:1:4
+C. A. Osasuna:R. C. D. Mallorca:3:2
+C. A. Osasuna:R. C. Celta de Vigo:4:2
+C. A. Osasuna:R. C. D. Espanyol:4:4
+C. A. Osasuna:Real Betis Balompié:1:2
+C. A. Osasuna:Real Madrid C. F.:2:4
+C. A. Osasuna:Real Sociedad:4:0
+C. A. Osasuna:Real Valladolid:4:2
+C. A. Osasuna:S. D. Eibar:1:1
+C. A. Osasuna:Sevilla F. C.:2:1
+C. A. Osasuna:Valencia C. F.:0:4
+C. A. Osasuna:Villarreal C. F.:4:1
+Deportivo Alavés:Athletic Club:1:0
+Deportivo Alavés:Atlético de Madrid:2:2
+Deportivo Alavés:C. D. Leganés:3:2
+Deportivo Alavés:C. A. Osasuna:0:0
+Deportivo Alavés:F. C. Barcelona:1:3
+Deportivo Alavés:Getafe C. F.:3:2
+Deportivo Alavés:Granada C. F.:1:0
+Deportivo Alavés:Levante U. D.:4:0
+Deportivo Alavés:R. C. D. Mallorca:3:1
+Deportivo Alavés:R. C. Celta de Vigo:1:0
+Deportivo Alavés:R. C. D. Espanyol:1:0
+Deportivo Alavés:Real Betis Balompié:1:3
+Deportivo Alavés:Real Madrid C. F.:2:3
+Deportivo Alavés:Real Sociedad:2:2
+Deportivo Alavés:Real Valladolid:3:2
+Deportivo Alavés:S. D. Eibar:1:3
+Deportivo Alavés:Sevilla F. C.:1:4
+Deportivo Alavés:Valencia C. F.:1:2
+Deportivo Alavés:Villarreal C. F.:1:0
+F. C. Barcelona:Athletic Club:3:4
+F. C. Barcelona:Atlético de Madrid:3:3
+F. C. Barcelona:C. D. Leganés:1:1
+F. C. Barcelona:C. A. Osasuna:2:3
+F. C. Barcelona:Deportivo Alavés:2:1
+F. C. Barcelona:Getafe C. F.:4:2
+F. C. Barcelona:Granada C. F.:2:0
+F. C. Barcelona:Levante U. D.:4:3
+F. C. Barcelona:R. C. D. Mallorca:4:3
+F. C. Barcelona:R. C. Celta de Vigo:4:4
+F. C. Barcelona:R. C. D. Espanyol:0:4
+F. C. Barcelona:Real Betis Balompié:1:3
+F. C. Barcelona:Real Madrid C. F.:3:2
+F. C. Barcelona:Real Sociedad:3:2
+F. C. Barcelona:Real Valladolid:4:2
+F. C. Barcelona:S. D. Eibar:1:3
+F. C. Barcelona:Sevilla F. C.:2:4
+F. C. Barcelona:Valencia C. F.:3:2
+F. C. Barcelona:Villarreal C. F.:3:3
+Getafe C. F.:Athletic Club:1:2
+Getafe C. F.:Atlético de Madrid:0:1
+Getafe C. F.:C. D. Leganés:0:3
+Getafe C. F.:C. A. Osasuna:1:0
+Getafe C. F.:Deportivo Alavés:4:0
+Getafe C. F.:F. C. Barcelona:1:1
+Getafe C. F.:Granada C. F.:4:3
+Getafe C. F.:Levante U. D.:1:4
+Getafe C. F.:R. C. D. Mallorca:2:4
+Getafe C. F.:R. C. Celta de Vigo:1:2
+Getafe C. F.:R. C. D. Espanyol:0:0
+Getafe C. F.:Real Betis Balompié:4:0
+Getafe C. F.:Real Madrid C. F.:4:0
+Getafe C. F.:Real Sociedad:2:3
+Getafe C. F.:Real Valladolid:0:1
+Getafe C. F.:S. D. Eibar:1:4
+Getafe C. F.:Sevilla F. C.:2:3
+Getafe C. F.:Valencia C. F.:4:4
+Getafe C. F.:Villarreal C. F.:2:0
+Granada C. F.:Athletic Club:1:4
+Granada C. F.:Atlético de Madrid:0:3
+Granada C. F.:C. D. Leganés:1:1
+Granada C. F.:C. A. Osasuna:1:3
+Granada C. F.:Deportivo Alavés:0:0
+Granada C. F.:F. C. Barcelona:2:3
+Granada C. F.:Getafe C. F.:4:4
+Granada C. F.:Levante U. D.:2:4
+Granada C. F.:R. C. D. Mallorca:3:2
+Granada C. F.:R. C. Celta de Vigo:0:0
+Granada C. F.:R. C. D. Espanyol:3:4
+Granada C. F.:Real Betis Balompié:0:3
+Granada C. F.:Real Madrid C. F.:4:2
+Granada C. F.:Real Sociedad:0:1
+Granada C. F.:Real Valladolid:4:4
+Granada C. F.:S. D. Eibar:0:3
+Granada C. F.:Sevilla F. C.:3:0
+Granada C. F.:Valencia C. F.:2:0
+Granada C. F.:Villarreal C. F.:2:1
+Levante U. D.:Athletic Club:1:0
+Levante U. D.:Atlético de Madrid:3:4
+Levante U. D.:C. D. Leganés:0:4
+Levante U. D.:C. A. Osasuna:4:4
+Levante U. D.:Deportivo Alavés:4:4
+Levante U. D.:F. C. Barcelona:4:4
+Levante U. D.:Getafe C. F.:2:3
+Levante U. D.:Granada C. F.:3:0
+Levante U. D.:R. C. D. Mallorca:3:3
+Levante U. D.:R. C. Celta de Vigo:3:4
+Levante U. D.:R. C. D. Espanyol:4:0
+Levante U. D.:Real Betis Balompié:0:1
+Levante U. D.:Real Madrid C. F.:4:0
+Levante U. D.:Real Sociedad:2:4
+Levante U. D.:Real Valladolid:2:3
+Levante U. D.:S. D. Eibar:0:4
+Levante U. D.:Sevilla F. C.:2:1
+Levante U. D.:Valencia C. F.:0:3
+Levante U. D.:Villarreal C. F.:1:1
+R. C. D. Mallorca:Athletic Club:3:2
+R. C. D. Mallorca:Atlético de Madrid:1:1
+R. C. D. Mallorca:C. D. Leganés:2:3
+R. C. D. Mallorca:C. A. Osasuna:1:3
+R. C. D. Mallorca:Deportivo Alavés:0:3
+R. C. D. Mallorca:F. C. Barcelona:1:1
+R. C. D. Mallorca:Getafe C. F.:0:3
+R. C. D. Mallorca:Granada C. F.:2:0
+R. C. D. Mallorca:Levante U. D.:4:1
+R. C. D. Mallorca:R. C. Celta de Vigo:0:4
+R. C. D. Mallorca:R. C. D. Espanyol:2:4
+R. C. D. Mallorca:Real Betis Balompié:3:4
+R. C. D. Mallorca:Real Madrid C. F.:4:0
+R. C. D. Mallorca:Real Sociedad:1:1
+R. C. D. Mallorca:Real Valladolid:4:3
+R. C. D. Mallorca:S. D. Eibar:4:4
+R. C. D. Mallorca:Sevilla F. C.:0:3
+R. C. D. Mallorca:Valencia C. F.:0:2
+R. C. D. Mallorca:Villarreal C. F.:0:3
+R. C. Celta de Vigo:Athletic Club:0:2
+R. C. Celta de Vigo:Atlético de Madrid:3:0
+R. C. Celta de Vigo:C. D. Leganés:0:0
+R. C. Celta de Vigo:C. A. Osasuna:2:2
+R. C. Celta de Vigo:Deportivo Alavés:0:2
+R. C. Celta de Vigo:F. C. Barcelona:1:3
+R. C. Celta de Vigo:Getafe C. F.:0:4
+R. C. Celta de Vigo:Granada C. F.:4:3
+R. C. Celta de Vigo:Levante U. D.:1:2
+R. C. Celta de Vigo:R. C. D. Mallorca:3:4
+R. C. Celta de Vigo:R. C. D. Espanyol:1:0
+R. C. Celta de Vigo:Real Betis Balompié:1:0
+R. C. Celta de Vigo:Real Madrid C. F.:3:3
+R. C. Celta de Vigo:Real Sociedad:4:3
+R. C. Celta de Vigo:Real Valladolid:0:1
+R. C. Celta de Vigo:S. D. Eibar:3:1
+R. C. Celta de Vigo:Sevilla F. C.:2:3
+R. C. Celta de Vigo:Valencia C. F.:2:0
+R. C. Celta de Vigo:Villarreal C. F.:2:0
+R. C. D. Espanyol:Athletic Club:1:3
+R. C. D. Espanyol:Atlético de Madrid:0:3
+R. C. D. Espanyol:C. D. Leganés:3:0
+R. C. D. Espanyol:C. A. Osasuna:0:3
+R. C. D. Espanyol:Deportivo Alavés:3:3
+R. C. D. Espanyol:F. C. Barcelona:1:3
+R. C. D. Espanyol:Getafe C. F.:3:3
+R. C. D. Espanyol:Granada C. F.:3:1
+R. C. D. Espanyol:Levante U. D.:4:3
+R. C. D. Espanyol:R. C. D. Mallorca:4:4
+R. C. D. Espanyol:R. C. Celta de Vigo:4:4
+R. C. D. Espanyol:Real Betis Balompié:2:0
+R. C. D. Espanyol:Real Madrid C. F.:0:0
+R. C. D. Espanyol:Real Sociedad:4:0
+R. C. D. Espanyol:Real Valladolid:0:1
+R. C. D. Espanyol:S. D. Eibar:4:2
+R. C. D. Espanyol:Sevilla F. C.:3:3
+R. C. D. Espanyol:Valencia C. F.:4:4
+R. C. D. Espanyol:Villarreal C. F.:3:4
+Real Betis Balompié:Athletic Club:0:3
+Real Betis Balompié:Atlético de Madrid:2:3
+Real Betis Balompié:C. D. Leganés:3:3
+Real Betis Balompié:C. A. Osasuna:0:2
+Real Betis Balompié:Deportivo Alavés:1:3
+Real Betis Balompié:F. C. Barcelona:1:4
+Real Betis Balompié:Getafe C. F.:3:4
+Real Betis Balompié:Granada C. F.:3:2
+Real Betis Balompié:Levante U. D.:4:4
+Real Betis Balompié:R. C. D. Mallorca:1:3
+Real Betis Balompié:R. C. Celta de Vigo:4:3
+Real Betis Balompié:R. C. D. Espanyol:2:4
+Real Betis Balompié:Real Madrid C. F.:1:4
+Real Betis Balompié:Real Sociedad:0:4
+Real Betis Balompié:Real Valladolid:2:3
+Real Betis Balompié:S. D. Eibar:3:3
+Real Betis Balompié:Sevilla F. C.:3:0
+Real Betis Balompié:Valencia C. F.:4:2
+Real Betis Balompié:Villarreal C. F.:4:4
+Real Madrid C. F.:Athletic Club:2:2
+Real Madrid C. F.:Atlético de Madrid:2:0
+Real Madrid C. F.:C. D. Leganés:4:1
+Real Madrid C. F.:C. A. Osasuna:0:2
+Real Madrid C. F.:Deportivo Alavés:4:0
+Real Madrid C. F.:F. C. Barcelona:0:2
+Real Madrid C. F.:Getafe C. F.:3:2
+Real Madrid C. F.:Granada C. F.:3:1
+Real Madrid C. F.:Levante U. D.:0:4
+Real Madrid C. F.:R. C. D. Mallorca:3:4
+Real Madrid C. F.:R. C. Celta de Vigo:4:2
+Real Madrid C. F.:R. C. D. Espanyol:3:4
+Real Madrid C. F.:Real Betis Balompié:0:2
+Real Madrid C. F.:Real Sociedad:1:3
+Real Madrid C. F.:Real Valladolid:2:0
+Real Madrid C. F.:S. D. Eibar:1:1
+Real Madrid C. F.:Sevilla F. C.:4:1
+Real Madrid C. F.:Valencia C. F.:4:0
+Real Madrid C. F.:Villarreal C. F.:3:4
+Real Sociedad:Athletic Club:3:2
+Real Sociedad:Atlético de Madrid:3:0
+Real Sociedad:C. D. Leganés:2:2
+Real Sociedad:C. A. Osasuna:3:2
+Real Sociedad:Deportivo Alavés:1:3
+Real Sociedad:F. C. Barcelona:3:1
+Real Sociedad:Getafe C. F.:1:4
+Real Sociedad:Granada C. F.:1:0
+Real Sociedad:Levante U. D.:1:3
+Real Sociedad:R. C. D. Mallorca:3:2
+Real Sociedad:R. C. Celta de Vigo:0:3
+Real Sociedad:R. C. D. Espanyol:4:2
+Real Sociedad:Real Betis Balompié:3:1
+Real Sociedad:Real Madrid C. F.:3:1
+Real Sociedad:Real Valladolid:2:2
+Real Sociedad:S. D. Eibar:2:1
+Real Sociedad:Sevilla F. C.:3:4
+Real Sociedad:Valencia C. F.:2:1
+Real Sociedad:Villarreal C. F.:1:4
+Real Valladolid:Athletic Club:2:0
+Real Valladolid:Atlético de Madrid:2:2
+Real Valladolid:C. D. Leganés:1:4
+Real Valladolid:C. A. Osasuna:3:2
+Real Valladolid:Deportivo Alavés:2:2
+Real Valladolid:F. C. Barcelona:2:0
+Real Valladolid:Getafe C. F.:2:2
+Real Valladolid:Granada C. F.:1:1
+Real Valladolid:Levante U. D.:2:0
+Real Valladolid:R. C. D. Mallorca:2:4
+Real Valladolid:R. C. Celta de Vigo:3:3
+Real Valladolid:R. C. D. Espanyol:2:0
+Real Valladolid:Real Betis Balompié:4:2
+Real Valladolid:Real Madrid C. F.:1:2
+Real Valladolid:Real Sociedad:0:1
+Real Valladolid:S. D. Eibar:3:2
+Real Valladolid:Sevilla F. C.:1:2
+Real Valladolid:Valencia C. F.:4:1
+Real Valladolid:Villarreal C. F.:2:2
+S. D. Eibar:Athletic Club:3:4
+S. D. Eibar:Atlético de Madrid:2:2
+S. D. Eibar:C. D. Leganés:3:4
+S. D. Eibar:C. A. Osasuna:3:0
+S. D. Eibar:Deportivo Alavés:1:4
+S. D. Eibar:F. C. Barcelona:0:3
+S. D. Eibar:Getafe C. F.:2:4
+S. D. Eibar:Granada C. F.:0:3
+S. D. Eibar:Levante U. D.:3:4
+S. D. Eibar:R. C. D. Mallorca:2:1
+S. D. Eibar:R. C. Celta de Vigo:4:3
+S. D. Eibar:R. C. D. Espanyol:1:3
+S. D. Eibar:Real Betis Balompié:2:0
+S. D. Eibar:Real Madrid C. F.:4:4
+S. D. Eibar:Real Sociedad:2:0
+S. D. Eibar:Real Valladolid:1:3
+S. D. Eibar:Sevilla F. C.:1:3
+S. D. Eibar:Valencia C. F.:3:4
+S. D. Eibar:Villarreal C. F.:2:1
+Sevilla F. C.:Athletic Club:2:0
+Sevilla F. C.:Atlético de Madrid:4:1
+Sevilla F. C.:C. D. Leganés:1:0
+Sevilla F. C.:C. A. Osasuna:2:2
+Sevilla F. C.:Deportivo Alavés:3:4
+Sevilla F. C.:F. C. Barcelona:1:4
+Sevilla F. C.:Getafe C. F.:3:1
+Sevilla F. C.:Granada C. F.:0:0
+Sevilla F. C.:Levante U. D.:3:3
+Sevilla F. C.:R. C. D. Mallorca:4:4
+Sevilla F. C.:R. C. Celta de Vigo:1:2
+Sevilla F. C.:R. C. D. Espanyol:0:4
+Sevilla F. C.:Real Betis Balompié:1:0
+Sevilla F. C.:Real Madrid C. F.:3:4
+Sevilla F. C.:Real Sociedad:4:3
+Sevilla F. C.:Real Valladolid:1:2
+Sevilla F. C.:S. D. Eibar:4:3
+Sevilla F. C.:Valencia C. F.:1:1
+Sevilla F. C.:Villarreal C. F.:0:2
+Valencia C. F.:Athletic Club:3:0
+Valencia C. F.:Atlético de Madrid:4:1
+Valencia C. F.:C. D. Leganés:1:2
+Valencia C. F.:C. A. Osasuna:4:4
+Valencia C. F.:Deportivo Alavés:1:2
+Valencia C. F.:F. C. Barcelona:2:3
+Valencia C. F.:Getafe C. F.:0:2
+Valencia C. F.:Granada C. F.:0:1
+Valencia C. F.:Levante U. D.:1:4
+Valencia C. F.:R. C. D. Mallorca:3:4
+Valencia C. F.:R. C. Celta de Vigo:0:1
+Valencia C. F.:R. C. D. Espanyol:0:1
+Valencia C. F.:Real Betis Balompié:1:3
+Valencia C. F.:Real Madrid C. F.:2:0
+Valencia C. F.:Real Sociedad:1:0
+Valencia C. F.:Real Valladolid:4:2
+Valencia C. F.:S. D. Eibar:1:3
+Valencia C. F.:Sevilla F. C.:3:1
+Valencia C. F.:Villarreal C. F.:1:4
+Villarreal C. F.:Athletic Club:1:2
+Villarreal C. F.:Atlético de Madrid:0:1
+Villarreal C. F.:C. D. Leganés:3:2
+Villarreal C. F.:C. A. Osasuna:3:4
+Villarreal C. F.:Deportivo Alavés:0:1
+Villarreal C. F.:F. C. Barcelona:3:3
+Villarreal C. F.:Getafe C. F.:0:4
+Villarreal C. F.:Granada C. F.:2:2
+Villarreal C. F.:Levante U. D.:4:4
+Villarreal C. F.:R. C. D. Mallorca:4:0
+Villarreal C. F.:R. C. Celta de Vigo:3:1
+Villarreal C. F.:R. C. D. Espanyol:4:1
+Villarreal C. F.:Real Betis Balompié:3:3
+Villarreal C. F.:Real Madrid C. F.:2:3
+Villarreal C. F.:Real Sociedad:2:1
+Villarreal C. F.:Real Valladolid:4:1
+Villarreal C. F.:S. D. Eibar:1:1
+Villarreal C. F.:Sevilla F. C.:0:1
+Villarreal C. F.:Valencia C. F.:0:1
