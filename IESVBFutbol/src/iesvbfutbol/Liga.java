@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class Liga {
     private final ArrayList<Equipo> equipos;
     private final ArrayList<Partido> partidos;
+    private ArrayList<Equipo> clasificacion;
 
     public Liga() {
         this.equipos = new ArrayList();
@@ -28,7 +29,9 @@ public class Liga {
     }
     
     public void mostrarClasificacion() {
-        
+        for(Equipo equipo : equipos) {
+            equipo.mostrar();
+        }
     }
     
     private void cargarEquipos() {
@@ -42,7 +45,7 @@ public class Liga {
             String cadenaLeida = lector.readLine();
 
             while (cadenaLeida != null && !cadenaLeida.equals("")) {
-                equipos.add(new Equipo(cadenaLeida));
+                equipos.add(instanciarEquipo(cadenaLeida));
                 cadenaLeida = lector.readLine();
             }
         } catch (IOException ex) {
@@ -83,16 +86,22 @@ public class Liga {
         }   
     }
     
+    private Equipo instanciarEquipo(String lineaPartido) {
+        String[] dataEquipo = lineaPartido.split(":");
+        
+        return new Equipo(Integer.parseInt(dataEquipo[0]), dataEquipo[1]);
+    }
+    
     private Partido instanciarPartido(String lineaPartido) {
         String[] dataPartido = lineaPartido.split(":");
         
-        Equipo equipoLocal = new Equipo(buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[0])));
-        Equipo equipoVisitante = new Equipo(buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[1])));
+        Equipo equipoLocal = new Equipo(Integer.parseInt(dataPartido[0]),buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[0])));
+        Equipo equipoVisitante = new Equipo(Integer.parseInt(dataPartido[1]),buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[1])));
         
         return new Partido(equipoLocal, equipoVisitante, Integer.parseInt(dataPartido[2]), Integer.parseInt(dataPartido[3]));
     }
     
     private String buscarNombreEquipoFromIndex(int index) {
-        return equipos.get(index - 1).getNombre();
+        return equipos.get(index).getNombre();
     }
 }

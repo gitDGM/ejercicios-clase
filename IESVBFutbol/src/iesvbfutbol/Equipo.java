@@ -10,16 +10,24 @@ package iesvbfutbol;
  * @author alumno
  */
 public class Equipo {
+    private final int idEquipo;
     private final String nombre;
     private int puntos;
-    private int golesTotales;
+    private int golesFavor;
+    private int golesContra;
 
-    public Equipo(String nombre) {
+    public Equipo(int idEquipo, String nombre) {
+        this.idEquipo = idEquipo;
         this.nombre = nombre;
         puntos = 0;
-        golesTotales = 0;
+        golesFavor = 0;
+        golesContra = 0;
     }
 
+    public int getIdEquipo() {
+        return idEquipo;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -28,8 +36,20 @@ public class Equipo {
         return puntos;
     }
 
-    public int getGolesTotales() {
-        return golesTotales;
+    public int getGolesFavor() {
+        return golesFavor;
+    }
+
+    public void setGolesFavor(int golesFavor) {
+        this.golesFavor = golesFavor;
+    }
+
+    public int getGolesContra() {
+        return golesContra;
+    }
+
+    public void setGolesContra(int golesContra) {
+        this.golesContra = golesContra;
     }
     
     public void ganar() {
@@ -40,7 +60,19 @@ public class Equipo {
         this.puntos += 1;
     }
     
-    public void sumarGoles(int golesJornada) {
-        golesTotales += golesJornada;
+    public void aumentarGolesFavor(int goles) {
+        this.golesFavor += goles;
+    }
+    
+    public void aumentarGolesContra(int goles) {
+        this.golesContra += goles;
+    }
+    
+    public void mostrar() {
+        System.out.print(nombre);
+        if (nombre.length() <= 15) { // FIX PARA MOSTRAR BIEN LOS DATOS
+            System.out.print("\t");
+        }
+        System.out.println("\t" + puntos + "\t" + golesFavor + "\t" + golesContra);
     }
 }
