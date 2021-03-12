@@ -26,6 +26,8 @@ public class Liga {
         
         cargarEquipos();
         cargarPartidos();
+        
+        cargarPartidosEnEquipos();
     }
     
     public void mostrarClasificacion() {
@@ -84,7 +86,7 @@ public class Liga {
                 System.out.println(ex.getMessage());                    
             }
         }   
-    }
+    }    
     
     private Equipo instanciarEquipo(String lineaPartido) {
         String[] dataEquipo = lineaPartido.split(":");
@@ -101,7 +103,49 @@ public class Liga {
         return new Partido(equipoLocal, equipoVisitante, Integer.parseInt(dataPartido[2]), Integer.parseInt(dataPartido[3]));
     }
     
+    private void cargarPartidosEnEquipos() {
+        for(Partido partido : partidos) {
+            int indexEquipoLocal = buscarIndexEquipoFromNombre(partido.getEquipoLocal().getNombre());
+            int indexEquipoVisitante = buscarIndexEquipoFromNombre(partido.getEquipoLocal().getNombre());  
+            
+            darPuntosPartidoEquipos(partido, indexEquipoLocal, indexEquipoVisitante);
+            
+            aumentarGolesEquipoPorPartido(indexEquipoLocal, partido);
+            aumentarGolesEquipoPorPartido(indexEquipoVisitante, partido);
+        }
+    }
+    
+    private void aumentarGolesEquipoPorPartido(int index, Partido partido) {
+        equipos.get(index).aumentarGolesFavor(partido.getGolesLocal());
+        equipos.get(index).aumentarGolesContra(partido.getGolesVisitante());
+    }
+    
+    private void darPuntosPartidoEquipos(Partido partido, int indexEquipoLocal, int indexEquipoVisitante) {
+        if (partido.getGolesLocal() > partido.getGolesVisitante()) {
+            equipos.get(indexEquipoLocal).ganar();
+        } else if (partido.getGolesLocal() == partido.getGolesVisitante()) {
+            equipos.get(indexEquipoLocal).empatar();
+            equipos.get(indexEquipoVisitante).empatar();
+        } else {
+            equipos.get(indexEquipoVisitante).ganar();
+        }
+    }
+    
+    
     private String buscarNombreEquipoFromIndex(int index) {
         return equipos.get(index).getNombre();
+    }
+    
+    private int buscarIndexEquipoFromNombre(String nombreEquipo) {
+        boolean encontrado = false;
+        int index;
+        
+        for (index = 0; index < equipos.size() && !encontrado; index++) {
+            if (nombreEquipo.equals(equipos.get(index).getNombre())) {
+                encontrado = true;
+            }
+        }
+        
+        return index - 1;
     }
 }

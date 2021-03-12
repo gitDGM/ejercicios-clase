@@ -25,8 +25,8 @@ public class ArrayFichero {
     
     public void mostrarValores() {
         if (valores != null) {
-            for (int i = 0; i < valores.length; i++) {
-                for (int j = 0; j < valores[i].length; j++) {
+            for (int i = valores.length - 1; i >= 0; i--) {
+                for (int j = valores[i].length - 1; j >= 0; j--) {
                     System.out.print(valores[i][j] + " ");
                 }
                 System.out.println();
@@ -63,13 +63,12 @@ public class ArrayFichero {
         
         String texto = ""; 
         if (fichero.exists()) {
-            FileReader filereader = null;
+            FileReader fr = null;
             BufferedReader lector = null;
 
             try {
-
-                filereader = new FileReader(fichero);
-                lector = new BufferedReader(filereader);
+                fr = new FileReader(fichero);
+                lector = new BufferedReader(fr);
 
                 String cadenaLeida = lector.readLine();
                 while (cadenaLeida != null) {
@@ -82,7 +81,7 @@ public class ArrayFichero {
 
             } finally {
                 try {
-                    if (filereader != null) filereader.close();
+                    if (fr != null) fr.close();
                     if (lector != null) lector.close();
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());                    
