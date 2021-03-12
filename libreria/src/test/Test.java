@@ -28,7 +28,7 @@ public class Test {
                 if (i != k) {
                     int golesLocal = (int)(Math.random() * 5);
                     int golesVisitante = (int)(Math.random() * 5);
-                    System.out.println(equipos[i] + ":" + equipos[k] + ":" + golesLocal + ":" + golesVisitante);
+                    System.out.println(i + ":" + k + ":" + golesLocal + ":" + golesVisitante);
                     
                 }
             }
