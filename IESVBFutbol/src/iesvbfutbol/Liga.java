@@ -16,18 +16,20 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class Liga {
-    private final ArrayList<Equipo> clasifiacion;
+    private final ArrayList<Equipo> equipos;
     private final ArrayList<Partido> partidos;
 
     public Liga() {
-        this.clasifiacion = new ArrayList();
+        this.equipos = new ArrayList();
         this.partidos = new ArrayList();
         
         cargarEquipos();
         cargarPartidos();
     }
     
-    public void mostrarClasificacion
+    public void mostrarClasificacion() {
+        
+    }
     
     private void cargarEquipos() {
         File fileEquipos = new File("src/datafutbol/equipos.txt");
@@ -40,7 +42,7 @@ public class Liga {
             String cadenaLeida = lector.readLine();
 
             while (cadenaLeida != null && !cadenaLeida.equals("")) {
-                clasifiacion.add(new Equipo(cadenaLeida));
+                equipos.add(new Equipo(cadenaLeida));
                 cadenaLeida = lector.readLine();
             }
         } catch (IOException ex) {
@@ -91,6 +93,6 @@ public class Liga {
     }
     
     private String buscarNombreEquipoFromIndex(int index) {
-        return clasifiacion.get(index - 1).getNombre();
+        return equipos.get(index - 1).getNombre();
     }
 }
