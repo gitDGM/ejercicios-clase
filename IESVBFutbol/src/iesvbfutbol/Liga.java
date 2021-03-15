@@ -106,7 +106,7 @@ public class Liga {
     private void cargarPartidosEnEquipos() {
         for(Partido partido : partidos) {
             int indexEquipoLocal = buscarIndexEquipoFromNombre(partido.getEquipoLocal().getNombre());
-            int indexEquipoVisitante = buscarIndexEquipoFromNombre(partido.getEquipoLocal().getNombre());  
+            int indexEquipoVisitante = buscarIndexEquipoFromNombre(partido.getEquipoVisitante().getNombre());  
             
             darPuntosPartidoEquipos(partido, indexEquipoLocal, indexEquipoVisitante);
             
