@@ -27,6 +27,8 @@ public class ListadoComunidades {
         // CARGAMOS LAS COMUNIDADES DEL FICHERO
         cargarComunidades();
         
+        // * EXTENSIÓN EJERCICIO *
+        // * COMENTAR PARA LA PRIMERA PARTE DEL EJERCICIO *
         // ORDENAMOS SEGÚN LAS POBLACIONES MEDIAS
         ordenarComunidadesPorPoblacionMedia();
     }
