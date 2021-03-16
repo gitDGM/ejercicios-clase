@@ -14,7 +14,7 @@ public class MainComunidad {
         ListadoComunidades comunidades = new ListadoComunidades();
         
         // TEST //
-        //comunidades.mostrar();
+        // comunidades.mostrar();
         //////////
         
         // MOSTRAR LISTADO CON SU MEDIA DE POBLACIÓN
