@@ -13,7 +13,11 @@ public class MainComunidad {
     public static void main(String[] args) {
         ListadoComunidades comunidades = new ListadoComunidades();
         
+        // TEST //
         //comunidades.mostrar();
+        //////////
+        
+        // MOSTRAR LISTADO CON SU MEDIA DE POBLACIÓN
         comunidades.mostrarMediaPoblacion();
     }
 }
