@@ -36,6 +36,7 @@ public class Ejercicio13 {
                     agenda.mostrarContactos();
                     break;
                 case 4:
+                    agenda.guardarContactos();
                     break;
                 default:
                     System.err.println("ERROR: Opción no válida.");

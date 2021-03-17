@@ -48,8 +48,12 @@ public class Agenda {
     }
     
     public void guardarContactos() {
+        File fichero = new File("src/EjerciciosFicherosTexto/Ejercicio13/agenda.txt");
+        if (fichero.exists()) {
+            fichero.delete();
+        }   
         for (int i = 0; i < contactos.size(); i++) {
-            escribirContacto(contactos.get(i));
+            escribirContacto(contactos.get(i), fichero);
         }
     }
     
@@ -77,12 +81,8 @@ public class Agenda {
         return repetido;
     }
     
-    private void escribirContacto(Contacto contacto) {
-        File fichero = new File("src/EjerciciosFicherosTexto/Ejercicio13/agenda.txt");
+    private void escribirContacto(Contacto contacto, File fichero) {
         
-        if (fichero.exists()) {
-            fichero.delete();
-        }        
         
         FileWriter filewriter = null;
         PrintWriter escritor = null;
