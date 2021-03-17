@@ -63,8 +63,7 @@ public class Ejercicio1 {
             try {
                 if(flujoSalida != null) {
                     flujoSalida.close();
-                } //cerramos el flujo para que se vacíe el buffer
-                  //y se escriban los datos pendientes en el archivo
+                } 
             } catch (IOException ex) {
                 System.err.println("Error al cerrar el fichero.");
             }
