@@ -60,6 +60,7 @@ public class Libreria {
     }
     
     static int introducirNumero(String msg) {
+        Scanner sc = new Scanner(System.in);
         int numero = 0;        
         boolean noValido;
         do {
