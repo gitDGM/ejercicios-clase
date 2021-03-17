@@ -13,7 +13,6 @@ import java.util.Scanner;
  * @author alumno
  */
 public class Ejercicio13 {
-    private static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
         Agenda agenda = new Agenda();
@@ -39,9 +38,10 @@ public class Ejercicio13 {
                 case 4:
                     break;
                 default:
+                    System.err.println("ERROR: Opción no válida.");
                     break;
             }
-        } while (opcion != 0);       
+        } while (opcion != 4);       
     }
     
     static void nuevoContacto(Agenda agenda) {        
@@ -53,12 +53,13 @@ public class Ejercicio13 {
     }
     
     static String introducirString(String msg) {
-        sc = new Scanner(System.in); 
+        Scanner sc = new Scanner(System.in); 
         System.out.println(msg);
         return sc.nextLine();
     }
     
     static int introducirNumero(String msg) {
+        Scanner sc = new Scanner(System.in);
         int numero = 0;        
         boolean noValido;
         do {
