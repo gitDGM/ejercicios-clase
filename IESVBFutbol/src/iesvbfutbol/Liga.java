@@ -18,7 +18,6 @@ import java.util.ArrayList;
 public class Liga {
     private final ArrayList<Equipo> equipos;
     private final ArrayList<Partido> partidos;
-    private ArrayList<Equipo> clasificacion;
 
     public Liga() {
         this.equipos = new ArrayList();
@@ -28,6 +27,7 @@ public class Liga {
         cargarPartidos();
         
         cargarPartidosEnEquipos();
+        ordenarClasificacionPorPuntos();
     }
     
     public void mostrarClasificacion() {
@@ -131,6 +131,17 @@ public class Liga {
         }
     }
     
+    private void ordenarClasificacionPorPuntos() {
+        for (int i = 0; i < equipos.size() - 1; i++) {
+            for (int k = 0; k < equipos.size() - i - 1; k++) {
+                if (equipos.get(k).getPuntos() < equipos.get(k + 1).getPuntos()) {
+                    Equipo temp = equipos.get(k + 1);
+                    equipos.set(k + 1, equipos.get(k));
+                    equipos.set(k, temp);
+                }
+            }
+        }
+    }
     
     private String buscarNombreEquipoFromIndex(int index) {
         return equipos.get(index).getNombre();
