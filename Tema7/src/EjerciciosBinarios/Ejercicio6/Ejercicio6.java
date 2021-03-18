@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class Ejercicio6 {
     public static void main(String[] args) {
         String ruta = "src/EjerciciosBinarios/Ejercicio6/data.dat";
-        ArrayList<Double> numeros = leerFicheroBinario(ruta);
+        ArrayList<Double> numeros = leerFicheroBinarioTest(ruta);
         
         mostrarNumeros(numeros);
     }
@@ -44,6 +44,33 @@ public class Ejercicio6 {
             } catch (EOFException ex) {
             }
             
+        } catch (FileNotFoundException ex) {
+            System.err.println("Error!!! El fichero no existe.");
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        } finally {
+            try {
+                if(flujoEntrada != null) {
+                    flujoEntrada.close();
+                } 
+            } catch (IOException ex) {
+                System.err.println("Error al cerrar el fichero.");
+            }
+        }
+        return numerosFichero;
+    }
+    
+    static ArrayList leerFicheroBinarioTest(String ruta) {
+        ObjectInputStream flujoEntrada = null;
+        ArrayList<Double> numerosFichero = null;
+                
+        try {
+            numerosFichero = new ArrayList();
+            flujoEntrada = new ObjectInputStream(new FileInputStream(ruta));
+            
+            while (flujoEntrada.available() > 0) {                    
+                numerosFichero.add(flujoEntrada.readDouble());
+            }            
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
         } catch (IOException ex) {
