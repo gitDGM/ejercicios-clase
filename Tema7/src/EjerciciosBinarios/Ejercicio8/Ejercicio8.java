@@ -21,7 +21,9 @@ import java.util.Scanner;
 public class Ejercicio8 {
     public static void main(String[] args) {
         String ruta = "src/EjerciciosBinarios/Ejercicio8/data.dat";
-        //escribirEnFicheroBinario(ruta);
+        
+        // DESCOMENTAR PARA ESCRIBIR EN FICHERO
+        // escribirEnFicheroBinario(ruta);
         
         System.out.println(leerFicheroBinario(ruta));
     }
