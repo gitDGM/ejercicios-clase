@@ -22,7 +22,30 @@ import java.util.Scanner;
 public class Ejercicio4 {
     public static void main(String[] args) {
         String ruta = "src/EjerciciosBinarios/Ejercicio4/data.dat";
-        ArrayList<Integer> tabla = new ArrayList();
+        ArrayList<Double> tabla = new ArrayList();
+        
+        int nNumeros;
+        do {            
+            nNumeros = introducirNumero("Introduce la cantidad de números que quieres introducir:");
+            if (nNumeros <= 0) {
+                System.err.println("ATENCIÓN: Introduce un número positivo y distinto de 0.");
+            }
+        } while (nNumeros <= 0);
+        
+        for (int i = 0; i < nNumeros; i++) {
+            tabla.add(introducirNumeroDouble("Introduce un número decimal: "));
+        }
+        System.out.println("Tabla de números introducidos por teclado");
+        mostrarNumeros(tabla);
+        
+        escribirEnFicheroBinario(tabla, ruta);
+        
+        
+        /* EJERCICIO 5 */
+        tabla = leerFicheroBinario(ruta); 
+        System.out.println("Tabla de números introducidos desde fichero binario:");       
+        mostrarNumeros(tabla);        
+        /***************/
         
     }
     
@@ -50,12 +73,42 @@ public class Ejercicio4 {
         return numerosFichero;
     }
     
-    static void escribirEnFicheroBinario(ArrayList<Integer> numeros, String ruta) {
+    static void mostrarNumeros(ArrayList<Double> numeros) {
+        for (double numero : numeros) {
+            System.out.println(numero + "\t");
+        }
+    }
+    
+    static void escribirEnFicheroBinario(ArrayList<Double> numeros, String ruta) {
         ObjectOutputStream flujoSalida = null;
         
         try {
             flujoSalida = new ObjectOutputStream(new FileOutputStream(ruta));            
             flujoSalida.writeObject(numeros);
+        } catch (FileNotFoundException ex) {
+            System.err.println("Error!!! El fichero no existe.");
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        } finally {
+            try {
+                if(flujoSalida != null) {
+                    flujoSalida.close();
+                } 
+            } catch (IOException ex) {
+                System.err.println("Error al cerrar el fichero.");
+            }
+        }
+    }
+    
+    /* USADO PARA GENERAR DATOS EN EL EJERCICIO 6 */
+    static void escribirEnFicheroBinarioUnoPorUno(ArrayList<Double> numeros, String ruta) {
+        ObjectOutputStream flujoSalida = null;
+        
+        try {
+            flujoSalida = new ObjectOutputStream(new FileOutputStream(ruta));    
+            for (double numero : numeros) {
+                flujoSalida.writeDouble(numero);
+            }
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
         } catch (IOException ex) {

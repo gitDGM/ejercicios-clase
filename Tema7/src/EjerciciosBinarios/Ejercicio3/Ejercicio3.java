@@ -50,13 +50,13 @@ public class Ejercicio3 {
     
     static ArrayList leerFicheroBinario(String ruta) {
         ObjectInputStream flujoEntrada = null;
-        ArrayList<Integer> numerosFichero = null;
+        ArrayList<Double> numerosFichero = null;
         
         try {        
             numerosFichero = new ArrayList();
             flujoEntrada = new ObjectInputStream(new FileInputStream(ruta));
             
-            numerosFichero = (ArrayList<Integer>)flujoEntrada.readObject();
+            numerosFichero = (ArrayList<Double>)flujoEntrada.readObject();
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
         } catch (IOException | ClassNotFoundException ex) {
