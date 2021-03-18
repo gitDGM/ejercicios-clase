@@ -17,7 +17,7 @@ import java.io.ObjectOutputStream;
 public class Ejercicio9 {
     static final int CANTIDAD_NUMS = 10;
     public static void main(String[] args) {
-        
+        // TODO: ORDENAR
     }
     
     static void escribirEnFicheroBinario(String ruta) {
