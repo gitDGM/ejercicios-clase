@@ -70,6 +70,9 @@ public class Ejercicio6 {
             
             while (flujoEntrada.available() > 0) {                    
                 numerosFichero.add(flujoEntrada.readDouble());
+                
+                // TEST
+                // System.err.println(flujoEntrada.available());
             }            
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
