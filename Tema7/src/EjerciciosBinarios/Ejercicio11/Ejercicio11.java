@@ -22,6 +22,7 @@ public class Ejercicio11 {
         String ruta = "src/EjerciciosBinarios/Ejercicio11/";
         
         ArrayList<Integer> numeros1 = ordenarNumerosArray(leerFicheroBinario(ruta + "numeros2.dat"));
+        escribirEnFicheroBinario(ruta + "numeros2.dat", numeros1);
         
         System.out.println(numeros1);
         
