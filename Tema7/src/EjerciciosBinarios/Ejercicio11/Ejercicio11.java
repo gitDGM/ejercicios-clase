@@ -10,5 +10,8 @@ package EjerciciosBinarios.Ejercicio11;
  * @author alumno
  */
 public class Ejercicio11 {
-    
+    public static void main(String[] args) {
+        String ruta = "src/EjerciciosBinarios/Ejercicio11/";
+        
+    }
 }
