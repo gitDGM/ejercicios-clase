@@ -54,8 +54,7 @@ public class Ejercicio3 {
         
         try {        
             numerosFichero = new ArrayList();
-            flujoEntrada = new ObjectInputStream(new FileInputStream(ruta));
-            
+            flujoEntrada = new ObjectInputStream(new FileInputStream(ruta));            
             numerosFichero = (ArrayList<Double>)flujoEntrada.readObject();
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
