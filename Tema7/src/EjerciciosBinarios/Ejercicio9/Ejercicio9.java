@@ -5,7 +5,6 @@
  */
 package EjerciciosBinarios.Ejercicio9;
 
-import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -41,8 +40,7 @@ public class Ejercicio9 {
                     tabla[k + 1] = temp;
                 }
             }
-        }
-        
+        }        
         return tabla;
     }
     
