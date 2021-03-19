@@ -11,6 +11,7 @@ package EjerciciosBinarios.Ejercicio10;
  */
 public class Ejercicio10 {
     public static void main(String[] args) {
+        String ruta = "src/EjerciciosBinarios/Ejercicio10/data.dat";
         
     }
 }
