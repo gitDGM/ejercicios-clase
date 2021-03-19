@@ -89,16 +89,15 @@ public class Liga {
     }    
     
     private Equipo instanciarEquipo(String lineaPartido) {
-        String[] dataEquipo = lineaPartido.split(":");
-        
+        String[] dataEquipo = lineaPartido.split(":");        
         return new Equipo(Integer.parseInt(dataEquipo[0]), dataEquipo[1]);
     }
     
     private Partido instanciarPartido(String lineaPartido) {
         String[] dataPartido = lineaPartido.split(":");
         
-        Equipo equipoLocal = new Equipo(Integer.parseInt(dataPartido[0]),buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[0])));
-        Equipo equipoVisitante = new Equipo(Integer.parseInt(dataPartido[1]),buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[1])));
+        Equipo equipoLocal = new Equipo(Integer.parseInt(dataPartido[0]), buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[0])));
+        Equipo equipoVisitante = new Equipo(Integer.parseInt(dataPartido[1]), buscarNombreEquipoFromIndex(Integer.parseInt(dataPartido[1])));
         
         return new Partido(equipoLocal, equipoVisitante, Integer.parseInt(dataPartido[2]), Integer.parseInt(dataPartido[3]));
     }

@@ -1,3 +1,0 @@
-equipoLocal - equipoVisitante - golesLocal - golesVisitante
-
-Crear clasificación
