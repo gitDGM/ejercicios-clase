@@ -28,6 +28,8 @@ public class Ejercicio11 {
         escribirEnFicheroBinario(ruta + "numeros1.dat", numeros2);        
         System.out.println(numeros2);
          */
+        
+        
         ArrayList<Integer> numeros1 = leerFicheroBinario(ruta + "numeros1.dat");
         ArrayList<Integer> numeros2 = leerFicheroBinario(ruta + "numeros2.dat");
         ArrayList<Integer> numeros = combinarOrdenarDosArrayList(numeros1, numeros2);
