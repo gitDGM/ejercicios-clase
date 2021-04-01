@@ -22,7 +22,7 @@ public class Ejercicio11 {
         String ruta = "src/EjerciciosBinarios/Ejercicio11/";
         
         ArrayList<Integer> numeros1 = ordenarNumerosArray(leerFicheroBinario(ruta + "numeros2.dat"));
-        escribirEnFicheroBinario(ruta + "numeros2.dat", numeros1);
+        //escribirEnFicheroBinario(ruta + "numeros2.dat", numeros1);
         
         System.out.println(numeros1);
         
@@ -71,6 +71,7 @@ public class Ejercicio11 {
         try {        
             flujoEntrada = new ObjectInputStream(new FileInputStream(ruta));            
             numeros = (ArrayList<Integer>) flujoEntrada.readObject();
+            System.out.println(numeros);
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
         } catch (IOException | ClassNotFoundException ex) {
