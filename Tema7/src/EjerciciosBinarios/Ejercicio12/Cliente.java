@@ -16,12 +16,11 @@ public class Cliente implements Serializable {
     private final int id;
     private String nombre;
     private String telefono;
-
-    public Cliente(String nombre, String telefono) {
-        this.id = nextID;
+    
+    public Cliente(int id, String nombre, String telefono) {
+        this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
-        nextID++;
     }
 
     public int getId() {

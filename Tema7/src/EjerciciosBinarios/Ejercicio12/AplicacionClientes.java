@@ -122,6 +122,17 @@ public class AplicacionClientes {
             }
         }
     }
+    
+    public int getUltimoIDCliente() {
+        int result;
+        if (siHayClientes()) {
+            result = clientes.get(clientes.size() - 1).getId() + 1;
+        } else {
+            result = 1;
+        }
+        
+        return result;
+    }
 
     private int buscarClientePorID(int idCliente) {
         int index = -1;

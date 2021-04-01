@@ -64,7 +64,7 @@ public class Ejercicio12 {
     static void nuevoCliente() {
         String nombre = introducirCadena("Introduce el nombre del cliente:");
         String telefono = introducirCadena("Introduce el teléfono del cliente:");
-        app.addCliente(new Cliente(nombre, telefono));
+        app.addCliente(new Cliente(app.getUltimoIDCliente(), nombre, telefono));
     }
     
     static void bajaCliente() {
