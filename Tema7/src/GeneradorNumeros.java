@@ -25,6 +25,8 @@ public class GeneradorNumeros {
         for (int i = 0; i < 10; i++) {
             tabla.add(introducirNumero("Introduce un número:"));
         }
+        
+        escribirEnFicheroBinarioUnoPorUnoEnteros(tabla, ruta);
 
     }
     
@@ -52,8 +54,8 @@ public class GeneradorNumeros {
 
         try {
             flujoSalida = new ObjectOutputStream(new FileOutputStream(ruta));
-            for (double numero : numeros) {
-                flujoSalida.writeDouble(numero);
+            for (int numero : numeros) {
+                flujoSalida.writeInt(numero);
             }
         } catch (FileNotFoundException ex) {
             System.err.println("Error!!! El fichero no existe.");
