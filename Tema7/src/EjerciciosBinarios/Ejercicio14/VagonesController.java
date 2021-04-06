@@ -35,6 +35,15 @@ public class VagonesController {
         vagones.add(nuevoVagon);
     }
     
+    public void removeVagon(int idVagon) {
+        int index = getIndexVagon(idVagon);
+        if (index != -1) {
+            vagones.remove(index);            
+        } else {
+            System.err.println("ERROR: No se ha encontrado una locomotora con ese ID.");
+        }
+    }
+    
     public void mostrarVagones() {
         for (Vagon vagon : vagones) {
             vagon.mostrar();
@@ -90,6 +99,18 @@ public class VagonesController {
         }
 
         return vagonesData;
+    }
+    
+    private int getIndexVagon(int idVagon) {
+        int index = -1;
+        
+        for (int i = 0; i < vagones.size() && index == -1; i++) {
+            if (vagones.get(i).getIdVagon() == idVagon) {
+                index = i;
+            }
+        }
+        
+        return index;
     }
 
     private boolean siExisteFichero() {

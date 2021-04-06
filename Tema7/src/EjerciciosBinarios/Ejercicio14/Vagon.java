@@ -19,7 +19,7 @@ public class Vagon implements Serializable {
         this.idVagon = idVagon;
     }
 
-    public int getIdLocomotora() {
+    public int getIdVagon() {
         return idVagon;
     }
     

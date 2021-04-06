@@ -39,7 +39,7 @@ public class LocomotorasController implements Serializable {
     public void removeLocomotora(int idLocomotora) {
         int index = getIndexLocomotora(idLocomotora);
         if (index != -1) {
-            locomotoras.remove(getIndexLocomotora(idLocomotora));            
+            locomotoras.remove(index);            
         } else {
             System.err.println("ERROR: No se ha encontrado una locomotora con ese ID.");
         }

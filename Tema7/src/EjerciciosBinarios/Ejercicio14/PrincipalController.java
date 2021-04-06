@@ -30,6 +30,14 @@ public class PrincipalController {
         locomotoraController.mostrarLocomotoras();
     }
     
+    public void altaVagon(Vagon nuevoVagon) {
+        vagonesController.addVagon(nuevoVagon);
+    }
+    
+    public void bajaVagon(int idVagon) {
+        vagonesController.removeVagon(idVagon);
+    }
+    
     public void mostrarVagones() {
         vagonesController.mostrarVagones();
     }
