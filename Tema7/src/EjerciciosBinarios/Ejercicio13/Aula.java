@@ -5,10 +5,18 @@
  */
 package EjerciciosBinarios.Ejercicio13;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 0017610
  */
 public class Aula {
     private ArrayList<Alumno> alumnos;
+
+    public Aula() {
+        alumnos = new ArrayList();
+    }
+    
+    
 }

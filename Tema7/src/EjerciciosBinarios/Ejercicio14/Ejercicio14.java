@@ -1,21 +1,18 @@
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package EjerciciosBinarios.Ejercicio14;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  *
  * @author alumno
  */
-public class Libreria {
-    
-    private static Scanner sc = new Scanner(System.in);
-    
+public class Ejercicio14 {
     public static void main(String[] args) {
         int opcion;
         do {
@@ -32,32 +29,9 @@ public class Libreria {
         } while (opcion != 0);       
     }
     
-    static boolean elegirOpcionContinuar(String msg) {        
+    static String introducirTexto(String msg) {
         Scanner sc = new Scanner(System.in);
-        boolean opcion = true; 
-        boolean noValido;
-        
-        do {
-            System.out.println(msg);
-            char letra = sc.next().charAt(0);
-            
-            switch (Character.toUpperCase(letra)) {
-                case 'N':
-                    opcion = false;
-                    noValido = false;
-                    break;
-                case 'S':
-                    opcion = true;
-                    noValido = false;
-                    break;
-                default:
-                    System.err.println("Opción no valida.");
-                    noValido = true;
-                    break;
-            }
-        } while (noValido);     
-        
-        return opcion;
+        return sc.nextLine();
     }
     
     static int introducirNumero(String msg) {
