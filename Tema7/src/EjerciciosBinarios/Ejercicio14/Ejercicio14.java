@@ -50,6 +50,7 @@ public class Ejercicio14 {
                     principalController.guardarDatosEnFicheros();
                     break;
                 default:
+                    System.err.println("ERROR: Opción no válida.");
                     break;
             }
         } while (opcion != 0);       
