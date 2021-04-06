@@ -20,6 +20,7 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class VagonesController {
+
     private static final File FICHERO = new File("src/EjerciciosBinarios/Ejercicio14/Vagones.dat");
     private final ArrayList<Vagon> vagones;
 
@@ -30,20 +31,24 @@ public class VagonesController {
             vagones = new ArrayList();
         }
     }
-    
+
     public void addVagon(Vagon nuevoVagon) {
-        vagones.add(nuevoVagon);
+        if (getIndexVagon(nuevoVagon.getIdVagon()) == -1) {
+            vagones.add(nuevoVagon);
+        } else {
+            System.err.println("ERROR: Ya existe un vagón con ese ID.");
+        }
     }
-    
+
     public void removeVagon(int idVagon) {
         int index = getIndexVagon(idVagon);
         if (index != -1) {
-            vagones.remove(index);            
+            vagones.remove(index);
         } else {
             System.err.println("ERROR: No se ha encontrado una locomotora con ese ID.");
         }
     }
-    
+
     public void mostrarVagones() {
         for (Vagon vagon : vagones) {
             vagon.mostrar();
@@ -75,11 +80,11 @@ public class VagonesController {
 
     private ArrayList cargarVagonesDeFichero() {
         ArrayList<Vagon> vagonesData = new ArrayList();
-        
+
         ObjectInputStream flujoObjetos = null;
         try {
             flujoObjetos = new ObjectInputStream(new FileInputStream(FICHERO));
-            while (true) {                
+            while (true) {
                 vagonesData.add((Vagon) flujoObjetos.readObject());
             }
         } catch (FileNotFoundException ex) {
@@ -100,23 +105,21 @@ public class VagonesController {
 
         return vagonesData;
     }
-    
+
     private int getIndexVagon(int idVagon) {
         int index = -1;
-        
+
         for (int i = 0; i < vagones.size() && index == -1; i++) {
             if (vagones.get(i).getIdVagon() == idVagon) {
                 index = i;
             }
         }
-        
+
         return index;
     }
 
     private boolean siExisteFichero() {
         return FICHERO.exists();
     }
-    
-    
-    
+
 }
