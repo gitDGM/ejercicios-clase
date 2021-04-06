@@ -33,7 +33,11 @@ public class LocomotorasController implements Serializable {
     }
     
     public void addLocomotora(Locomotora nuevaLocomotora) {
-        locomotoras.add(nuevaLocomotora);
+        if (getIndexLocomotora(nuevaLocomotora.getIdLocomotora()) == -1) {
+            locomotoras.add(nuevaLocomotora);            
+        } else {
+            System.err.println("ERROR: Ya existe una locomotora con ese ID.");
+        }
     }
     
     public void removeLocomotora(int idLocomotora) {
