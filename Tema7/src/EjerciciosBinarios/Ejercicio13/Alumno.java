@@ -13,9 +13,9 @@ public class Alumno {
     private int idMatricula;
     private String nombre;
     private String apellidos;
-    private int[] notas;
+    private double[] notas;
 
-    public Alumno(int idMatricula, String nombre, String apellidos, int[] notas) {
+    public Alumno(int idMatricula, String nombre, String apellidos, double[] notas) {
         this.idMatricula = idMatricula;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -34,7 +34,7 @@ public class Alumno {
         return apellidos;
     }
 
-    public int[] getNotas() {
+    public double[] getNotas() {
         return notas;
     }
 
@@ -50,7 +50,7 @@ public class Alumno {
         this.apellidos = apellidos;
     }
 
-    public void setNotas(int[] notas) {
+    public void setNotas(double[] notas) {
         this.notas = notas;
     }
     
@@ -58,7 +58,7 @@ public class Alumno {
         int contador = 1;
         System.out.println(idMatricula + " - " + nombre + " " + apellidos);
         System.out.println("NOTAS:");
-        for (int nota : notas) {
+        for (double nota : notas) {
             System.out.println("Nota asignatura " + contador + ": " +  notas[contador - 1]);
             contador++;
         }

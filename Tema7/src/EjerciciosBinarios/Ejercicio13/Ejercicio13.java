@@ -5,6 +5,7 @@
  */
 package EjerciciosBinarios.Ejercicio13;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,22 +15,36 @@ import java.util.Scanner;
  */
 public class Ejercicio13 {
     
-    private final Aula aula = new Aula();
+    private static final Aula aula = new Aula();
+    private static final int CANTIDAD_ASIGNATURAS = 5;
     public static void main(String[] args) {
         int opcion;
         do {
             System.out.println("##########################");
-            System.out.println("0.- Añadir alumno");
+            System.out.println("1.- Añadir alumno");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
+                case 1:
+                    break;
                 case 0:
                     break;
                 default:
                     break;
             }
         } while (opcion != 0);       
+    }
+    
+    static void addAlumno() {
+        int idMatricula = introducirNumero("Introduce el número de matrícula:");
+        String nombre = introducirTexto("Introduce el nombre del alumno:");
+        String apellidos = introducirTexto("Introduce los apellidos del alumno:");
+        double[] notas = new double[CANTIDAD_ASIGNATURAS];
+        for (int i = 0; i < CANTIDAD_ASIGNATURAS; i++) {
+            notas[i] = (introducirNumeroDouble("Introduce la nota de la asignatura " + (i + 1) + ": "));
+        }
+        aula.addAlumno(new Alumno(idMatricula, nombre, apellidos, notas));
     }
     
     static boolean elegirOpcionContinuar(String msg) {        
@@ -77,5 +92,29 @@ public class Ejercicio13 {
         } while (noValido);
 
         return numero;
+    }
+    
+    static double introducirNumeroDouble(String msg) {
+        Scanner sc = new Scanner(System.in);
+        double numero = 0;        
+        boolean noValido;
+        do {
+            System.out.println(msg);
+            try {
+                numero = sc.nextDouble();
+                noValido = false;
+            } catch (InputMismatchException ex) {
+                System.err.println("Debe ser un número decimal.");
+                noValido = true;
+                sc.next();
+            }
+        } while (noValido);
+
+        return numero;
+    }
+    
+    static String introducirTexto(String msg) {
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
     }
 }
