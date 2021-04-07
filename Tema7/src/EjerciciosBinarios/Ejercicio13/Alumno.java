@@ -37,7 +37,30 @@ public class Alumno {
     public int[] getNotas() {
         return notas;
     }
-     
+
+    public void setIdMatricula(int idMatricula) {
+        this.idMatricula = idMatricula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setNotas(int[] notas) {
+        this.notas = notas;
+    }
     
-    
+    public void mostrar() {
+        int contador = 1;
+        System.out.println(idMatricula + " - " + nombre + " " + apellidos);
+        System.out.println("NOTAS:");
+        for (int nota : notas) {
+            System.out.println("Nota asignatura " + contador + ": " +  notas[contador - 1]);
+            contador++;
+        }
+    }
 }
