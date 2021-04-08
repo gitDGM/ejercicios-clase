@@ -14,5 +14,6 @@ public class PrincipalAlumnos {
         AlumnoController controladorAlumnos = new AlumnoController();
         
         controladorAlumnos.mostrarAlumnos();
+        //controladorAlumnos.guardarDatosEnFicheroBinario();
     }
 }

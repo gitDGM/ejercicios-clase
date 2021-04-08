@@ -5,11 +5,14 @@
  */
 package EjercicioAlumnos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alumno
  */
-public class Matricula {
+public class Matricula implements Serializable {
+    private static final long serialVersionUID = 22222L;
     private int curso;
     private double media;
 

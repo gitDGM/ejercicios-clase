@@ -5,13 +5,15 @@
  */
 package EjercicioAlumnos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author alumno
  */
-public class Alumno {
+public class Alumno implements Serializable {
+    private static final long serialVersionUID = 11111L;
     private final int idAlumno;
     private final ArrayList<Matricula> matriculas;
 
