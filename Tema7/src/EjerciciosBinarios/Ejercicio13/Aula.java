@@ -40,10 +40,6 @@ public class Aula {
         }
     }
     
-    public void addNotaAlumno(double nota) {
-        
-    }
-    
     public void mostrarAlumnos() {
         for (Alumno alumno : alumnos) {
             alumno.mostrar();
