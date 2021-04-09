@@ -46,7 +46,7 @@ public class PrincipalControlador {
     public void gestionarMercancias() {
         ArrayList<Camion> camionesBinarios = generarCamionesDesdeBinario();
         visualizarCamionesBinarios(camionesBinarios);
-        System.out.println("\n######## FACTURA ########");
+        System.out.println("######## FACTURA ########");
         generarFacturaCamiones(camionesBinarios);
         System.out.println("#########################");
     }
