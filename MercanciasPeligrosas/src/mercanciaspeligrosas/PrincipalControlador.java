@@ -157,7 +157,10 @@ public class PrincipalControlador {
                 }
             }
             
-            camionesGenerados.add(new Camion(i, mercanciasCamion, i));
+            // COMPROBAR SI HAY MERCANCIAS DE CIERTA PELIGROSIDAD
+            if (mercanciasCamion.size() > 0) {
+                camionesGenerados.add(new Camion(i, mercanciasCamion, i));
+            }
         }
         
         return camionesGenerados;

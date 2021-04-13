@@ -1,12 +1,9 @@
 8
 Tolueno;1
-Nitrocelulosa;2
+Nitrocelulosa;3
 Acido Nitrico;4
-Fosforo;2
+Fosforo;3
 Cal viva;5
 Dinamita;1
 Radioactivo alfa;3
 Cloro;1
-
-
-
