@@ -17,12 +17,33 @@ public class Cola {
     }
     
     public void add(int dato) {
-        head = new Nodo(dato, null);
+        if (!isEmpty()) {    
+            Nodo nodoActual = head;
+            while (nodoActual.getAnterior() != null) {
+                nodoActual = nodoActual.getAnterior();
+            }
+            nodoActual.setAnterior(dato);
+        } else {
+            head = new Nodo(dato, null);
+        }   
     }
+    
+    public void mostrar() {
+        Nodo nodoActual = head;
+        while (nodoActual != null) {
+            nodoActual.mostrar();
+            nodoActual = nodoActual.getAnterior();
+        }
+    }
+    
+    public boolean isEmpty() {
+        return head == null;
+    }
+    
     
     private class Nodo {
         private int dato;
-        private final Nodo anterior;
+        private Nodo anterior;
         
         public Nodo(int dato, Nodo anterior) {
             this.dato = dato;
@@ -39,6 +60,10 @@ public class Cola {
 
         public void setDato(int dato) {
             this.dato = dato;
+        }
+        
+        public void setAnterior(int dato) {
+            this.anterior = new Nodo(dato, null);
         }
         
         public void mostrar() {
