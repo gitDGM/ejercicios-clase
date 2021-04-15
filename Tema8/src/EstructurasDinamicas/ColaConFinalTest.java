@@ -9,11 +9,15 @@ package EstructurasDinamicas;
  *
  * @author alumno
  */
-public class ColaTest {
+public class ColaConFinalTest {
     public static void main(String[] args) {
-        Cola cola = new Cola();
+        ColaConFinal cola = new ColaConFinal();
         
         cola.add(3);
+        cola.mostrarTail();
+        cola.remove();
+        System.out.println("Tamaño de la cola: " + cola.size());
+        cola.mostrarTail();
         cola.add(2);
         cola.add(6);
         cola.add(4);
@@ -22,7 +26,7 @@ public class ColaTest {
         cola.add(1);        
         System.out.print("Nodo eliminado: ");
         cola.removeDato();
-        cola.mostrar();   
+        cola.mostrar();
         
         System.out.println("Tamaño de la cola: " + cola.size());
         

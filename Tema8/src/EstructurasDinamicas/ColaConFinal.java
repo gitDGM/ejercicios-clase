@@ -9,11 +9,13 @@ package EstructurasDinamicas;
  *
  * @author alumno
  */
-public class Cola {
+public class ColaConFinal {
     private Nodo head;
+    private Nodo tail;
     
-    public Cola() {
+    public ColaConFinal() {
         head = null;
+        tail = null;
     }
     
     public void add(int dato) {
@@ -22,14 +24,17 @@ public class Cola {
             while (nodoActual.getSiguiente()!= null) {
                 nodoActual = nodoActual.getSiguiente();
             }
-            nodoActual.setAnterior(new Nodo(dato, null));
+            nodoActual.setSiguiente(new Nodo(dato, null));
+            tail = nodoActual.getSiguiente();
         } else {
             head = new Nodo(dato, null);
+            tail = head;
         }   
     }
     
     public void remove() {
         if (!isEmpty()) {
+            tail = head == tail ? null : tail;
             head = head.getSiguiente();
         }
     }
@@ -71,6 +76,15 @@ public class Cola {
         }
     }
     
+    public void mostrarTail() {
+        if (!isEmpty()) {
+            System.out.print("ULTIMO: ");
+            tail.mostrar();            
+        } else {
+            System.out.println("ATENCIÓN: Cola vacía.");
+        }
+    }
+    
     public boolean isEmpty() {
         return head == null;
     }
@@ -96,7 +110,7 @@ public class Cola {
             this.dato = dato;
         }
         
-        public void setAnterior(Nodo nodoSiguiente) {
+        public void setSiguiente(Nodo nodoSiguiente) {
             this.siguiente = nodoSiguiente;
         }
         
