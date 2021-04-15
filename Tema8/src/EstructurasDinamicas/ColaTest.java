@@ -18,8 +18,14 @@ public class ColaTest {
         cola.add(6);
         cola.add(4);
         cola.add(10);
+        cola.remove();
         cola.add(1);
+        cola.mostrar();   
         
-        cola.mostrar();
+        System.out.println("Tamaño de la cola: " + cola.size());
+        
+        cola.vaciar();        
+        System.out.println("Cola vaciada.");        
+        System.out.println("Tamaño de la cola: " + cola.size());
     }
 }

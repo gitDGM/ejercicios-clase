@@ -19,20 +19,48 @@ public class Cola {
     public void add(int dato) {
         if (!isEmpty()) {    
             Nodo nodoActual = head;
-            while (nodoActual.getAnterior() != null) {
-                nodoActual = nodoActual.getAnterior();
+            while (nodoActual.getSiguiente()!= null) {
+                nodoActual = nodoActual.getSiguiente();
             }
-            nodoActual.setAnterior(dato);
+            nodoActual.setAnterior(new Nodo(dato, null));
         } else {
             head = new Nodo(dato, null);
         }   
+    }
+    
+    public void remove() {
+        if (!isEmpty()) {
+            head = head.getSiguiente();
+        }
+    }
+    
+    public int size() {
+        int size = 0;
+        
+        if (!isEmpty()) {
+            Nodo nodoActual = head;
+            while (nodoActual != null) {
+                nodoActual = nodoActual.getSiguiente();
+                size++;
+            }
+        }
+        
+        return size;
+    }
+    
+    public void vaciar() {
+        if (!isEmpty()) {
+            while(head != null) {
+                remove();
+            }
+        }
     }
     
     public void mostrar() {
         Nodo nodoActual = head;
         while (nodoActual != null) {
             nodoActual.mostrar();
-            nodoActual = nodoActual.getAnterior();
+            nodoActual = nodoActual.getSiguiente();
         }
     }
     
@@ -40,30 +68,29 @@ public class Cola {
         return head == null;
     }
     
-    
     private class Nodo {
         private int dato;
-        private Nodo anterior;
+        private Nodo siguiente;
         
-        public Nodo(int dato, Nodo anterior) {
+        public Nodo(int dato, Nodo siguiente) {
             this.dato = dato;
-            this.anterior = anterior;
+            this.siguiente = siguiente;
         }
 
         public int getDato() {
             return dato;
         }
 
-        public Nodo getAnterior() {
-            return anterior;
+        public Nodo getSiguiente() {
+            return siguiente;
         }
 
         public void setDato(int dato) {
             this.dato = dato;
         }
         
-        public void setAnterior(int dato) {
-            this.anterior = new Nodo(dato, null);
+        public void setAnterior(Nodo nodoSiguiente) {
+            this.siguiente = nodoSiguiente;
         }
         
         public void mostrar() {
