@@ -69,10 +69,10 @@ public class Lista {
                 }
                 Nodo nodoSiguiente = nodoAnteriorPosicion.getSiguiente();
                 nodoAnteriorPosicion.setSiguiente(nodoSiguiente.getSiguiente());
-                nodoSiguiente = null;
+                liberarMemoria(nodoSiguiente);
             }
         } else {
-            System.out.println("ERROR: No es posible borrar ese elemento.");
+            System.err.println("ERROR: No es posible borrar ese elemento.");
         }
     }
     
@@ -80,9 +80,23 @@ public class Lista {
         if (!isEmpty()) {
             boolean encontrado = false;
             Nodo nodoActual = inicio;
-            while(nodoActual)
+            Nodo nodoAnterior = null;
+            while(nodoActual != null && !encontrado) {
+                if (nodoActual.getDato().equals(dato)) {
+                    encontrado = true;
+                } else {
+                    nodoAnterior = nodoActual;
+                    nodoActual = nodoActual.getSiguiente();
+                }
+            }
+            if (encontrado) {
+                nodoAnterior.setSiguiente(nodoActual.getSiguiente());
+                liberarMemoria(nodoActual);
+            } else {
+                System.err.println("ERROR: No se ha encontrado ese elemento.");
+            }
         } else {
-            System.out.println("ERROR: No es posible borrar ese elemento.");
+            System.err.println("ERROR: No es posible borrar ese elemento.");
         }
     }
     
@@ -112,6 +126,10 @@ public class Lista {
     
     public boolean isEmpty() {
         return inicio == null;
+    }
+    
+    private void liberarMemoria(Nodo nodo) {
+        nodo = null;
     }
     
     private class Nodo {
