@@ -58,11 +58,12 @@ public class Lista {
     
     public void remove(int posicion) {
         if (!isEmpty() && posicion >= 0 && posicion < size()) {
+            Nodo nodoAnteriorPosicion = inicio; 
             if (posicion == 0) {
-                inicio = inicio.getSiguiente();
+                inicio = nodoAnteriorPosicion.getSiguiente();
+                liberarMemoria(nodoAnteriorPosicion);
             } else {
                 int contador = 0;
-                Nodo nodoAnteriorPosicion = inicio;
                 while (contador < posicion - 1) {
                     nodoAnteriorPosicion = nodoAnteriorPosicion.getSiguiente();
                     contador++;

@@ -20,7 +20,7 @@ public class ListaTest {
         lista.add("test 5");
         lista.add("test 6");
         lista.add("test 7", 2);
-        lista.remove(-1);
+        lista.remove(6);
         lista.remove("test 10");
         
         lista.mostrar();
