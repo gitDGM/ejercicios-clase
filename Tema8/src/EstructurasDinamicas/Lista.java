@@ -56,6 +56,36 @@ public class Lista {
         }
     }
     
+    public void remove(int posicion) {
+        if (!isEmpty() && posicion >= 0 && posicion < size()) {
+            if (posicion == 0) {
+                inicio = inicio.getSiguiente();
+            } else {
+                int contador = 0;
+                Nodo nodoAnteriorPosicion = inicio;
+                while (contador < posicion - 1) {
+                    nodoAnteriorPosicion = nodoAnteriorPosicion.getSiguiente();
+                    contador++;
+                }
+                Nodo nodoSiguiente = nodoAnteriorPosicion.getSiguiente();
+                nodoAnteriorPosicion.setSiguiente(nodoSiguiente.getSiguiente());
+                nodoSiguiente = null;
+            }
+        } else {
+            System.out.println("ERROR: No es posible borrar ese elemento.");
+        }
+    }
+    
+    public void remove(String dato) {
+        if (!isEmpty()) {
+            boolean encontrado = false;
+            Nodo nodoActual = inicio;
+            while(nodoActual)
+        } else {
+            System.out.println("ERROR: No es posible borrar ese elemento.");
+        }
+    }
+    
     public void mostrar() {
         if (!isEmpty()) {            
             Nodo nodoActual = inicio;
