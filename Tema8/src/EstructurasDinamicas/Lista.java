@@ -36,19 +36,35 @@ public class Lista {
     }
     
     public void add(String dato, int posicion) {
-        if (!isEmpty() && posicion >= 0 && posicion <= (size() + 1)) {
-            int contador = 0;
+        if (!isEmpty() && posicion >= 0 && posicion <= size()) {
             if (posicion == 0) {
-                Nodo nodoActual = inicio;
-                while (nodoActual != null) {                
-                    nodoActual = nodoActual.getSiguiente();
-
-                } 
-            }       
+                inicio = new Nodo(dato, inicio);
+            } else if (posicion == size()) {
+                add(dato);
+            } else {
+                int contador = 0;
+                Nodo nodoPosicion = inicio;
+                while (contador < posicion) {
+                    nodoPosicion = nodoPosicion.getSiguiente();
+                    contador++;
+                }
+                Nodo nodoSiguiente = nodoPosicion.getSiguiente();
+                nodoPosicion.setSiguiente(new Nodo(dato, nodoSiguiente));
+            }
         } else {
             System.err.println("ERROR: No es posible añadir en esa posición.");
         }
-    } 
+    }
+    
+    public void mostrar() {
+        if (!isEmpty()) {            
+            Nodo nodoActual = inicio;
+            while (nodoActual != null) {    
+                nodoActual.mostrar();
+                nodoActual = nodoActual.getSiguiente();
+            }
+        }
+    }
     
     public int size() {
         int size = 0;
@@ -96,6 +112,10 @@ public class Lista {
 
         public void setSiguiente(Nodo siguiente) {
             this.siguiente = siguiente;
+        }
+        
+        public void mostrar() {
+            System.out.println(dato + "\t");
         }
     }
 }
