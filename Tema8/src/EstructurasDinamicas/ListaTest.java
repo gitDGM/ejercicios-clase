@@ -24,5 +24,14 @@ public class ListaTest {
         lista.remove("test 10");
         
         lista.mostrar();
+        
+        System.out.println("#####################\n");
+        lista.get(5);
+        System.out.println("Posicion: " + lista.get("test 5"));
+        
+        System.out.println("#####################\n");
+        System.out.println("Vaciamos la lista...");
+        lista.vaciar();
+        lista.mostrar();
     }
 }

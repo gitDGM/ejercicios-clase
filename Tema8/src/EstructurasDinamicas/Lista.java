@@ -101,6 +101,59 @@ public class Lista {
         }
     }
     
+    public void get(int posicion) {
+        if (!isEmpty() && posicion >= 0 && posicion < size()) {
+            Nodo nodoActual = inicio;
+            int contador = 0;
+            while(nodoActual != null && contador < posicion) {
+                nodoActual = nodoActual.getSiguiente();
+                contador++;
+            }
+            nodoActual.mostrar();
+        } else {
+            System.err.println("ERROR: No se ha encontrado ese elemento.");            
+        }
+    }
+    
+    public int get(String dato) {
+        int posicion;
+        if (!isEmpty()) {
+            posicion = 0;
+            boolean encontrado = false;
+            Nodo nodoActual = inicio;
+            while (nodoActual != null && !encontrado) {
+                if (nodoActual.getDato().equals(dato)) {
+                    encontrado = true;
+                } else {
+                    posicion++;
+                    nodoActual = nodoActual.getSiguiente();
+                }
+            }
+            if (!encontrado) {                
+                System.out.println("ERROR: No se ha econtrado un elemento con ese dato.");
+                posicion = -1;
+            }
+        } else {
+            posicion = -1;
+            System.err.println("ERROR: La lista está vacía");            
+        }
+        
+        return posicion;
+    }
+    
+    public void vaciar() {
+        if (!isEmpty()) {
+            Nodo nodoAnterior;
+            Nodo nodoActual = inicio;
+            while (nodoActual != null) {
+                nodoAnterior = nodoActual;
+                nodoActual = nodoActual.getSiguiente();
+                liberarMemoria(nodoAnterior);
+            }
+            inicio = null;
+        }
+    }
+    
     public void mostrar() {
         if (!isEmpty()) {            
             Nodo nodoActual = inicio;
@@ -108,6 +161,8 @@ public class Lista {
                 nodoActual.mostrar();
                 nodoActual = nodoActual.getSiguiente();
             }
+        } else {
+            System.err.println("ERROR: La lista está vacía.");
         }
     }
     
