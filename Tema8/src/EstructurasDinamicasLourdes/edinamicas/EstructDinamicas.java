@@ -3,6 +3,8 @@
  */
 package EstructurasDinamicasLourdes.edinamicas;
 
+import java.util.Stack;
+
 /**
  *
  * @author alumno
@@ -11,7 +13,16 @@ public class EstructDinamicas {
 
     public static void main(String[] args) {
         
-        
+        Stack pila = new Stack();
+        pila.push("test 0");
+
+        pila.push("test 1");
+        pila.push("test 2");
+        pila.push("test 3");
+        pila.push("test 4");
+      
+        printStack(pila);
+       
        /*Pila pila = new Pila();
        
        pila.agregarNodo(10);
@@ -240,4 +251,15 @@ public class EstructDinamicas {
        lista.imprimirLista(); 
 }
     
+    
+    static void printStack(Stack pila) {
+        if (pila.empty()) {
+            return;
+        }        
+        String x = "" + pila.pop();
+        pila.pop();
+        printStack(pila);
+        System.out.println(x + ", ");
+        pila.push(x);
+    }
 }
