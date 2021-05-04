@@ -6,6 +6,7 @@
 package EstructurasDinamicasLourdes.edinamicas.Ejercicio;
 
 import EstructurasDinamicasLourdes.edinamicas.*;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -217,6 +218,60 @@ public class Principal {
                     break;
                 case 7:
                     cola.vaciarCola();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.err.println("Error: Opción no válida.");
+                    break;
+            }
+        } while (opcion != 0); 
+    }
+    
+    static void menuListaGenerica() {
+        ArrayList<Integer> listaGen = new ArrayList();
+        int opcion;        
+        do {
+            System.out.println("\n\nTrabajando con LISTAS");
+            System.out.println("*************************\n");
+            System.out.println("1.- Insertar elemento ascendente");
+            System.out.println("2.- Insertar elemento descendente");
+            System.out.println("3.- Eliminar elemento (por posición)");
+            System.out.println("4.- Eliminar elemento (por dato)");
+            System.out.println("5.- Mostrar lista");
+            System.out.println("6.- Obtener número de elementos");
+            System.out.println("7.- ¿Lista vacía?");
+            System.out.println("8.- Vaciar lista");
+            System.out.println("0.- Salir\n");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
+                    listaGen.add(introducirNumero("Introduce un valor: "));
+                    break;
+                case 2:                    
+                    listaGen.add(introducirNumero("Introduce una posición: "), introducirNumero("Introduce un valor: "));
+                    break;
+                case 3:
+                    listaGen.remove(introducirNumero("Introduce una posición: "));
+                    break;
+                case 4:
+                    
+                    break;
+                case 5:
+                    //listaOrd.imprimirLista();
+                    break;
+                case 6:
+                    //System.out.println("Tamaño de la lista: " + listaOrd.obtenerTam());
+                    break;
+                case 7:
+                    if (listaGen.isEmpty()) {
+                        System.out.println("Está vacía.");
+                    } else {
+                        System.out.println("No está vacía.");  
+                    }
+                    break;
+                case 8:
+                    //listaOrd.vaciarLista();
                     break;
                 case 0:
                     break;
