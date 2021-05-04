@@ -1,7 +1,7 @@
 /*
  * Para pruebas de las estructuras dinḿicas
  */
-package edinamicas;
+package EstructurasDinamicasLourdes.edinamicas;
 
 /**
  *

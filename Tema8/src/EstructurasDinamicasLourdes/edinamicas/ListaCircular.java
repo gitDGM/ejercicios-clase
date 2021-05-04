@@ -2,7 +2,7 @@
  * Implemento una lista genérica
  * Una lista genérica permite las inserciones y extracciones en cualquier parte de la lista
  */
-package edinamicas;
+package EstructurasDinamicasLourdes.edinamicas;
 
 /**
  *
@@ -15,7 +15,7 @@ public class ListaCircular {
     }
     private Nodo inicio;
     
-    ListaCircular() {
+    public ListaCircular() {
         this.inicio = null;
     }
     

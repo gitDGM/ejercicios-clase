@@ -2,20 +2,20 @@
  * Implemento una lista genérica
  * Una lista genérica permite las inserciones y extracciones en cualquier parte de la lista
  */
-package edinamicas;
+package EstructurasDinamicasLourdes.anterior_borrar;
 
 /**
  *
  * @author alumno
  */
-public class ListaCircular {
+public class ListaCircularACT {
     private class Nodo {
         String dato;
         Nodo siguiente;
     }
     private Nodo inicio;
     
-    ListaCircular() {
+    ListaCircularACT() {
         this.inicio = null;
     }
     
@@ -183,7 +183,7 @@ public class ListaCircular {
                 }
             }
         }
-        if(direcBorrar != null) //si he encontrado el elemento, libero memoria
+        if(direcBorrar != null) { //si he encontrado el elemento, libero memoria
             liberarMemoria(direcBorrar);
         }      
         return borro;
@@ -272,7 +272,7 @@ public class ListaCircular {
     }
 
     //Visualizo todos los elementos de la lista a partir de la posición indicada
-    public void imprimirLista(int posicion) {
+    public void imprimirListaPos(int posicion) {
         if(esVacia()){
             System.out.print("Lista vacía");
         } else { //contiene algo

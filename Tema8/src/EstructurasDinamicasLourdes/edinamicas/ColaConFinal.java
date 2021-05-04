@@ -1,7 +1,7 @@
 /*
  * Implemento una lista de tipo Cola (agrego al final, elimino del principio)
  */
-package edinamicas;
+package EstructurasDinamicasLourdes.edinamicas;
 
 public class ColaConFinal {
     private class Nodo {
@@ -10,7 +10,7 @@ public class ColaConFinal {
     }
     private Nodo frente, fondo; //fondo apunta al último elemento
     
-    ColaConFinal() {
+    public ColaConFinal() {
         frente = null;
         fondo = null;
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edinamicas;
+package EstructurasDinamicasLourdes.edinamicas;
 
 /**
  *
@@ -16,7 +16,7 @@ public class ListaOrdDoble {
     }
     private Nodo inicio, fin;
     
-    ListaOrdDoble() {
+    public ListaOrdDoble() {
         this.inicio = null;
         this.fin = null;
     }

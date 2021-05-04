@@ -1,7 +1,7 @@
 /*
  * Implementa una lista dinámica de tipo Pila
  */
-package edinamicas;
+package EstructurasDinamicasLourdes.edinamicas;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Pila {
     private Nodo cima;
     
     //constructor de la pila
-    Pila(){
+    public Pila(){
         this.cima = null;
     }
     
