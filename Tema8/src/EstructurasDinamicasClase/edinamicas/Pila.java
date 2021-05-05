@@ -1,7 +1,7 @@
 /*
  * Implementa una lista dinámica de tipo Pila
  */
-package EstructurasDinamicasLourdes.edinamicas;
+package EstructurasDinamicasClase.edinamicas;
 
 /**
  *

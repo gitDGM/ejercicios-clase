@@ -1,18 +1,17 @@
 /*
  * Implemento una lista de tipo Cola (agrego al final, elimino del principio)
  */
-package EstructurasDinamicasLourdes.edinamicas;
+package EstructurasDinamicasClase.edinamicas;
 
-public class ColaConFinal {
+public class Cola {
     private class Nodo {
         String nombre;
         Nodo siguiente;
     }
-    private Nodo frente, fondo; //fondo apunta al último elemento
+    private Nodo frente;
     
-    public ColaConFinal() {
+    public Cola() {
         frente = null;
-        fondo = null;
     }
     
     //Comprueba si la cola está vacio o no
@@ -31,10 +30,12 @@ public class ColaConFinal {
         nuevo.siguiente = null;
         if(esVacia()) { //la cola está vacia
             frente = nuevo;
-            fondo = nuevo;
         } else { //existe ya la cola
-             fondo.siguiente = nuevo;
-             fondo = nuevo;
+            Nodo recorre = frente;
+            while(recorre.siguiente != null){
+                recorre = recorre.siguiente;
+            }
+            recorre.siguiente = nuevo;
         }
         
     }
@@ -42,12 +43,7 @@ public class ColaConFinal {
     //Elimina un nodo (es decir, del frente) sin mostrar dato
     public void eliminarNodo() {
         if(!esVacia()){
-            if(frente == fondo) {
-                frente = null;
-                fondo = null;
-            } else {
-                frente = frente.siguiente;
-            }
+            frente = frente.siguiente;
         }
         
     }
@@ -57,12 +53,7 @@ public class ColaConFinal {
         String informacion = "";
         if(!esVacia()){
             informacion = frente.nombre;
-            if(frente == fondo) {
-                frente = null;
-                fondo = null;
-            } else {
-                frente = frente.siguiente;
-            }
+            frente = frente.siguiente;
         }
         return informacion;
     }

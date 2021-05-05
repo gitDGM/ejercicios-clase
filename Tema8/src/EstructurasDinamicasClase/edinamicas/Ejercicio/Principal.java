@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package EstructurasDinamicasLourdes.edinamicas.Ejercicio;
+package EstructurasDinamicasClase.edinamicas.Ejercicio;
 
-import EstructurasDinamicasLourdes.edinamicas.*;
+import EstructurasDinamicasClase.edinamicas.Lista;
+import EstructurasDinamicasClase.edinamicas.ListaOrdenada;
+import EstructurasDinamicasClase.edinamicas.Cola;
+import EstructurasDinamicasClase.edinamicas.ListaOrdDoble;
+import EstructurasDinamicasClase.edinamicas.Pila;
+import EstructurasDinamicasClase.edinamicas.ListaCircular;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -41,6 +46,7 @@ public class Principal {
                     menuCola();
                     break;
                 case 4:
+                    menuListaGenerica();
                     break;
                 case 5:
                     menuListaOrdenada();
@@ -82,13 +88,13 @@ public class Principal {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    lista.agregarNodo("test " + lista.obtenerTam());
+                    lista.agregarNodo("" + introducirNumero("Introduce un valor: "));
                     break;
                 case 2:
-                    lista.agregarNodo(introducirNumero("Elige una posición: "),"test " + lista.obtenerTam());
+                    lista.agregarNodo(introducirNumero("Elige una posición: "),"" + introducirNumero("Introduce un valor: "));
                     break;
                 case 3:
-                    lista.eliminarNodo("test " + introducirNumero("Elige cuál quieres borrar:"));
+                    lista.eliminarNodo("" + introducirNumero("Elige cuál quieres borrar:"));
                     break;
                 case 4:
                     lista.eliminarNodo(introducirNumero("Elige una posición: "));
@@ -107,7 +113,7 @@ public class Principal {
                     }
                     break;
                 case 8:
-                    lista.obtenerNodo("test " + introducirNumero("Elige cuál quieres obtener: "));
+                    lista.obtenerNodo("" + introducirNumero("Elige cuál quieres obtener: "));
                     break;
                 case 9:
                     lista.obtenerNodo(introducirNumero("Elige una posición: "));
@@ -128,7 +134,7 @@ public class Principal {
         Pila pila = new Pila();
         int opcion;        
         do {
-            System.out.println("\n\nTrabajando con LISTAS");
+            System.out.println("\n\nTrabajando con PILAS");
             System.out.println("*************************\n");
             System.out.println("1.- Insertar elemento");
             System.out.println("2.- Extraer elemento");
@@ -178,7 +184,7 @@ public class Principal {
         Cola cola = new Cola();
         int opcion;        
         do {
-            System.out.println("\n\nTrabajando con LISTAS");
+            System.out.println("\n\nTrabajando con COLAS");
             System.out.println("*************************\n");
             System.out.println("1.- Insertar elemento");
             System.out.println("2.- Extraer elemento");
@@ -286,7 +292,7 @@ public class Principal {
         ListaOrdenada listaOrd = new ListaOrdenada();
         int opcion;        
         do {
-            System.out.println("\n\nTrabajando con LISTAS");
+            System.out.println("\n\nTrabajando con LISTAS ORDENADAS");
             System.out.println("*************************\n");
             System.out.println("1.- Insertar elemento ascendente");
             System.out.println("2.- Insertar elemento descendente");
@@ -340,7 +346,7 @@ public class Principal {
         ListaOrdDoble listaOrdDoble = new ListaOrdDoble();
         int opcion;        
         do {
-            System.out.println("\n\nTrabajando con LISTAS");
+            System.out.println("\n\nTrabajando con LISTAS ORDENADAS DOBLE");
             System.out.println("*************************\n");
             System.out.println("1.- Insertar elemento ascendente");
             System.out.println("2.- Insertar elemento descendente");
@@ -398,7 +404,7 @@ public class Principal {
         ListaCircular listaCircular = new ListaCircular();
         int opcion;        
         do {
-            System.out.println("\n\nTrabajando con LISTAS");
+            System.out.println("\n\nTrabajando con LISTAS CIRCULARES");
             System.out.println("*************************\n");
             System.out.println("1.- Insertar elemento ascendente");
             System.out.println("2.- Insertar elemento descendente");

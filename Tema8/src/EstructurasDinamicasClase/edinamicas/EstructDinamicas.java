@@ -1,7 +1,7 @@
 /*
  * Para pruebas de las estructuras dinḿicas
  */
-package EstructurasDinamicasLourdes.edinamicas;
+package EstructurasDinamicasClase.edinamicas;
 
 import java.util.Stack;
 

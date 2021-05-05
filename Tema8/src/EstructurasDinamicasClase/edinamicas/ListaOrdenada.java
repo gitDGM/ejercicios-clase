@@ -2,7 +2,7 @@
  * Implemento una lista genérica
  * Una lista genérica permite las inserciones y extracciones en cualquier parte de la lista
  */
-package EstructurasDinamicasLourdes.edinamicas;
+package EstructurasDinamicasClase.edinamicas;
 
 /**
  *
