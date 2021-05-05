@@ -18,8 +18,10 @@ public class HospitalPrincipal {
         int opcion;
         do {
             System.out.println("##########################");
-            System.out.println("1.- Agregar articulo");
-            System.out.println("2.- Mostrar articulos");
+            System.out.println("1.- Agregar enfermo");
+            System.out.println("2.- Atender enfermo");
+            System.out.println("3.- Mostrar enfermos en sala de espera");
+            System.out.println("4.- Mostrar enfermos atendidos");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -28,7 +30,13 @@ public class HospitalPrincipal {
                     hospital.agregarEnfermo(new Enfermo(introducirNumero("Introduce le id del enfermo: "), introducirTexto("Introduce el nombre del enfermo: ")));
                     break;
                 case 2:
-                    articuloController.mostrar();
+                    hospital.atenderEnfermo();
+                    break;
+                case 3:
+                    hospital.mostrarColaSalaEspera();
+                    break;
+                case 4:
+                    hospital.mostrarColaAtendidos();
                     break;
                 case 0:
                     break;

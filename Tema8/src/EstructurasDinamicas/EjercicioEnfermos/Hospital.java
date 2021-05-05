@@ -5,6 +5,7 @@
  */
 package EstructurasDinamicas.EjercicioEnfermos;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -33,6 +34,22 @@ public class Hospital {
             enfermosAtendidos.add(enfermoActual);
         } else {
             System.err.println("ERROR: No hay enfermos en la sala de espera.");
+        }
+    }
+    
+    public void mostrarColaAtendidos() {
+        Iterator<Enfermo> it = enfermosAtendidos.iterator();
+        while (it.hasNext()) {
+            Enfermo next = it.next();
+            next.mostrar();
+        }
+    }
+    
+    public void mostrarColaSalaEspera() {
+        Iterator<Enfermo> it = salaEspera.iterator();
+        while (it.hasNext()) {
+            Enfermo next = it.next();
+            next.mostrar();
         }
     }
     
