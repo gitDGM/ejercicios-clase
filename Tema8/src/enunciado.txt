@@ -4,3 +4,7 @@ Crear un programa que permite insertar X datos de Artículos en una pila (los da
 
 EJERCICIO 2
 Crear un programa para atender la sala de espera de un hospital. Tenemos que ingresar los enfermos en la sala de espera y hacerlos pasara las consultas, sacándolos de la cola de la sala de espera y pasándolos a la cola de enfermos atendidos.
+
+
+EJERCICIO 3
+Crear un programa que permita introducir 10 números aleatorios no repetidos y visualizarlos, empleando tres tipos de conjuntos que conoces.
