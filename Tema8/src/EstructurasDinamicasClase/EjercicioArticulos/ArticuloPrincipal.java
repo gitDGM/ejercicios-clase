@@ -1,29 +1,35 @@
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package EstructurasDinamicasClase.EjercicioArticulos;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  *
  * @author alumno
  */
-public class Libreria {
-    
-    private static Scanner sc = new Scanner(System.in);
-    
+public class ArticuloPrincipal {
     public static void main(String[] args) {
+        ArticuloController articuloController = new ArticuloController();
         int opcion;
         do {
             System.out.println("##########################");
+            System.out.println("1.- Agregar articulo");
+            System.out.println("2.- Mostrar articulos");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
+                case 1:
+                    articuloController.agregarArticulo(new Articulo(introducirNumero("Introduce el código del artículo: "), introducirTexto("Introduce el nombre del artículo:"), introducirNumero("Introduce el stock del artículo: ")));
+                    break;
+                case 2:
+                    articuloController.mostrar();
+                    break;
                 case 0:
                     break;
                 default:
@@ -32,7 +38,11 @@ public class Libreria {
         } while (opcion != 0);       
     }
     
-    
+    static String introducirTexto(String msg) {
+        Scanner sc = new Scanner(System.in);     
+        System.out.println(msg);
+        return sc.nextLine();
+    }
     
     static int introducirNumero(String msg) {
         Scanner sc = new Scanner(System.in);
@@ -51,33 +61,5 @@ public class Libreria {
         } while (noValido);
 
         return numero;
-    }
-    
-    static boolean elegirOpcionContinuar(String msg) {        
-        Scanner sc = new Scanner(System.in);
-        boolean opcion = true; 
-        boolean noValido;
-        
-        do {
-            System.out.println(msg);
-            char letra = sc.next().charAt(0);
-            
-            switch (Character.toUpperCase(letra)) {
-                case 'N':
-                    opcion = false;
-                    noValido = false;
-                    break;
-                case 'S':
-                    opcion = true;
-                    noValido = false;
-                    break;
-                default:
-                    System.err.println("Opción no valida.");
-                    noValido = true;
-                    break;
-            }
-        } while (noValido);     
-        
-        return opcion;
     }
 }

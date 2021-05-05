@@ -1,0 +1,6 @@
+EJERCICIO 1
+Crear un programa que permite insertar X datos de Artículos en una pila (los datos de cada Artículo son nombre, código y stock). Posteriormente, el programa visualizará los datos de los productos cuyo stock sea menor a 100.
+
+
+EJERCICIO 2
+Crear un programa para atender la sala de espera de un hospital. Tenemos que ingresar los enfermos en la sala de espera y hacerlos pasara las consultas, sacándolos de la cola de la sala de espera y pasándolos a la cola de enfermos atendidos.
