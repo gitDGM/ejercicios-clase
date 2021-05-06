@@ -8,3 +8,6 @@ Crear un programa para atender la sala de espera de un hospital. Tenemos que ing
 
 EJERCICIO 3
 Crear un programa que permita introducir 10 números aleatorios no repetidos y visualizarlos, empleando tres tipos de conjuntos que conoces.
+    - TreeSet (Inserta los valores ordenados, no permite nulos)
+    - HashSet (No tiene orden)
+    - LinkedHashSet (Los valores están ordenados de la manera en la que se insertan)
