@@ -11,3 +11,16 @@ Crear un programa que permita introducir 10 números aleatorios no repetidos y v
     - TreeSet (Inserta los valores ordenados, no permite nulos)
     - HashSet (No tiene orden)
     - LinkedHashSet (Los valores están ordenados de la manera en la que se insertan)
+
+
+EJERCICIO 4
+Este ejercicio práctico tiene por objetivo mostrar la importancia de las colas en la Informática, concretamente en las simulaciones, pues permiten analizar situaciones de la vida real sin la necesidad de realizarlas realmente (con el correspondiente beneficio reducir constes)
+
+Crear un programa para la simulación de una venta de entradas online, sabiendo lo siguiente:
+    - Acceden a la web usuarios cada 2 ó 3 minutos.
+    - Cada usuario tarda entre 2 y 4 minutos en realizar la compra.
+
+Se desea realizar las siguientes operaciones:
+    a) Número de usuarios que se atienden en 10 horas.
+    b) Cantidad de usuarios que hay en cola después de 10 horas.
+    c) ¿Cuál fue la hora de llegada del primer cliente que no es atendido al trascurrir las 10 horas (es decir, la persona que está primera en la cola cuando se cumplen 10 horas)?
