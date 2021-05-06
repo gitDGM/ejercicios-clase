@@ -13,4 +13,6 @@ import java.util.Queue;
  */
 public class UsuarioController {
     private Queue<Usuario> usuarios;
+    private 
+    
 }
