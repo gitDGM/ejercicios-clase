@@ -24,3 +24,12 @@ Se desea realizar las siguientes operaciones:
     a) Número de usuarios que se atienden en 10 horas.
     b) Cantidad de usuarios que hay en cola después de 10 horas.
     c) ¿Cuál fue la hora de llegada del primer cliente que no es atendido al trascurrir las 10 horas (es decir, la persona que está primera en la cola cuando se cumplen 10 horas)?
+
+
+EJERCICIO 5
+PARKING (Usar HashMap<Integer, String>)
+    - Generar plazas
+    - Agregar vehículos
+    - Plazas disponibles
+    - Retirar vehículos
+    - Salir
