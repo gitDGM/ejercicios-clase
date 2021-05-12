@@ -13,11 +13,15 @@ import iesvbinmobiliaria.personas.Cliente;
  */
 public class Casa extends Vivienda {
 
-    private int numPlantas;
+    private final int numPlantas;
 
-    public Casa(int numPlantas, String direccion, String localidad, String pais, float precio, Cliente propietario) {
-        super(direccion, localidad, pais, precio, propietario);
+    public Casa(int numPlantas, int idVivienda, String direccion, String localidad, String pais, float precio, Cliente propietario) {
+        super(idVivienda, direccion, localidad, pais, precio, propietario);
         this.numPlantas = numPlantas;
+    }
+
+    public int getNumPlantas() {
+        return numPlantas;
     }
 
 }

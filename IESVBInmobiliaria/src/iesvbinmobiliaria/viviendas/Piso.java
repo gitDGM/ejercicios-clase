@@ -15,8 +15,16 @@ public class Piso extends Vivienda {
 
     private boolean duplex;
 
-    public Piso(boolean duplex, String direccion, String localidad, String pais, float precio, Cliente propietario) {
-        super(direccion, localidad, pais, precio, propietario);
+    public Piso(boolean duplex, int idVivienda, String direccion, String localidad, String pais, float precio, Cliente propietario) {
+        super(idVivienda, direccion, localidad, pais, precio, propietario);
+        this.duplex = duplex;
+    }
+
+    public boolean isDuplex() {
+        return duplex;
+    }
+
+    public void setDuplex(boolean duplex) {
         this.duplex = duplex;
     }
 

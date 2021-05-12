@@ -15,16 +15,22 @@ import iesvbinmobiliaria.viviendas.Vivienda;
  */
 public class Venta {
 
+    private final int idVenta;
     private final Cliente comprador;
     private final Cliente propietario;
     private final Empleado vendedor;
     private final Vivienda vivienda;
 
-    public Venta(Cliente comprador, Cliente propietario, Empleado vendedor, Vivienda vivienda) {
+    public Venta(int idVenta, Cliente comprador, Cliente propietario, Empleado vendedor, Vivienda vivienda) {
+        this.idVenta = idVenta;
         this.comprador = comprador;
         this.propietario = propietario;
         this.vendedor = vendedor;
         this.vivienda = vivienda;
+    }
+
+    public int getIdVenta() {
+        return idVenta;
     }
 
     public Cliente getComprador() {

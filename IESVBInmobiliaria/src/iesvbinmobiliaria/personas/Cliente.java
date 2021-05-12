@@ -9,6 +9,6 @@ package iesvbinmobiliaria.personas;
  *
  * @author alumno
  */
-public class Cliente {
+public class Cliente extends Persona {
 
 }
