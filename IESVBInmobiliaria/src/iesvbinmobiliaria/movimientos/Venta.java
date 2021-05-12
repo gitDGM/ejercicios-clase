@@ -11,6 +11,7 @@ import iesvbinmobiliaria.viviendas.Vivienda;
 
 /**
  *
+ *
  * @author alumno
  */
 public class Venta {
