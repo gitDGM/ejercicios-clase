@@ -5,10 +5,19 @@
  */
 package iesvbinmobiliaria.viviendas;
 
+import iesvbinmobiliaria.personas.Cliente;
+
 /**
  *
  * @author alumno
  */
 public class Piso extends Vivienda {
+
+    private boolean duplex;
+
+    public Piso(boolean duplex, String direccion, String localidad, String pais, float precio, Cliente propietario) {
+        super(direccion, localidad, pais, precio, propietario);
+        this.duplex = duplex;
+    }
 
 }
