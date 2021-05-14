@@ -5,8 +5,6 @@
  */
 package iesvbinmobiliaria.viviendas;
 
-import iesvbinmobiliaria.personas.Cliente;
-
 /**
  *
  * @author alumno
@@ -15,8 +13,8 @@ public class Piso extends Vivienda {
 
     private boolean duplex;
 
-    public Piso(boolean duplex, int idVivienda, String direccion, String localidad, String pais, float precio, Cliente propietario) {
-        super(idVivienda, direccion, localidad, pais, precio, propietario);
+    public Piso(boolean duplex, int idVivienda, String direccion, String localidad, String pais, float precio, int idPropietario) {
+        super(idVivienda, direccion, localidad, pais, precio, idPropietario);
         this.duplex = duplex;
     }
 

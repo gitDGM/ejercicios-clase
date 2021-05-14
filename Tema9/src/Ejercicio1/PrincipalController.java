@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class PrincipalController {
 
-    private Conexion db;
+    private final Conexion db;
 
     public PrincipalController(String bbdd) {
         db = new Conexion(bbdd);
@@ -25,5 +25,38 @@ public class PrincipalController {
         ArrayList<String> data = db.ejecutarObtener("SELECT * FROM fabricante");
 
         System.out.println(data.get(0));
+    }
+
+    public void insertarFabricante(String nombreFabricante) {
+        db.ejecutarModificar("INSERT INTO fabricante VALUES (NULL, '" + nombreFabricante + "');");
+    }
+
+    public void insertarProducto(String nombreProducto, double precio, int idFabricante) {
+        String query = "INSERT INTO producto VALUES (NULL, '" + nombreProducto + "', " + precio + ", " + idFabricante + ");";
+
+        if (existeFabricante(idFabricante)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: El fabricante no existe.");
+        }
+
+    }
+
+    public boolean existeProducto(String nombreProducto) {
+        String query = "SELECT count(codigo) from producto where nombre='" + nombreProducto + "';";
+        boolean existe;
+
+        existe = !db.ejecutarObtener(query).get(0).equals("0");
+
+        return existe;
+    }
+
+    public boolean existeFabricante(int idFabricante) {
+        String query = "SELECT count(codigo) from fabricante where codigo=" + idFabricante + ";";
+        boolean existe;
+
+        existe = !db.ejecutarObtener(query).get(0).equalsIgnoreCase("0");
+
+        return existe;
     }
 }

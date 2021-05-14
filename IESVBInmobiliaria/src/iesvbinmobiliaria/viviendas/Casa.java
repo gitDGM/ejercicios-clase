@@ -5,8 +5,6 @@
  */
 package iesvbinmobiliaria.viviendas;
 
-import iesvbinmobiliaria.personas.Cliente;
-
 /**
  *
  * @author alumno
@@ -15,8 +13,8 @@ public class Casa extends Vivienda {
 
     private final int numPlantas;
 
-    public Casa(int numPlantas, int idVivienda, String direccion, String localidad, String pais, float precio, Cliente propietario) {
-        super(idVivienda, direccion, localidad, pais, precio, propietario);
+    public Casa(int numPlantas, int idVivienda, String direccion, String localidad, String pais, float precio, int idPropietario) {
+        super(idVivienda, direccion, localidad, pais, precio, idPropietario);
         this.numPlantas = numPlantas;
     }
 

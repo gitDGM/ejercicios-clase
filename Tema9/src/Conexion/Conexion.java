@@ -45,7 +45,7 @@ public class Conexion {
         try {
             resultado = conexionBD.prepareStatement(query);
             resultado.execute();
-
+            System.out.println("\nATENCIÓN: Se ejecutó correctamente.\n");
         } catch (SQLException ex) {
             System.err.println("ERROR: " + ex.getMessage());
         }
