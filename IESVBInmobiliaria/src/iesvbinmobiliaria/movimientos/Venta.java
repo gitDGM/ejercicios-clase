@@ -5,10 +5,6 @@
  */
 package iesvbinmobiliaria.movimientos;
 
-import iesvbinmobiliaria.personas.Cliente;
-import iesvbinmobiliaria.personas.Empleado;
-import iesvbinmobiliaria.viviendas.Vivienda;
-
 /**
  *
  *
@@ -17,37 +13,31 @@ import iesvbinmobiliaria.viviendas.Vivienda;
 public class Venta {
 
     private final int idVenta;
-    private final Cliente comprador;
-    private final Cliente propietario;
-    private final Empleado vendedor;
-    private final Vivienda vivienda;
+    private final int idCliente;
+    private final int idEmpleado;
+    private final int idVivienda;
 
-    public Venta(int idVenta, Cliente comprador, Cliente propietario, Empleado vendedor, Vivienda vivienda) {
+    public Venta(int idVenta, int idCliente, int idEmpleado, int idVivienda) {
         this.idVenta = idVenta;
-        this.comprador = comprador;
-        this.propietario = propietario;
-        this.vendedor = vendedor;
-        this.vivienda = vivienda;
+        this.idCliente = idCliente;
+        this.idEmpleado = idEmpleado;
+        this.idVivienda = idVivienda;
     }
 
     public int getIdVenta() {
         return idVenta;
     }
 
-    public Cliente getComprador() {
-        return comprador;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public Cliente getPropietario() {
-        return propietario;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public Empleado getVendedor() {
-        return vendedor;
-    }
-
-    public Vivienda getVivienda() {
-        return vivienda;
+    public int getIdVivienda() {
+        return idVivienda;
     }
 
 }

@@ -11,4 +11,8 @@ package iesvbinmobiliaria.personas;
  */
 public class Cliente extends Persona {
 
+    public Cliente(int idPersona, String nombre, String apellidos, String dni, String telefono) {
+        super(idPersona, nombre, apellidos, dni, telefono);
+    }
+
 }
