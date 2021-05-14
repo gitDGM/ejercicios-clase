@@ -65,7 +65,7 @@ public class Conexion {
 
                 for (int i = 0; i < numCampos; i++) {
                     fila += resultado.getString(i + 1);
-                    if (i != i - 1) {
+                    if (i != i - 1 && numCampos != 1) {
                         fila += ";";
                     }
                 }

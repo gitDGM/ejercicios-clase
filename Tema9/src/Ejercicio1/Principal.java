@@ -20,6 +20,7 @@ public class Principal {
             System.out.println("##########################");
             System.out.println("1.- Insertar fabricante");
             System.out.println("2.- Insertar producto");
+            System.out.println("3.- Eliminar producto");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -29,6 +30,9 @@ public class Principal {
                     break;
                 case 2:
                     insertarProducto();
+                    break;
+                case 3:
+                    db.borrarProducto(introducirNumero("Introduce el ID del producto: "));
                     break;
                 case 0:
                     break;

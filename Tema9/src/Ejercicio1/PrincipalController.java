@@ -42,10 +42,21 @@ public class PrincipalController {
 
     }
 
-    public boolean existeProducto(String nombreProducto) {
-        String query = "SELECT count(codigo) from producto where nombre='" + nombreProducto + "';";
+    public void borrarProducto(int idProducto) {
+        String query = "DELETE FROM producto WHERE codigo=" + idProducto + ";";
+
+        if (existeProducto(idProducto)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: El producto no existe.");
+        }
+    }
+
+    public boolean existeProducto(int idProducto) {
+        String query = "SELECT count(codigo) from producto where codigo=" + idProducto + ";";
         boolean existe;
 
+        System.err.println(db.ejecutarObtener(query).get(0));
         existe = !db.ejecutarObtener(query).get(0).equals("0");
 
         return existe;
