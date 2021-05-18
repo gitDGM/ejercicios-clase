@@ -5,10 +5,18 @@
  */
 package Ejercicio2;
 
+import Conexion.Conexion;
+
 /**
  *
  * @author alumno
  */
 public class PrincipalController {
 
+    private final Conexion db;
+
+    public PrincipalController(String bbdd) {
+        db = new Conexion(bbdd);
+        db.conectar();
+    }
 }
