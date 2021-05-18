@@ -70,6 +70,37 @@ LOCK TABLES `empleados` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ventas`
+--
+
+DROP TABLE IF EXISTS `ventas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ventas` (
+  `idVenta` int(11) NOT NULL,
+  `idComprador` int(11) NOT NULL,
+  `idEmpleado` int(11) NOT NULL,
+  `idVivienda` int(11) NOT NULL,
+  PRIMARY KEY (`idVenta`),
+  KEY `idComprador` (`idComprador`),
+  KEY `idEmpleado` (`idEmpleado`),
+  KEY `idVivienda` (`idVivienda`),
+  CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idComprador`) REFERENCES `clientes` (`idCliente`),
+  CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`idEmpleado`) REFERENCES `empleados` (`idEmpleado`),
+  CONSTRAINT `ventas_ibfk_3` FOREIGN KEY (`idVivienda`) REFERENCES `viviendas` (`idVivienda`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ventas`
+--
+
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `viviendas`
 --
 
@@ -77,17 +108,17 @@ DROP TABLE IF EXISTS `viviendas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `viviendas` (
-  `idViviendas` int(11) NOT NULL AUTO_INCREMENT,
-  `direccion` varchar(255) DEFAULT NULL,
+  `idVivienda` int(11) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
   `localidad` varchar(100) NOT NULL,
   `pais` varchar(100) NOT NULL,
   `precio` double(10,2) NOT NULL,
   `duplex` tinyint(1) NOT NULL,
   `numPlantas` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL,
-  PRIMARY KEY (`idViviendas`),
-  KEY `idCliente` (`idCliente`),
-  CONSTRAINT `viviendas_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`)
+  `idPropietario` int(11) NOT NULL,
+  PRIMARY KEY (`idVivienda`),
+  KEY `idPropietario` (`idPropietario`),
+  CONSTRAINT `viviendas_ibfk_1` FOREIGN KEY (`idPropietario`) REFERENCES `clientes` (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -109,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-13 15:50:18
+-- Dump completed on 2021-05-18 19:42:39
