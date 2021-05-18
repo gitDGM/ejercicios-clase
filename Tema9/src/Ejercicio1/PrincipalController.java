@@ -6,6 +6,10 @@
 package Ejercicio1;
 
 import Conexion.Conexion;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -89,7 +93,14 @@ public class PrincipalController {
 
         if (contieneDatos(queryVerificar)) {
             ArrayList<String> resultado = db.ejecutarObtener(query);
-            mostrarTablaProducto(resultado);
+
+            File fichero = new File("src/Ejercicio1/productos.txt");
+            if (fichero.exists()) {
+                fichero.delete();
+            }
+            for (int i = 0; i < resultado.size(); i++) {
+                escribirProducto(resultado.get(i), fichero);
+            }
         }
     }
 
@@ -123,7 +134,36 @@ public class PrincipalController {
             for (String campo : dataFila) {
                 System.out.print(campo + "\t");
             }
-            System.out.println("\n##########################\n");
+            System.out.println();
+        }
+        System.out.println("\n##########################\n");
+    }
+
+    private void escribirProducto(String fila, File fichero) {
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+
+        try {
+            filewriter = new FileWriter(fichero, true);
+            escritor = new PrintWriter(filewriter);
+            String[] camposFila = fila.split(";");
+            for (String campo : camposFila) {
+                escritor.print(campo + "\t");
+            }
+            escritor.println();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) {
+                    filewriter.close();
+                }
+                if (escritor != null) {
+                    escritor.close();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
     }
 }
