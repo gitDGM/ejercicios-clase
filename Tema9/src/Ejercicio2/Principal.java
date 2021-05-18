@@ -30,6 +30,8 @@ public class Principal {
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
+                case 1:
+                    break;
                 case 0:
                     break;
                 default:
