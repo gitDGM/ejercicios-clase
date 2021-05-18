@@ -26,7 +26,7 @@ CREATE TABLE `fabricante` (
   `codigo` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `fabricante` (
 
 LOCK TABLES `fabricante` WRITE;
 /*!40000 ALTER TABLE `fabricante` DISABLE KEYS */;
-INSERT INTO `fabricante` VALUES (1,'diego');
+INSERT INTO `fabricante` VALUES (1,'diego'),(2,'Pablo');
 /*!40000 ALTER TABLE `fabricante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +54,7 @@ CREATE TABLE `producto` (
   PRIMARY KEY (`codigo`),
   KEY `codigo_fabricante` (`codigo_fabricante`),
   CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`codigo_fabricante`) REFERENCES `fabricante` (`codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,6 +63,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
+INSERT INTO `producto` VALUES (5,'Manzana',60.00,1),(6,'Silla',500.80,1);
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-13 17:15:55
+-- Dump completed on 2021-05-18 19:30:00
