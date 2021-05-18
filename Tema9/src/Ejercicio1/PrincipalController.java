@@ -52,14 +52,58 @@ public class PrincipalController {
         }
     }
 
+    public void modificarProducto(int idProducto, double nuevoPrecio) {
+        String query = "UPDATE producto set precio=" + nuevoPrecio + " where codigo=" + idProducto + ";";
+
+        if (existeProducto(idProducto)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: El producto no existe.");
+        }
+    }
+
+    public void modificarProducto(int idProducto, boolean existe, double nuevoPrecio) {
+        String query = "UPDATE producto set precio=" + nuevoPrecio + " where codigo=" + idProducto + ";";
+
+        if (existe) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: El producto no existe.");
+        }
+    }
+
+    public void mostrarProductosFrabricante(int idFabricante) {
+        String query = "SELECT * FROM producto where codigo_fabricante=" + idFabricante;
+
+        if (existeFabricante(idFabricante)) {
+            ArrayList<String> resultado = db.ejecutarObtener(query);
+            mostrarTablaProducto(resultado);
+        } else {
+            System.err.println("ERROR: El fabricante no existe.");
+        }
+    }
+
+    public void generarFicheroProductos(double precioMin) {
+        String query = "SELECT * FROM producto where precio >= " + precioMin + ";";
+        String queryVerificar = "SELECT COUNT(codigo) FROM producto where precio >= " + precioMin + ";";
+
+        if (contieneDatos(queryVerificar)) {
+            ArrayList<String> resultado = db.ejecutarObtener(query);
+            mostrarTablaProducto(resultado);
+        }
+    }
+
     public boolean existeProducto(int idProducto) {
         String query = "SELECT count(codigo) from producto where codigo=" + idProducto + ";";
         boolean existe;
 
-        System.err.println(db.ejecutarObtener(query).get(0));
         existe = !db.ejecutarObtener(query).get(0).equals("0");
 
         return existe;
+    }
+
+    public boolean contieneDatos(String query) {
+        return !db.ejecutarObtener(query).get(0).equals("0");
     }
 
     public boolean existeFabricante(int idFabricante) {
@@ -69,5 +113,17 @@ public class PrincipalController {
         existe = !db.ejecutarObtener(query).get(0).equalsIgnoreCase("0");
 
         return existe;
+    }
+
+    private void mostrarTablaProducto(ArrayList<String> data) {
+
+        for (int i = 0; i < data.size(); i++) {
+            System.out.println("\n####### PRODUCTOS ########");
+            String[] dataFila = data.get(i).split(";");
+            for (String campo : dataFila) {
+                System.out.print(campo + "\t");
+            }
+            System.out.println("\n##########################\n");
+        }
     }
 }

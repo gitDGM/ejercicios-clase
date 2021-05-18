@@ -69,7 +69,9 @@ public class Conexion {
                         fila += ";";
                     }
                 }
-                fila += "\n";
+                if (resultado.next()) {
+                    fila += "\n";
+                }
 
                 data.add(fila);
             }

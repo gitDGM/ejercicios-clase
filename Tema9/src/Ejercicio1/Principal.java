@@ -21,6 +21,9 @@ public class Principal {
             System.out.println("1.- Insertar fabricante");
             System.out.println("2.- Insertar producto");
             System.out.println("3.- Eliminar producto");
+            System.out.println("4.- Modificar producto");
+            System.out.println("5.- Mostrar producto de un fabricante");
+            System.out.println("6.- Generar fichero de texto (Productos >= 500€)");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -34,6 +37,15 @@ public class Principal {
                 case 3:
                     db.borrarProducto(introducirNumero("Introduce el ID del producto: "));
                     break;
+                case 4:
+                    modificarProducto();
+                    break;
+                case 5:
+                    db.mostrarProductosFrabricante(introducirNumero("Introduce el ID de un fabricante para mostrar sus productos:"));
+                    break;
+                case 6:
+                    db.generarFicheroProductos(500);
+                    break;
                 case 0:
                     break;
                 default:
@@ -44,10 +56,20 @@ public class Principal {
 
     static void insertarProducto() {
         String nombreProducto = introducirCadena("Introduce el nombre del producto: ");
-        double precio = introducirNumeroDouble("Introduce el precio: ");
+        double precio = introducirNumeroDouble("Introduce el precio (ej. 0,5): ");
         int idFrabricante = introducirNumero("Introduce el ID del fabricante: ");
 
         db.insertarProducto(nombreProducto, precio, idFrabricante);
+    }
+
+    static void modificarProducto() {
+        int idProducto = introducirNumero("Introduce el ID del producto que quieres modificar: ");
+        boolean existe = db.existeProducto(idProducto);
+        if (existe) {
+            db.modificarProducto(idProducto, existe, introducirNumeroDouble("Introduce el nuevo precio:"));
+        } else {
+            System.err.println("ERROR: El producto no existe.");
+        }
     }
 
     static String introducirCadena(String msg) {
