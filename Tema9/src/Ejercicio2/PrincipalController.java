@@ -6,8 +6,6 @@
 package Ejercicio2;
 
 import Conexion.Conexion;
-import java.time.LocalDate;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -31,15 +29,41 @@ public class PrincipalController {
     public void insertarContribuyente(String dni, String nombre, String poblacion, int idFuncionario, double importe, boolean pagar) {
         String query = "INSERT INTO contribuyentes values (null, '" + dni + "', '" + nombre + "', '" + poblacion + "', " + idFuncionario + ", " + importe + ", " + pagar + ", NOW());";
 
-        db.ejecutarModificar(query);
+        if (existeFuncionario(idFuncionario) && verificarDNI(dni)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: No ha sido posible añadir el contribuyente.");
+        }
+    }
+
+    public boolean existeFuncionario(int idFuncionario) {
+        String query = "SELECT count(idFuncionario) from funcionarios where idFuncionario=" + idFuncionario + ";";
+        boolean existe;
+
+        existe = !db.ejecutarObtener(query).get(0).equals("0");
+
+        return existe;
+    }
+
+    public boolean existeContribuyente(String dni) {
+        String query = "SELECT count(dni) from contribuyentes where dni='" + dni + "';";
+
+        return !db.ejecutarObtener(query).get(0).equals("0");
+    }
+
+    public void eliminarContribuyente(String dni) {
+        String query = "DELETE FROM contribuyentes where dni='" + dni + "';";
+
+        if (existeContribuyente(dni)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: No existe ningún contribuyente con ese DNI.");
+        }
     }
 
     private boolean verificarDNI(String dni) {
+        String dniRegex = "\\d{8}[A-HJ-NP-TV-Z]";
 
-        Pattern patron = Pattern.compile("");
-        Matcher matcher = patron.matcher(dni);
-
-        return matcher.matches();
+        return Pattern.matches(dniRegex, dni);
     }
-
 }

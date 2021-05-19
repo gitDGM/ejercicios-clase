@@ -33,6 +33,12 @@ public class Principal {
                 case 1:
                     insertarFuncionario();
                     break;
+                case 2:
+                    insertarContribuyente();
+                    break;
+                case 3:
+                    eliminarContribuyente();
+                    break;
                 case 0:
                     break;
                 default:
@@ -47,6 +53,21 @@ public class Principal {
                 introducirCadena("Introduce el nombre de la provincia: "),
                 introducirNumero("Introduce su edad: ")
         );
+    }
+
+    static void insertarContribuyente() {
+        db.insertarContribuyente(
+                introducirCadena("Introduce el DNI: "),
+                introducirCadena("Introduce el nombre: "),
+                introducirCadena("Introduce el nombre de la población: "),
+                introducirNumero("Introduce el ID del funcionario: "),
+                introducirNumeroDouble("Introduce la cantiad a pagar:"),
+                elegirPagar("Introduce si sale a pagar o no (S/N): ")
+        );
+    }
+
+    static void eliminarContribuyente() {
+        db.eliminarContribuyente(introducirCadena("Introduce el DNI:"));
     }
 
     static String introducirCadena(String msg) {
@@ -92,5 +113,33 @@ public class Principal {
         } while (noValido);
 
         return numero;
+    }
+
+    static boolean elegirPagar(String msg) {
+        Scanner sc = new Scanner(System.in);
+        boolean opcion = true;
+        boolean noValido;
+
+        do {
+            System.out.println(msg);
+            char letra = sc.next().charAt(0);
+
+            switch (Character.toUpperCase(letra)) {
+                case 'N':
+                    opcion = false;
+                    noValido = false;
+                    break;
+                case 'S':
+                    opcion = true;
+                    noValido = false;
+                    break;
+                default:
+                    System.err.println("Opción no valida.");
+                    noValido = true;
+                    break;
+            }
+        } while (noValido);
+
+        return opcion;
     }
 }

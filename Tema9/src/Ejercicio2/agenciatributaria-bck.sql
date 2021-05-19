@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `contribuyentes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contribuyentes` (
   `idContribuyente` int(11) NOT NULL AUTO_INCREMENT,
-  `dni` varchar(10) NOT NULL,
+  `dni` varchar(9) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `poblacion` varchar(100) NOT NULL,
   `idFuncionario` int(11) NOT NULL,

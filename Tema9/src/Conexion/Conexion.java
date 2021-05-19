@@ -47,7 +47,11 @@ public class Conexion {
             resultado.execute();
             System.out.println("\nATENCIÓN: Se ejecutó correctamente.\n");
         } catch (SQLException ex) {
-            System.err.println("ERROR: " + ex.getMessage());
+            if (ex.getMessage().contains("Duplicate entry")) {
+                System.err.println("ERROR: El registro está duplicado.");
+            } else {
+                System.err.println("ERROR: " + ex.getMessage());
+            }
         }
     }
 
