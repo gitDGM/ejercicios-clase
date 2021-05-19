@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `contribuyentes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contribuyentes` (
   `idContribuyente` int(11) NOT NULL AUTO_INCREMENT,
-  `dni` varchar(9) NOT NULL,
+  `dni` varchar(10) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `poblacion` varchar(100) NOT NULL,
   `idFuncionario` int(11) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `contribuyentes` (
   UNIQUE KEY `dni` (`dni`),
   KEY `idFuncionario` (`idFuncionario`),
   CONSTRAINT `contribuyentes_ibfk_1` FOREIGN KEY (`idFuncionario`) REFERENCES `funcionarios` (`idFuncionario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `contribuyentes` (
 
 LOCK TABLES `contribuyentes` WRITE;
 /*!40000 ALTER TABLE `contribuyentes` DISABLE KEYS */;
-INSERT INTO `contribuyentes` VALUES (1,'45139962R','Diego','Plasencia',1,3000.00,1,'2021-05-19');
+INSERT INTO `contribuyentes` VALUES (1,'45139962R','Diego','Plasencia',1,600.00,1,'2021-05-19');
 /*!40000 ALTER TABLE `contribuyentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `funcionarios` (
   `provincia` varchar(100) NOT NULL,
   `edad` int(11) NOT NULL,
   PRIMARY KEY (`idFuncionario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `funcionarios` (
 
 LOCK TABLES `funcionarios` WRITE;
 /*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
-INSERT INTO `funcionarios` VALUES (1,'Diego','Cáceres',22);
+INSERT INTO `funcionarios` VALUES (1,'Diego','Cáceres',22),(2,'dgad','adgadg',2);
 /*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -83,5 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-19 16:16:22
-
+-- Dump completed on 2021-05-19 17:10:00
