@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Principal {
 
-    private static final Ejercicio1.PrincipalController db = new Ejercicio1.PrincipalController("tienda");
+    private static final PrincipalController db = new PrincipalController("agenciatributaria");
     public static void main(String[] args) {
         int opcion;
         do {
@@ -31,6 +31,7 @@ public class Principal {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
+                    insertarFuncionario();
                     break;
                 case 0:
                     break;
@@ -38,6 +39,14 @@ public class Principal {
                     break;
             }
         } while (opcion != 0);
+    }
+
+    static void insertarFuncionario() {
+        db.insertarFuncionario(
+                introducirCadena("Introduce el nombre: "),
+                introducirCadena("Introduce el nombre de la provincia: "),
+                introducirNumero("Introduce su edad: ")
+        );
     }
 
     static String introducirCadena(String msg) {
