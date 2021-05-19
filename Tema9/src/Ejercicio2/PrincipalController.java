@@ -28,8 +28,8 @@ public class PrincipalController {
         db.ejecutarModificar(query);
     }
 
-    public void insertarContribuyente(String dni, String nombre, String poblacion, int idFuncionario, double importe, boolean pagar, LocalDate fechaRealizacion) {
-        String query = "";
+    public void insertarContribuyente(String dni, String nombre, String poblacion, int idFuncionario, double importe, boolean pagar) {
+        String query = "INSERT INTO contribuyentes values (null, '" + dni + "', '" + nombre + "', '" + poblacion + "', " + idFuncionario + ", " + importe + ", " + pagar + ", NOW());";
 
         db.ejecutarModificar(query);
     }
