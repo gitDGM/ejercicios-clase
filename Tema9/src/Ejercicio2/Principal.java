@@ -39,6 +39,9 @@ public class Principal {
                 case 3:
                     eliminarContribuyente();
                     break;
+                case 4:
+                    modificarImporteContribuyente();
+                    break;
                 case 0:
                     break;
                 default:
@@ -68,6 +71,13 @@ public class Principal {
 
     static void eliminarContribuyente() {
         db.eliminarContribuyente(introducirCadena("Introduce el DNI:"));
+    }
+
+    static void modificarImporteContribuyente() {
+        db.modificarImporteContribuyente(
+                introducirCadena("Introduce el DNI: "),
+                introducirNumeroDouble("Introduce el nuevo importe: ")
+        );
     }
 
     static String introducirCadena(String msg) {

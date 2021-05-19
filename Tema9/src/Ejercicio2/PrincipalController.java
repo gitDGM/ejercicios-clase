@@ -36,6 +36,28 @@ public class PrincipalController {
         }
     }
 
+    public void eliminarContribuyente(String dni) {
+        String query = "DELETE FROM contribuyentes where dni='" + dni + "';";
+
+        if (existeContribuyente(dni)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: No existe ningún contribuyente con ese DNI.");
+        }
+    }
+
+    public void modificarImporteContribuyente(String dni, double importe) {
+        String query = "UPDATE contribuyentes SET importe=" + importe + " WHERE dni='" + dni + "';";
+
+        if (existeContribuyente(dni)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: No existe ningún contribuyente con ese DNI.");
+        }
+
+    }
+
+    // UPDATE contribuyentes SET importe=50 WHERE dni='45139962R';
     public boolean existeFuncionario(int idFuncionario) {
         String query = "SELECT count(idFuncionario) from funcionarios where idFuncionario=" + idFuncionario + ";";
         boolean existe;
@@ -49,16 +71,6 @@ public class PrincipalController {
         String query = "SELECT count(dni) from contribuyentes where dni='" + dni + "';";
 
         return !db.ejecutarObtener(query).get(0).equals("0");
-    }
-
-    public void eliminarContribuyente(String dni) {
-        String query = "DELETE FROM contribuyentes where dni='" + dni + "';";
-
-        if (existeContribuyente(dni)) {
-            db.ejecutarModificar(query);
-        } else {
-            System.err.println("ERROR: No existe ningún contribuyente con ese DNI.");
-        }
     }
 
     private boolean verificarDNI(String dni) {
