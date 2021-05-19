@@ -6,6 +6,7 @@
 package Ejercicio2;
 
 import Conexion.Conexion;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,13 +25,18 @@ public class PrincipalController {
 
     public void insertarFuncionario(String nombre, String provincia, int edad) {
         String query = "INSERT INTO funcionarios VALUES (null, '" + nombre + "', '" + provincia + "', " + edad + ");";
-        System.out.println(query);
+        db.ejecutarModificar(query);
+    }
+
+    public void insertarContribuyente(String dni, String nombre, String poblacion, int idFuncionario, double importe, boolean pagar, LocalDate fechaRealizacion) {
+        String query = "";
+
         db.ejecutarModificar(query);
     }
 
     private boolean verificarDNI(String dni) {
 
-        Pattern patron = Pattern.compile("[0-9]{7,8}[A-Z a-z]");
+        Pattern patron = Pattern.compile("");
         Matcher matcher = patron.matcher(dni);
 
         return matcher.matches();
