@@ -19,4 +19,9 @@ public class PrincipalController {
         db = new Conexion(bbdd);
         db.conectar();
     }
+
+    public void insertarFuncionario() {
+
+    }
+
 }
