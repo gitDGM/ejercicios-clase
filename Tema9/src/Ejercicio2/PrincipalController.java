@@ -6,6 +6,7 @@
 package Ejercicio2;
 
 import Conexion.Conexion;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 /**
@@ -57,7 +58,17 @@ public class PrincipalController {
 
     }
 
-    // UPDATE contribuyentes SET importe=50 WHERE dni='45139962R';
+    public void mostrarAtendidos() {
+        String query = "SELECT funcionarios.nombre, contribuyentes.nombre from contribuyentes inner join funcionarios ON contribuyentes.idfuncionario = funcionarios.idFuncionario;";
+        String verifyQuery = "SELECT count(funcionarios.nombre) from contribuyentes inner join funcionarios ON contribuyentes.idfuncionario = funcionarios.idFuncionario;";
+
+        if (contieneDatos(verifyQuery)) {
+            ArrayList<String> resultado = db.ejecutarObtener(query);
+            mostrarResultadoAtendidos(resultado);
+        }
+
+    }
+
     public boolean existeFuncionario(int idFuncionario) {
         String query = "SELECT count(idFuncionario) from funcionarios where idFuncionario=" + idFuncionario + ";";
         boolean existe;
@@ -73,9 +84,27 @@ public class PrincipalController {
         return !db.ejecutarObtener(query).get(0).equals("0");
     }
 
+    private void mostrarResultadoAtendidos(ArrayList<String> data) {
+
+        for (int i = 0; i < data.size(); i++) {
+            System.out.println("\n####### CONTRIBUYENTES ATENDIDOS ########");
+            String[] dataFila = data.get(i).split(";");
+            for (String campo : dataFila) {
+                System.out.print(campo + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println("#########################################\n");
+    }
+
     private boolean verificarDNI(String dni) {
         String dniRegex = "\\d{8}[A-HJ-NP-TV-Z]";
 
         return Pattern.matches(dniRegex, dni);
     }
+
+    private boolean contieneDatos(String query) {
+        return !db.ejecutarObtener(query).get(0).equals("0");
+    }
+
 }

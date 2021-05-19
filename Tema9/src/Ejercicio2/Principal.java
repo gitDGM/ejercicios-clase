@@ -42,6 +42,11 @@ public class Principal {
                 case 4:
                     modificarImporteContribuyente();
                     break;
+                case 5:
+                    db.mostrarAtendidos();
+                    break;
+                case 6:
+                    break;
                 case 0:
                     break;
                 default:
