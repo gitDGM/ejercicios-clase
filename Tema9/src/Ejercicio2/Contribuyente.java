@@ -5,25 +5,30 @@
  */
 package Ejercicio2;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author alumno
  */
-public class Contribuyente {
+public class Contribuyente implements Serializable {
+
+    private static final long serialVersionUID = 11111L;
 
     private final int idContribuyente;
     private final String dni;
+    private final String nombre;
     private final String poblacion;
     private final int idFuncionario;
     private final double importe;
     private final boolean pagar;
     private final LocalDate fechaRealizacion;
 
-    public Contribuyente(int idContribuyente, String dni, String poblacion, int idFuncionario, double importe, boolean pagar, LocalDate fechaRealizacion) {
+    public Contribuyente(int idContribuyente, String dni, String nombre, String poblacion, int idFuncionario, double importe, boolean pagar, LocalDate fechaRealizacion) {
         this.idContribuyente = idContribuyente;
         this.dni = dni;
+        this.nombre = nombre;
         this.poblacion = poblacion;
         this.idFuncionario = idFuncionario;
         this.importe = importe;
@@ -37,6 +42,10 @@ public class Contribuyente {
 
     public String getDni() {
         return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public String getPoblacion() {

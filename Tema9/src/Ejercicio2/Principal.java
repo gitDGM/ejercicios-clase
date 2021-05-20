@@ -101,7 +101,7 @@ public class Principal {
     }
 
     static void generarFicheroContribuyentes() {
-
+        db.generarFicheroContribuyentes(introducirCadena("Introduce el nombre de la población:"));
     }
 
     static String introducirCadena(String msg) {

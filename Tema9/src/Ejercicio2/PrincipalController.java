@@ -6,6 +6,12 @@
 package Ejercicio2;
 
 import Conexion.Conexion;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -76,7 +82,10 @@ public class PrincipalController {
 
         if (contieneDatos(verifyQuery)) {
             ArrayList<String> resultado = db.ejecutarObtener(query);
+            escribirFichero(resultado);
             mostrarResultadoAtendidos(resultado);
+        } else {
+            System.err.println("ERROR: No existen registros.");
         }
 
     }
@@ -88,6 +97,8 @@ public class PrincipalController {
         if (contieneDatos(verifyQuery)) {
             ArrayList<String> resultado = db.ejecutarObtener(query);
             mostrarResultadoAtendidos(resultado);
+        } else {
+            System.err.println("ERROR: No existen registros.");
         }
 
     }
@@ -128,6 +139,45 @@ public class PrincipalController {
 
     private boolean contieneDatos(String query) {
         return !db.ejecutarObtener(query).get(0).equals("0");
+    }
+
+    private boolean comprobarPagar(String pagar) {
+        return pagar.equals("1");
+    }
+
+    private void escribirFichero(ArrayList<String> data) {
+        File fichero = new File("src/Ejercicio2/contribuyentes.bin");
+        ObjectOutputStream flujoSalida = null;
+
+        try {
+            flujoSalida = new ObjectOutputStream(new FileOutputStream(fichero));
+            for (int i = 0; i < data.size(); i++) {
+                String[] campos = data.get(i).split(";");
+                Contribuyente contribuyente = new Contribuyente(
+                        Integer.parseInt(campos[0]), // ID
+                        campos[1], // DNI
+                        campos[2], // NOMBRE
+                        campos[3], // POBLACION
+                        Integer.parseInt(campos[4]),
+                        Double.parseDouble(campos[5]),
+                        comprobarPagar(campos[6]),
+                        LocalDate.parse(campos[7])
+                );
+                flujoSalida.writeObject(contribuyente);
+            }
+        } catch (FileNotFoundException ex) {
+            System.err.println("Error!!! El fichero no existe.");
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        } finally {
+            try {
+                if (flujoSalida != null) {
+                    flujoSalida.close();
+                }
+            } catch (IOException ex) {
+                System.err.println("Error al cerrar el fichero.");
+            }
+        }
     }
 
 }
