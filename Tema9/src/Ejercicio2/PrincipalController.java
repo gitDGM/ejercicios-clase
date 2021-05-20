@@ -7,6 +7,7 @@ package Ejercicio2;
 
 import Conexion.Conexion;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 /**
@@ -55,7 +56,13 @@ public class PrincipalController {
         } else {
             System.err.println("ERROR: No existe ningún contribuyente con ese DNI.");
         }
+    }
 
+    public HashMap<Integer, String> poblacionesFuncionarios() {
+        HashMap<Integer, String> poblaciones = new HashMap();
+        String query = "";
+
+        return poblaciones;
     }
 
     public void mostrarAtendidos() {
