@@ -61,7 +61,7 @@ CREATE TABLE `funcionarios` (
   `provincia` varchar(100) NOT NULL,
   `edad` int(11) NOT NULL,
   PRIMARY KEY (`idFuncionario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `funcionarios` (
 
 LOCK TABLES `funcionarios` WRITE;
 /*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
-INSERT INTO `funcionarios` VALUES (1,'Diego','Cáceres',22),(2,'dgad','adgadg',2);
+INSERT INTO `funcionarios` VALUES (1,'Diego','Cáceres',22),(2,'dgad','adgadg',2),(3,'Pablo','Cáceres',25),(4,'Alejandro','Salamanca',22);
 /*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -83,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-19 17:10:00
+-- Dump completed on 2021-05-20 16:39:45
