@@ -5,6 +5,7 @@
  */
 package Ejercicio2;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -46,6 +47,10 @@ public class Principal {
                     db.mostrarAtendidos();
                     break;
                 case 6:
+                    mostrarProvinciasFuncionarios();
+                    break;
+                case 7:
+                    generarFicheroContribuyentes();
                     break;
                 case 0:
                     break;
@@ -83,6 +88,20 @@ public class Principal {
                 introducirCadena("Introduce el DNI: "),
                 introducirNumeroDouble("Introduce el nuevo importe: ")
         );
+    }
+
+    static void mostrarProvinciasFuncionarios() {
+        HashMap<Integer, String> provincias = db.poblacionesFuncionarios();
+        System.out.println("###### PROVINCIAS ######");
+        for (int i = 0; i < provincias.size(); i++){
+            System.out.println((i + 1) + ".- " + provincias.get(i));
+        }
+        System.out.println("########################");
+
+    }
+
+    static void generarFicheroContribuyentes() {
+
     }
 
     static String introducirCadena(String msg) {

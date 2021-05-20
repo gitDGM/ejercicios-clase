@@ -129,14 +129,12 @@ public class PrincipalController {
     private void mostrarTablaProducto(ArrayList<String> data) {
 
         for (int i = 0; i < data.size(); i++) {
-            System.out.println("\n####### PRODUCTOS ########");
             String[] dataFila = data.get(i).split(";");
             for (String campo : dataFila) {
                 System.out.print(campo + "\t");
             }
             System.out.println();
         }
-        System.out.println("\n##########################\n");
     }
 
     private void escribirProducto(String fila, File fichero) {

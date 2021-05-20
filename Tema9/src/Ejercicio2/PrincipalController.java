@@ -60,9 +60,25 @@ public class PrincipalController {
 
     public HashMap<Integer, String> poblacionesFuncionarios() {
         HashMap<Integer, String> poblaciones = new HashMap();
-        String query = "";
+        String query = "SELECT DISTINCT provincia FROM funcionarios;";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+        for (int i = 0; i < data.size(); i++) {
+            poblaciones.put(i, data.get(i));
+        }
 
         return poblaciones;
+    }
+
+    public void generarFicheroContribuyentes(String provincia) {
+        String query = "SELECT * FROM contribuyentes WHERE poblacion = '" + provincia + "' AND pagar = TRUE AND fecha_realizacion < '2022-01-01';";
+        String verifyQuery = "SELECT COUNT(idFuncionario) FROM contribuyentes WHERE poblacion = '" + provincia + "' AND pagar = TRUE AND fecha_realizacion < '2022-01-01';";
+
+        if (contieneDatos(verifyQuery)) {
+            ArrayList<String> resultado = db.ejecutarObtener(query);
+            mostrarResultadoAtendidos(resultado);
+        }
+
     }
 
     public void mostrarAtendidos() {
