@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `mascotas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mascotas` (
-  `idMascota` int(11) NOT NULL,
+  `idMascota` int(11) NOT NULL AUTO_INCREMENT,
   `edad` int(3) NOT NULL,
   `vivo` tinyint(1) NOT NULL,
   `fecha_nacimiento` date NOT NULL,

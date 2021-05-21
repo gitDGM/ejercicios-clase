@@ -20,4 +20,8 @@ public class PrincipalController {
         db.conectar();
     }
 
+    public void insertarPerro() {
+        String query = "INSERT INTO mascostas VALUES (NULL, " + +");";
+    }
+
 }
