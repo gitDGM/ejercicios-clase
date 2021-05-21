@@ -46,7 +46,23 @@ public class PrincipalController {
     }
 
     public void eliminarMascota(int idMascota) {
+        String query = "DELETE FROM mascotas WHERE idMascota=" + idMascota + ";";
 
+        if (existeMascota(idMascota)) {
+            db.ejecutarModificar(query);
+        } else {
+            System.err.println("ERROR: No existe ninguna mascota con ese ID.");
+        }
+    }
+
+    public boolean existeMascota(int idMascota) {
+        String query = "SELECT count(idMascota) from mascotas WHERE idMascota=" + idMascota + ";";
+
+        return !db.ejecutarObtener(query).get(0).equals("0");
+    }
+
+    public void listarDatosAnimales() {
+        String query = "";
     }
 
 }

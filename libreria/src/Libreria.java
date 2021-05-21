@@ -13,9 +13,7 @@ import java.util.Scanner;
  * @author alumno
  */
 public class Libreria {
-    
-    private static Scanner sc = new Scanner(System.in);
-    
+
     public static void main(String[] args) {
         int opcion;
         do {
@@ -29,14 +27,14 @@ public class Libreria {
                 default:
                     break;
             }
-        } while (opcion != 0);       
+        } while (opcion != 0);
     }
-    
-    
-    
+
+
+
     static int introducirNumero(String msg) {
         Scanner sc = new Scanner(System.in);
-        int numero = 0;        
+        int numero = 0;
         boolean noValido;
         do {
             System.out.println(msg);
@@ -52,16 +50,16 @@ public class Libreria {
 
         return numero;
     }
-    
-    static boolean elegirOpcionContinuar(String msg) {        
+
+    static boolean elegirOpcionContinuar(String msg) {
         Scanner sc = new Scanner(System.in);
-        boolean opcion = true; 
+        boolean opcion = true;
         boolean noValido;
-        
+
         do {
             System.out.println(msg);
             char letra = sc.next().charAt(0);
-            
+
             switch (Character.toUpperCase(letra)) {
                 case 'N':
                     opcion = false;
@@ -76,8 +74,8 @@ public class Libreria {
                     noValido = true;
                     break;
             }
-        } while (noValido);     
-        
+        } while (noValido);
+
         return opcion;
     }
 }
