@@ -115,6 +115,8 @@ public class Principal {
         boolean vuela = elegirEstado("Puede volar? (S/N):");
         String raza = introducirCadena("Introduce el origen del loro:");
         boolean habla = elegirEstado("Puede hablar? (S/N):");
+
+        db.insertarLoro(nombre, edad, estado, fechaNacimiento, pico, vuela, raza, habla);
     }
 
     static void insertarCanario() {
@@ -130,6 +132,8 @@ public class Principal {
         boolean vuela = elegirEstado("Puede volar? (S/N):");
         String color = introducirCadena("Introduce el color del canario:");
         boolean canta = elegirEstado("Puede cantar? (S/N):");
+
+        db.insertarCanario(nombre, edad, estado, fechaNacimiento, pico, vuela, color, canta);
     }
 
     static String introducirCadena(String msg) {
