@@ -96,8 +96,10 @@ public class Principal {
                 introducirNumero("Introduce el mes (mm): "),
                 introducirNumero("Introduce el día (dd):")
         );
-        String raza = introducirCadena("Introduce el colo del gato:");
+        String color = introducirCadena("Introduce el color del gato:");
         boolean peloLargo = elegirEstado("Tiene pelo largo? (S/N):");
+
+        db.insertarGato(nombre, edad, estado, fechaNacimiento, color, peloLargo);
     }
 
     static void insertarLoro() {

@@ -29,4 +29,28 @@ public class PrincipalController {
         db.ejecutarModificar(query);
     }
 
+    public void insertarGato(String nombre, int edad, boolean estado, LocalDate fechaNacimiento, String color, boolean peloLargo) {
+        String query = "INSERT INTO mascotas VALUES (NULL, '" + nombre + "', " + edad + ", " + estado + ", '" + fechaNacimiento.toString() + "', null, null , '" + color + "', " + peloLargo + ", null, null, null, null, null, 2);";
+
+        System.err.println("QUERY: " + query);
+
+        db.ejecutarModificar(query);
+    }
+
+    public void insertarLoro(String nombre, int edad, boolean estado, LocalDate fechaNacimiento, boolean pico, boolean vuela, String origen, boolean habla) {
+        String query = "INSERT INTO mascotas VALUES (NULL, '" + nombre + "', " + edad + ", " + estado + ", '" + fechaNacimiento.toString() + "', null, null , null, null, " + pico + ", " + vuela + ", '" + origen + "', " + habla + ", null, 3);";
+
+        System.err.println("QUERY: " + query);
+
+        db.ejecutarModificar(query);
+    }
+
+    public void insertarCanario(String nombre, int edad, boolean estado, LocalDate fechaNacimiento, boolean pico, boolean vuela, String color, boolean canta) {
+        String query = "INSERT INTO mascotas VALUES (NULL, '" + nombre + "', " + edad + ", " + estado + ", '" + fechaNacimiento.toString() + "', null, null , null, null, " + pico + ", " + vuela + ", '" + origen + "', null, " + canta + ", 3);";
+
+        System.err.println("QUERY: " + query);
+
+        db.ejecutarModificar(query);
+    }
+
 }
