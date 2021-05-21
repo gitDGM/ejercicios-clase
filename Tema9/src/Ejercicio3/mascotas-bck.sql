@@ -39,7 +39,7 @@ CREATE TABLE `mascotas` (
   `canta` tinyint(1) DEFAULT NULL,
   `tipo` int(11) NOT NULL,
   PRIMARY KEY (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `mascotas` (
 
 LOCK TABLES `mascotas` WRITE;
 /*!40000 ALTER TABLE `mascotas` DISABLE KEYS */;
-INSERT INTO `mascotas` VALUES (1,'Tobi',1,1,'2020-05-08','Mastín',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
+INSERT INTO `mascotas` VALUES (3,'ADGADG',1,1,'1234-12-12','adgadadg',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1),(4,'adgadga',2,1,'2134-02-12',NULL,NULL,'adgadga',1,NULL,NULL,NULL,NULL,NULL,2);
 /*!40000 ALTER TABLE `mascotas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,8 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-21 18:01:31
-
-
-
-
+-- Dump completed on 2021-05-21 19:17:27

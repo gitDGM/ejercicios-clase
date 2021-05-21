@@ -7,6 +7,7 @@ package Ejercicio3;
 
 import Conexion.Conexion;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
@@ -62,7 +63,54 @@ public class PrincipalController {
     }
 
     public void listarDatosAnimales() {
-        String query = "";
+
+        listarPerros();
+        listarGatos();
+
+    }
+
+    public void listarPerros() {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, raza, pulgas FROM mascotas WHERE tipo=1;";
+        String verificarQuery = "SELECT count(idMascota) FROM mascotas WHERE tipo=1;";
+
+        if (contieneDatos(verificarQuery)) {
+            ArrayList<String> data = db.ejecutarObtener(query);
+
+            System.out.println("##### PERROS #####");
+            for (int i = 0; i < data.size(); i++) {
+                String[] dataFila = data.get(i).split(";");
+
+                for (String campo : dataFila) {
+                    System.out.print(campo + "\t");
+                }
+                System.out.println();
+            }
+            System.out.println("##################\n");
+        }
+    }
+
+    public void listarGatos() {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, color, pelo_largo FROM mascotas WHERE tipo=2;";
+        String verificarQuery = "SELECT count(idMascota) FROM mascotas WHERE tipo=2;";
+
+        if (contieneDatos(verificarQuery)) {
+            ArrayList<String> data = db.ejecutarObtener(query);
+
+            System.out.println("##### GATOS #####");
+            for (int i = 0; i < data.size(); i++) {
+                String[] dataFila = data.get(i).split(";");
+
+                for (String campo : dataFila) {
+                    System.out.print(campo + "\t");
+                }
+                System.out.println();
+            }
+            System.out.println("##################\n");
+        }
+    }
+
+    private boolean contieneDatos(String query) {
+        return !db.ejecutarObtener(query).get(0).equals("0");
     }
 
 }

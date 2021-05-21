@@ -32,7 +32,12 @@ public class Principal {
                     opcionInsertarAninal();
                     break;
                 case 2:
-                    db.eliminarMascota(introducirNumero("Introduce el ID de la mascota:"));
+                    db.eliminarMascota(
+                            introducirNumero("Introduce el ID de la mascota:")
+                    );
+                    break;
+                case 3:
+                    db.listarDatosAnimales();
                     break;
                 case 0:
                     break;
