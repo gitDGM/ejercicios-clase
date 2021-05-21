@@ -66,6 +66,8 @@ public class PrincipalController {
 
         listarPerros();
         listarGatos();
+        listarLoros();
+        listarCanarios();
 
     }
 
@@ -97,6 +99,46 @@ public class PrincipalController {
             ArrayList<String> data = db.ejecutarObtener(query);
 
             System.out.println("##### GATOS #####");
+            for (int i = 0; i < data.size(); i++) {
+                String[] dataFila = data.get(i).split(";");
+
+                for (String campo : dataFila) {
+                    System.out.print(campo + "\t");
+                }
+                System.out.println();
+            }
+            System.out.println("##################\n");
+        }
+    }
+
+    public void listarLoros() {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, pico, vuela, origen, habla FROM mascotas WHERE tipo=3;";
+        String verificarQuery = "SELECT count(idMascota) FROM mascotas WHERE tipo=3;";
+
+        if (contieneDatos(verificarQuery)) {
+            ArrayList<String> data = db.ejecutarObtener(query);
+
+            System.out.println("##### LOROS #####");
+            for (int i = 0; i < data.size(); i++) {
+                String[] dataFila = data.get(i).split(";");
+
+                for (String campo : dataFila) {
+                    System.out.print(campo + "\t");
+                }
+                System.out.println();
+            }
+            System.out.println("##################\n");
+        }
+    }
+
+    public void listarCanarios() {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, pico, vuela, color, canta FROM mascotas WHERE tipo=4;";
+        String verificarQuery = "SELECT count(idMascota) FROM mascotas WHERE tipo=4;";
+
+        if (contieneDatos(verificarQuery)) {
+            ArrayList<String> data = db.ejecutarObtener(query);
+
+            System.out.println("##### CANARIOS #####");
             for (int i = 0; i < data.size(); i++) {
                 String[] dataFila = data.get(i).split(";");
 
