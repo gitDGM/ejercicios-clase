@@ -45,4 +45,8 @@ public class PrincipalController {
         db.ejecutarModificar(query);
     }
 
+    public void eliminarMascota(int idMascota) {
+
+    }
+
 }
