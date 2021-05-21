@@ -83,6 +83,8 @@ public class Principal {
         );
         String raza = introducirCadena("Introduce la raza del perro:");
         boolean pulgas = elegirEstado("Tiene pulgas vivo? (S/N):");
+
+        db.insertarPerro(nombre, edad, estado, fechaNacimiento, raza, pulgas);
     }
 
     static void insertarGato() {

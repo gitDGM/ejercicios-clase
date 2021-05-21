@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS `mascotas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mascotas` (
   `idMascota` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
   `edad` int(3) NOT NULL,
   `vivo` tinyint(1) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
@@ -38,7 +39,7 @@ CREATE TABLE `mascotas` (
   `canta` tinyint(1) DEFAULT NULL,
   `tipo` int(11) NOT NULL,
   PRIMARY KEY (`idMascota`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,6 +48,7 @@ CREATE TABLE `mascotas` (
 
 LOCK TABLES `mascotas` WRITE;
 /*!40000 ALTER TABLE `mascotas` DISABLE KEYS */;
+INSERT INTO `mascotas` VALUES (1,'Tobi',1,1,'2020-05-08','Mastín',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `mascotas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-21 17:45:07
+-- Dump completed on 2021-05-21 18:01:31

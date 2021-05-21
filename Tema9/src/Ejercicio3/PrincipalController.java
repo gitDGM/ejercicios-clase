@@ -6,6 +6,7 @@
 package Ejercicio3;
 
 import Conexion.Conexion;
+import java.time.LocalDate;
 
 /**
  *
@@ -20,8 +21,12 @@ public class PrincipalController {
         db.conectar();
     }
 
-    public void insertarPerro() {
-        String query = "INSERT INTO mascostas VALUES (NULL, " + +");";
+    public void insertarPerro(String nombre, int edad, boolean estado, LocalDate fechaNacimiento, String raza, boolean pulgas) {
+        String query = "INSERT INTO mascotas VALUES (NULL, '" + nombre + "', " + edad + ", " + estado + ", '" + fechaNacimiento.toString() + "', '" + raza + "', " + pulgas + ", null, null, null, null, null, null, null, 1);";
+
+        System.err.println("QUERY: " + query);
+
+        db.ejecutarModificar(query);
     }
 
 }
