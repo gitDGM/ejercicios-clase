@@ -151,6 +151,15 @@ public class PrincipalController {
         }
     }
 
+    public void mostrarDatosMascota(int idMascota) {
+        String query = "SELECT tipo FROM mascotas WHERE idMascota=" + idMascota + ";";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        System.err.println(data.size());
+
+    }
+
     private boolean contieneDatos(String query) {
         return !db.ejecutarObtener(query).get(0).equals("0");
     }

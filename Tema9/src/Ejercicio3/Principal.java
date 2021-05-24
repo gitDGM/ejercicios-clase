@@ -39,6 +39,11 @@ public class Principal {
                 case 3:
                     db.listarDatosAnimales();
                     break;
+                case 4:
+                    db.mostrarDatosMascota(
+                            introducirNumero("Introduce el ID de la mascota:")
+                    );
+                    break;
                 case 0:
                     break;
                 default:
