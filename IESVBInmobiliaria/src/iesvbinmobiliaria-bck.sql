@@ -1,6 +1,6 @@
 -- MySQL dump 10.19  Distrib 10.3.29-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: iesvbinmobiliario
+-- Host: localhost    Database: iesvbinmobiliaria
 -- ------------------------------------------------------
 -- Server version	10.3.29-MariaDB-0ubuntu0.20.04.1
 
@@ -140,5 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-18 19:42:39
-
+-- Dump completed on 2021-05-25 19:33:42
