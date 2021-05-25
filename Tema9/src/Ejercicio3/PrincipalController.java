@@ -160,16 +160,16 @@ public class PrincipalController {
             int tipo = Integer.parseInt(data.get(0).split(";")[14]);
             switch (tipo) {
                 case 1:
-                    System.out.println("perro");
+                    mostrarPerro(idMascota);
                     break;
                 case 2:
-                    System.out.println("gato");
+                    mostrarGato(idMascota);
                     break;
                 case 3:
-                    System.out.println("loro");
+                    mostrarLoro(idMascota);
                     break;
                 case 4:
-                    System.out.println("canario");
+                    mostrarCanario(idMascota);
                     break;
             }
         } else {
@@ -180,6 +180,60 @@ public class PrincipalController {
 
     public void mostrarPerro(int idMascota) {
         String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, raza, pulgas FROM mascotas WHERE idMascota = " + idMascota + ";";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            String[] dataCampos = data.get(0).split(";");
+            for (int i = 0; i < dataCampos.length; i++) {
+                System.out.print(dataCampos[i] + "\t");
+            }
+            System.out.println();
+        } else {
+            System.err.println("ERROR: No existe ninguna mascota con ese ID.");
+        }
+
+        System.out.println("");
+    }
+
+    public void mostrarGato(int idMascota) {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, color, pelo_largo FROM mascotas WHERE idMascota = " + idMascota + ";";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            String[] dataCampos = data.get(0).split(";");
+            for (int i = 0; i < dataCampos.length; i++) {
+                System.out.print(dataCampos[i] + "\t");
+            }
+            System.out.println();
+        } else {
+            System.err.println("ERROR: No existe ninguna mascota con ese ID.");
+        }
+
+        System.out.println("");
+    }
+
+    public void mostrarLoro(int idMascota) {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, pico, vuela, origen, habla FROM mascotas WHERE idMascota = " + idMascota + ";";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            String[] dataCampos = data.get(0).split(";");
+            for (int i = 0; i < dataCampos.length; i++) {
+                System.out.print(dataCampos[i] + "\t");
+            }
+            System.out.println();
+        } else {
+            System.err.println("ERROR: No existe ninguna mascota con ese ID.");
+        }
+
+        System.out.println("");
+    }
+
+    public void mostrarCanario(int idMascota) {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, pico, vuela, color, canta FROM mascotas WHERE idMascota = " + idMascota + ";";
 
         ArrayList<String> data = db.ejecutarObtener(query);
 
