@@ -47,7 +47,6 @@ public class lanzador {
             System.out.println("##########################");
             System.out.println("1.- Insertar cliente");
             System.out.println("2.- Eliminar cliente");
-            System.out.println("3.- Modificar dato cliente");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -64,8 +63,6 @@ public class lanzador {
                     db.eliminarCliente(
                             introducirCadena("Introduce el DNI del cliente:")
                     );
-                    break;
-                case 3:
                     break;
                 case 0:
                     break;

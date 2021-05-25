@@ -12,8 +12,8 @@ package iesvbinmobiliaria.personas;
 public class Persona {
 
     private final int idPersona;
-    private String nombre;
-    private String apellidos;
+    private final String nombre;
+    private final String apellidos;
     private final String dni;
     private String telefono;
 
@@ -43,14 +43,6 @@ public class Persona {
 
     public String getTelefono() {
         return telefono;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
     public void setTelefono(String telefono) {
