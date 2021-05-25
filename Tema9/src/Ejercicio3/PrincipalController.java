@@ -157,11 +157,43 @@ public class PrincipalController {
         ArrayList<String> data = db.ejecutarObtener(query);
 
         if (!data.isEmpty()) {
-            System.out.println("test");
+            int tipo = Integer.parseInt(data.get(0).split(";")[14]);
+            switch (tipo) {
+                case 1:
+                    System.out.println("perro");
+                    break;
+                case 2:
+                    System.out.println("gato");
+                    break;
+                case 3:
+                    System.out.println("loro");
+                    break;
+                case 4:
+                    System.out.println("canario");
+                    break;
+            }
         } else {
             System.err.println("ERROR: No existe ninguna mascota con ese ID.");
         }
 
+    }
+
+    public void mostrarPerro(int idMascota) {
+        String query = "SELECT idMascota, nombre, edad, vivo, fecha_nacimiento, raza, pulgas FROM mascotas WHERE idMascota = " + idMascota + ";";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            String[] dataCampos = data.get(0).split(";");
+            for (int i = 0; i < dataCampos.length; i++) {
+                System.out.print(dataCampos[i] + "\t");
+            }
+            System.out.println();
+        } else {
+            System.err.println("ERROR: No existe ninguna mascota con ese ID.");
+        }
+
+        System.out.println("");
     }
 
     private boolean contieneDatos(String query) {
