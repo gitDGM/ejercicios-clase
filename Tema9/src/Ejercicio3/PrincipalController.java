@@ -152,11 +152,15 @@ public class PrincipalController {
     }
 
     public void mostrarDatosMascota(int idMascota) {
-        String query = "SELECT tipo FROM mascotas WHERE idMascota=" + idMascota + ";";
+        String query = "select * from mascotas where idMascota = " + idMascota + " and tipo = (select tipo from mascotas where idMascota = " + idMascota + ");";
 
         ArrayList<String> data = db.ejecutarObtener(query);
 
-        System.err.println(data.size());
+        if (!data.isEmpty()) {
+            System.out.println("test");
+        } else {
+            System.err.println("ERROR: No existe ninguna mascota con ese ID.");
+        }
 
     }
 
