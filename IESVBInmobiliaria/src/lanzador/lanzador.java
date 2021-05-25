@@ -15,20 +15,23 @@ import java.util.Scanner;
  */
 public class lanzador {
 
-    private static final IESVBInmobiliaria db = new IESVBInmobiliaria("iesvbinmoviliaria");
+    private static final IESVBInmobiliaria db = new IESVBInmobiliaria("iesvbinmobiliaria");
     public static void main(String[] args) {
         int opcion;
         do {
             System.out.println("##########################");
-            System.out.println("1.- Insertar animal");
-            System.out.println("2.- Eliminar amimal");
-            System.out.println("3.- Consular datos de los animales");
-            System.out.println("4.- Consultar datos de un animal");
+            System.out.println("1.- Gestionar clientes");
+            System.out.println("2.- Gestionar empleados");
+            System.out.println("3.- Gestionar viviendas");
+            System.out.println("4.- Gestionar movimientos");
+            System.out.println("5.- Menú de consulta de datos");
+            System.out.println("6.- Generar informes");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
+                    gestionarClientes();
                     break;
                 case 0:
                     break;
@@ -36,6 +39,39 @@ public class lanzador {
                     break;
             }
         } while (opcion != 0);
+    }
+
+    static void gestionarClientes() {
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("1.- Insertar cliente");
+            System.out.println("2.- Eliminar cliente");
+            System.out.println("3.- Modificar dato cliente");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
+                    db.insertarCliente(
+                            introducirCadena("Introduce el nombre del cliente:"),
+                            introducirCadena("Introduce los apellidos del cliente:"),
+                            introducirCadena("Introduce el DNI del cliente:"),
+                            introducirCadena("Introduce el teléfono del cliente:")
+                    );
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    break;
+                case 0:
+                    break;
+                default:
+                    break;
+            }
+        } while (opcion != 0);
+
     }
 
     static String introducirCadena(String msg) {
