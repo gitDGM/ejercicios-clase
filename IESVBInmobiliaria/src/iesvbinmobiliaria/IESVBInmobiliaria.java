@@ -39,7 +39,7 @@ public class IESVBInmobiliaria {
         ArrayList<String> data = db.ejecutarObtener(query);
 
         if (!data.isEmpty()) {
-            db.ejecutarModificar("DELETE FROM clientes WHERE dni = " + dni + "';");
+            db.ejecutarModificar("DELETE FROM clientes WHERE dni = '" + dni + "';");
         } else {
             System.err.println("ERROR: No existe ningún registro con ese DNI.");
         }

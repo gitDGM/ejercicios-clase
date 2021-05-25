@@ -61,7 +61,9 @@ public class lanzador {
                     );
                     break;
                 case 2:
-                    
+                    db.eliminarCliente(
+                            introducirCadena("Introduce el DNI del cliente:")
+                    );
                     break;
                 case 3:
                     break;
