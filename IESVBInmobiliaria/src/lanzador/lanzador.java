@@ -5,7 +5,7 @@
  */
 package lanzador;
 
-import java.time.LocalDate;
+import iesvbinmobiliaria.IESVBInmobiliaria;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class lanzador {
 
-    private static final IESVBInmobiliaria db = new PrincipalController("mascotas");
+    private static final IESVBInmobiliaria db = new IESVBInmobiliaria("iesvbinmoviliaria");
     public static void main(String[] args) {
         int opcion;
         do {
@@ -29,20 +29,6 @@ public class lanzador {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    opcionInsertarAninal();
-                    break;
-                case 2:
-                    db.eliminarMascota(
-                            introducirNumero("Introduce el ID de la mascota:")
-                    );
-                    break;
-                case 3:
-                    db.listarDatosAnimales();
-                    break;
-                case 4:
-                    db.mostrarDatosMascota(
-                            introducirNumero("Introduce el ID de la mascota:")
-                    );
                     break;
                 case 0:
                     break;
@@ -50,103 +36,6 @@ public class lanzador {
                     break;
             }
         } while (opcion != 0);
-    }
-
-    static void opcionInsertarAninal() {
-        int opcion;
-        do {
-            System.out.println("##########################");
-            System.out.println("1.- Perro");
-            System.out.println("2.- Gato");
-            System.out.println("3.- Loro");
-            System.out.println("4.- Canario");
-            System.out.println("0.- Salir");
-            System.out.println("##########################");
-            opcion = introducirNumero("Elige un tipo de animal:");
-            switch(opcion) {
-                case 1:
-                    insertarPerro();
-                    break;
-                case 2:
-                    insertarGato();
-                    break;
-                case 3:
-                    insertarLoro();
-                    break;
-                case 4:
-                    insertarCanario();
-                    break;
-                case 0:
-                    break;
-                default:
-                    break;
-            }
-        } while (opcion != 0);
-
-    }
-
-    static void insertarPerro() {
-        String nombre = introducirCadena("Introduce el nombre del perro:");
-        int edad = introducirNumero("Introduce la edad del perro:");
-        boolean estado = elegirEstado("Está vivo? (S/N):");
-        LocalDate fechaNacimiento = LocalDate.of(
-                introducirNumero("Introduce el año (aaaa): "),
-                introducirNumero("Introduce el mes (mm): "),
-                introducirNumero("Introduce el día (dd):")
-        );
-        String raza = introducirCadena("Introduce la raza del perro:");
-        boolean pulgas = elegirEstado("Tiene pulgas vivo? (S/N):");
-
-        db.insertarPerro(nombre, edad, estado, fechaNacimiento, raza, pulgas);
-    }
-
-    static void insertarGato() {
-        String nombre = introducirCadena("Introduce el nombre del gato:");
-        int edad = introducirNumero("Introduce la edad del gato:");
-        boolean estado = elegirEstado("Está vivo? (S/N):");
-        LocalDate fechaNacimiento = LocalDate.of(
-                introducirNumero("Introduce el año (aaaa): "),
-                introducirNumero("Introduce el mes (mm): "),
-                introducirNumero("Introduce el día (dd):")
-        );
-        String color = introducirCadena("Introduce el color del gato:");
-        boolean peloLargo = elegirEstado("Tiene pelo largo? (S/N):");
-
-        db.insertarGato(nombre, edad, estado, fechaNacimiento, color, peloLargo);
-    }
-
-    static void insertarLoro() {
-        String nombre = introducirCadena("Introduce el nombre del loro:");
-        int edad = introducirNumero("Introduce la edad del loro:");
-        boolean estado = elegirEstado("Está vivo? (S/N):");
-        LocalDate fechaNacimiento = LocalDate.of(
-                introducirNumero("Introduce el año (aaaa): "),
-                introducirNumero("Introduce el mes (mm): "),
-                introducirNumero("Introduce el día (dd):")
-        );
-        boolean pico = elegirEstado("Tiene pico? (S/N):");
-        boolean vuela = elegirEstado("Puede volar? (S/N):");
-        String raza = introducirCadena("Introduce el origen del loro:");
-        boolean habla = elegirEstado("Puede hablar? (S/N):");
-
-        db.insertarLoro(nombre, edad, estado, fechaNacimiento, pico, vuela, raza, habla);
-    }
-
-    static void insertarCanario() {
-        String nombre = introducirCadena("Introduce el nombre del canario:");
-        int edad = introducirNumero("Introduce la edad del canario:");
-        boolean estado = elegirEstado("Está vivo? (S/N):");
-        LocalDate fechaNacimiento = LocalDate.of(
-                introducirNumero("Introduce el año (aaaa): "),
-                introducirNumero("Introduce el mes (mm): "),
-                introducirNumero("Introduce el día (dd):")
-        );
-        boolean pico = elegirEstado("Tiene pico? (S/N):");
-        boolean vuela = elegirEstado("Puede volar? (S/N):");
-        String color = introducirCadena("Introduce el color del canario:");
-        boolean canta = elegirEstado("Puede cantar? (S/N):");
-
-        db.insertarCanario(nombre, edad, estado, fechaNacimiento, pico, vuela, color, canta);
     }
 
     static String introducirCadena(String msg) {
