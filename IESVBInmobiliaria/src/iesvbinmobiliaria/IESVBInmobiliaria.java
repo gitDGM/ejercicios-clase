@@ -5,10 +5,19 @@
  */
 package iesvbinmobiliaria;
 
+import Conexion.Conexion;
+
 /**
  *
  * @author alumno
  */
 public class IESVBInmobiliaria {
+
+    private final Conexion db;
+
+    public IESVBInmobiliaria(String bbdd) {
+        db = new Conexion(bbdd);
+        db.conectar();
+    }
 
 }
