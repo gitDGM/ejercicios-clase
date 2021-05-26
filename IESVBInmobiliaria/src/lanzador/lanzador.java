@@ -36,6 +36,7 @@ public class lanzador {
                 case 0:
                     break;
                 default:
+                    System.err.println("ERROR: Opción inválida.");
                     break;
             }
         } while (opcion != 0);
@@ -67,6 +68,40 @@ public class lanzador {
                 case 0:
                     break;
                 default:
+                    System.err.println("ERROR: Opción inválida.");
+                    break;
+            }
+        } while (opcion != 0);
+
+    }
+
+    static void gestionarEmpleados() {
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("1.- Insertar empleado");
+            System.out.println("2.- Eliminar empleado");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
+                    db.insertarCliente(
+                            introducirCadena("Introduce el nombre del empleado:"),
+                            introducirCadena("Introduce los apellidos del empleado:"),
+                            introducirCadena("Introduce el DNI del empleado:"),
+                            introducirCadena("Introduce el teléfono del empleado:")
+                    );
+                    break;
+                case 2:
+                    db.eliminarCliente(
+                            introducirCadena("Introduce el DNI del empleado:")
+                    );
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.err.println("ERROR: Opción inválida.");
                     break;
             }
         } while (opcion != 0);

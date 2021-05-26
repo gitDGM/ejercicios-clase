@@ -45,4 +45,29 @@ public class IESVBInmobiliaria {
         }
 
     }
+
+    public void insertarEmpleado(String nombre, String apellidos, String dni, String telefono) {
+        String query = "SELECT * FROM empleados WHERE dni = '" + dni + "';";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (data.isEmpty()) {
+            db.ejecutarModificar("INSERT INTO empleados VALUES (NULL, '" + nombre + "', '" + apellidos + "', '" + dni + "', '" + telefono + "' );");
+        } else {
+            System.err.println("ERROR: No es posible añadir este cliente, el DNI ya existe.");
+        }
+    }
+
+    public void eliminarEmpleado(String dni) {
+        String query = "SELECT * FROM empleados WHERE dni = '" + dni + "';";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            db.ejecutarModificar("DELETE FROM empleados WHERE dni = '" + dni + "';");
+        } else {
+            System.err.println("ERROR: No existe ningún registro con ese DNI.");
+        }
+
+    }
 }
