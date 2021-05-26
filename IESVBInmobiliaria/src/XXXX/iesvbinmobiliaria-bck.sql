@@ -30,7 +30,7 @@ CREATE TABLE `clientes` (
   `telefono` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `dni` (`dni`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES (1,'Diego','Gómez Moreno','45139962R','123456789');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,13 +115,13 @@ CREATE TABLE `viviendas` (
   `localidad` varchar(100) NOT NULL,
   `pais` varchar(100) NOT NULL,
   `precio` double(10,2) NOT NULL,
-  `duplex` tinyint(1),
-  `numPlantas` int(11),
+  `duplex` tinyint(1) DEFAULT NULL,
+  `numPlantas` int(11) DEFAULT NULL,
   `idPropietario` int(11) NOT NULL,
   PRIMARY KEY (`idVivienda`),
   KEY `idPropietario` (`idPropietario`),
   CONSTRAINT `viviendas_ibfk_1` FOREIGN KEY (`idPropietario`) REFERENCES `clientes` (`idCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +130,7 @@ CREATE TABLE `viviendas` (
 
 LOCK TABLES `viviendas` WRITE;
 /*!40000 ALTER TABLE `viviendas` DISABLE KEYS */;
+INSERT INTO `viviendas` VALUES (1,'aaaaa1','aaaaa','aaaaa','aaaa',5000.00,NULL,2,1);
 /*!40000 ALTER TABLE `viviendas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -141,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-25 19:33:42
+-- Dump completed on 2021-05-26 16:35:45
