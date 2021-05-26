@@ -12,14 +12,16 @@ package iesvbinmobiliaria.viviendas;
 public class Vivienda {
 
     private final int idVivienda;
+    private final String referenciaCatastral;
     private final String direccion;
     private final String localidad;
     private final String pais;
     private float precio;
     private final int idPropietario;
 
-    public Vivienda(int idVivienda, String direccion, String localidad, String pais, float precio, int idPropietario) {
+    public Vivienda(int idVivienda, String referenciaCatastral, String direccion, String localidad, String pais, float precio, int idPropietario) {
         this.idVivienda = idVivienda;
+        this.referenciaCatastral = referenciaCatastral;
         this.direccion = direccion;
         this.localidad = localidad;
         this.pais = pais;
@@ -29,6 +31,10 @@ public class Vivienda {
 
     public int getIdVivienda() {
         return idVivienda;
+    }
+
+    public String getReferenciaCatastral() {
+        return referenciaCatastral;
     }
 
     public String getDireccion() {

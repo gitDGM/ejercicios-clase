@@ -11,19 +11,14 @@ package iesvbinmobiliaria.viviendas;
  */
 public class Piso extends Vivienda {
 
-    private boolean duplex;
+    private final boolean duplex;
 
-    public Piso(boolean duplex, int idVivienda, String direccion, String localidad, String pais, float precio, int idPropietario) {
-        super(idVivienda, direccion, localidad, pais, precio, idPropietario);
+    public Piso(boolean duplex, int idVivienda, String referenciaCatastral, String direccion, String localidad, String pais, float precio, int idPropietario) {
+        super(idVivienda, referenciaCatastral, direccion, localidad, pais, precio, idPropietario);
         this.duplex = duplex;
     }
 
     public boolean isDuplex() {
         return duplex;
     }
-
-    public void setDuplex(boolean duplex) {
-        this.duplex = duplex;
-    }
-
 }

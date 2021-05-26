@@ -124,11 +124,14 @@ public class lanzador {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    db.insertarCliente(
-                            introducirCadena("Introduce el nombre del cliente:"),
-                            introducirCadena("Introduce los apellidos del cliente:"),
-                            introducirCadena("Introduce el DNI del cliente:"),
-                            introducirCadena("Introduce el teléfono del cliente:")
+                    db.insertarCasa(
+                            introducirCadena("Introduce la referencia catastral de la vivienda:"),
+                            introducirCadena("Introduce la direccion de la vivienda:"),
+                            introducirCadena("Introduce la localidad de la vivienda:"),
+                            introducirCadena("Introduce el pais de la vivienda:"),
+                            introducirNumeroDouble("Introduce el precio de la vivienda:"),
+                            introducirNumero("Introduce el número de pisos de la vivienda:"),
+                            introducirCadena("Introduce el DNI del propietario:")
                     );
                     break;
                 case 2:

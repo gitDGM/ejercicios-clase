@@ -13,8 +13,8 @@ public class Casa extends Vivienda {
 
     private final int numPlantas;
 
-    public Casa(int numPlantas, int idVivienda, String direccion, String localidad, String pais, float precio, int idPropietario) {
-        super(idVivienda, direccion, localidad, pais, precio, idPropietario);
+    public Casa(int numPlantas, int idVivienda, String referenciaCatastral, String direccion, String localidad, String pais, float precio, int idPropietario) {
+        super(idVivienda, referenciaCatastral, direccion, localidad, pais, precio, idPropietario);
         this.numPlantas = numPlantas;
     }
 
