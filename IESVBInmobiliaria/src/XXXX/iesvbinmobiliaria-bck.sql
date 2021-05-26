@@ -108,14 +108,14 @@ DROP TABLE IF EXISTS `viviendas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `viviendas` (
-  `idVivienda` int(11) NOT NULL,
+  `idVivienda` int(11) NOT NULL AUTO_INCREMENT,
   `referencia_catastral` varchar(100) NOT NULL,
   `direccion` varchar(200) NOT NULL,
   `localidad` varchar(100) NOT NULL,
   `pais` varchar(100) NOT NULL,
   `precio` double(10,2) NOT NULL,
-  `duplex` tinyint(1) NOT NULL,
-  `numPlantas` int(11) NOT NULL,
+  `duplex` tinyint(1),
+  `numPlantas` int(11),
   `idPropietario` int(11) NOT NULL,
   PRIMARY KEY (`idVivienda`),
   KEY `idPropietario` (`idPropietario`),
