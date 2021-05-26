@@ -43,7 +43,6 @@ public class IESVBInmobiliaria {
         } else {
             System.err.println("ERROR: No existe ningún registro con ese DNI.");
         }
-
     }
 
     public void insertarEmpleado(String nombre, String apellidos, String dni, String telefono) {
@@ -68,6 +67,41 @@ public class IESVBInmobiliaria {
         } else {
             System.err.println("ERROR: No existe ningún registro con ese DNI.");
         }
+    }
 
+    public void insertarCasa(String direccion, String localidad, String pais, String precio, int numPlantas, int idPropietario) {
+        String query = "SELECT * FROM viviendas WHERE direccion = '" + direccion + "';";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (data.isEmpty()) {
+            db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, 'direccion', 'localidad', 'pais', precio, NULL, numPlantas, idPropietario)");
+        } else {
+            System.err.println("ERROR: No es posible añadir este cliente, el DNI ya existe.");
+        }
+    }
+
+    public void insertarPiso(String direccion, String localidad, String pais, String precio, int numPlantas, int idPropietario) {
+        String query = "SELECT * FROM viviendas WHERE direccion = '" + direccion + "';";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (data.isEmpty()) {
+            db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, 'direccion', 'localidad', 'pais', precio, NULL, numPlantas, idPropietario)");
+        } else {
+            System.err.println("ERROR: No es posible añadir este cliente, el DNI ya existe.");
+        }
+    }
+
+    public void eliminarVivienda(String dni) {
+        String query = "SELECT * FROM empleados WHERE dni = '" + dni + "';";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            db.ejecutarModificar("DELETE FROM empleados WHERE dni = '" + dni + "';");
+        } else {
+            System.err.println("ERROR: No existe ningún registro con ese DNI.");
+        }
     }
 }

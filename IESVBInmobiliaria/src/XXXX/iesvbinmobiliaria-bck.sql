@@ -109,6 +109,7 @@ DROP TABLE IF EXISTS `viviendas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `viviendas` (
   `idVivienda` int(11) NOT NULL,
+  `referencia_catastral` varchar(100) NOT NULL,
   `direccion` varchar(200) NOT NULL,
   `localidad` varchar(100) NOT NULL,
   `pais` varchar(100) NOT NULL,

@@ -33,6 +33,12 @@ public class lanzador {
                 case 1:
                     gestionarClientes();
                     break;
+                case 2:
+                    gestionarEmpleados();
+                    break;
+                case 3:
+                    gestionarViviendas();
+                    break;
                 case 0:
                     break;
                 default:
@@ -72,7 +78,6 @@ public class lanzador {
                     break;
             }
         } while (opcion != 0);
-
     }
 
     static void gestionarEmpleados() {
@@ -105,7 +110,38 @@ public class lanzador {
                     break;
             }
         } while (opcion != 0);
+    }
 
+    static void gestionarViviendas() {
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("1.- Insertar casa");
+            System.out.println("2.- Insertar piso");
+            System.out.println("3.- Eliminar vivienda");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
+                    db.insertarCliente(
+                            introducirCadena("Introduce el nombre del cliente:"),
+                            introducirCadena("Introduce los apellidos del cliente:"),
+                            introducirCadena("Introduce el DNI del cliente:"),
+                            introducirCadena("Introduce el teléfono del cliente:")
+                    );
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.err.println("ERROR: Opción inválida.");
+                    break;
+            }
+        } while (opcion != 0);
     }
 
     static String introducirCadena(String msg) {
