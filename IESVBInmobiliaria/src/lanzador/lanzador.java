@@ -135,8 +135,20 @@ public class lanzador {
                     );
                     break;
                 case 2:
+                    db.insertarPiso(
+                            introducirCadena("Introduce la referencia catastral de la vivienda:"),
+                            introducirCadena("Introduce la direccion de la vivienda:"),
+                            introducirCadena("Introduce la localidad de la vivienda:"),
+                            introducirCadena("Introduce el pais de la vivienda:"),
+                            introducirNumeroDouble("Introduce el precio de la vivienda:"),
+                            elegir("Introduce si es duplex o no (S/N):"),
+                            introducirCadena("Introduce el DNI del propietario:")
+                    );
                     break;
                 case 3:
+                    db.eliminarVivienda(
+                            introducirCadena("Introduce la referencia catastral de la vivienda:")
+                    );
                     break;
                 case 0:
                     break;
@@ -192,7 +204,7 @@ public class lanzador {
         return numero;
     }
 
-    static boolean elegirEstado(String msg) {
+    static boolean elegir(String msg) {
         Scanner sc = new Scanner(System.in);
         boolean opcion = true;
         boolean noValido;

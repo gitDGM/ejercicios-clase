@@ -75,22 +75,19 @@ public class IESVBInmobiliaria {
         ArrayList<String> data = db.ejecutarObtener(query);
 
         if (data.isEmpty()) {
-            System.err.println("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", NULL, " + numPlantas + ", (SELECT idCliente FROM clientes WHERE dni = '" + dniPropietario + "'));");
             db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", NULL, " + numPlantas + ", (SELECT idCliente FROM clientes WHERE dni = '" + dniPropietario + "'));");
         } else {
             System.err.println("ERROR: No es posible añadir este cliente, el DNI ya existe.");
         }
     }
 
-    public void insertarPiso(String referenciaCatastral, String direccion, String localidad, String pais, String precio, boolean duplex, int idPropietario) {
+    public void insertarPiso(String referenciaCatastral, String direccion, String localidad, String pais, double precio, boolean duplex, String dniPropietario) {
         String query = "SELECT * FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
 
         ArrayList<String> data = db.ejecutarObtener(query);
 
         if (data.isEmpty()) {
-
-            System.err.println("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", " + duplex + ", NULL, " + idPropietario + ");");
-            db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", " + duplex + ", NULL, " + idPropietario + ");");
+            db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", " + duplex + ", NULL, (SELECT idCliente FROM clientes WHERE dni = '" + dniPropietario + "'));");
         } else {
             System.err.println("ERROR: No es posible añadir este cliente, el DNI ya existe.");
         }
@@ -104,7 +101,7 @@ public class IESVBInmobiliaria {
         if (!data.isEmpty()) {
             db.ejecutarModificar("DELETE FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';");
         } else {
-            System.err.println("ERROR: No existe ningún registro con ese DNI.");
+            System.err.println("ERROR: No existe ningún registro con esa referencia catastral.");
         }
     }
 }
