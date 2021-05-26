@@ -106,12 +106,19 @@ public class IESVBInmobiliaria {
     }
 
     public void insertarVenta(String dniComprador, String dniEmpleado, String referenciaCatastral) {
-        String query = "SELECT * FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
+        String queryCliente = "SELECT idCliente FROM clientes WHERE dni = '" + dniComprador + "';";
+        String queryEmpleado = "SELECT idEmpleado FROM empleados WHERE dni = '" + dniEmpleado + "';";
+        String queryVivienda = "SELECT idVivienda FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
 
-        ArrayList<String> data = db.ejecutarObtener(query);
+        ArrayList<String> dataCliente = db.ejecutarObtener(queryCliente);
+        ArrayList<String> dataEmpleado = db.ejecutarObtener(queryEmpleado);
+        ArrayList<String> dataVivienda = db.ejecutarObtener(queryVivienda);
 
-        if (data.isEmpty()) {
-            db.ejecutarModificar("");
+        if (!dataCliente.isEmpty() && !dataEmpleado.isEmpty() && !dataVivienda.isEmpty()) {
+            int idCliente = Integer.parseInt(dataCliente.get(0));
+            int idEmpleado = Integer.parseInt(dataEmpleado.get(0));
+            int idVivienda = Integer.parseInt(dataVivienda.get(0));
+            db.ejecutarModificar("INSERT INTO ventas VALUES (NULL, " + idCliente + ", " + idEmpleado + ", " + idVivienda + ");");
         } else {
             System.err.println("ERROR: No es posible añadir este cliente, el DNI ya existe.");
         }

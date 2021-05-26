@@ -173,13 +173,10 @@ public class lanzador {
             switch(opcion) {
                 case 1:
                     db.insertarVenta(
-                            referenciaCatastral,
-                            direccion,
-                            localidad,
-                            pais,
-                            opcion,
-                            true,
-                            dniPropietario);
+                            introducirCadena("Introduce el DNI del cliente:"),
+                            introducirCadena("Introduce el DNI del empleado:"),
+                            introducirCadena("Introduce la referencia catastral de la vivienda:")
+                    );
                     break;
                 case 0:
                     break;
