@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `ventas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ventas` (
-  `idVenta` int(11) NOT NULL,
+  `idVenta` int(11) NOT NULL AUTO_INCREMENT,
   `idComprador` int(11) NOT NULL,
   `idEmpleado` int(11) NOT NULL,
   `idVivienda` int(11) NOT NULL,

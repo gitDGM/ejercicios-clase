@@ -39,6 +39,9 @@ public class lanzador {
                 case 3:
                     gestionarViviendas();
                     break;
+                case 4:
+                    gestionarMovimientos();
+                    break;
                 case 0:
                     break;
                 default:
@@ -149,6 +152,34 @@ public class lanzador {
                     db.eliminarVivienda(
                             introducirCadena("Introduce la referencia catastral de la vivienda:")
                     );
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.err.println("ERROR: Opción inválida.");
+                    break;
+            }
+        } while (opcion != 0);
+    }
+
+    static void gestionarMovimientos() {
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("1.- Insertar venta");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
+                    db.insertarVenta(
+                            referenciaCatastral,
+                            direccion,
+                            localidad,
+                            pais,
+                            opcion,
+                            true,
+                            dniPropietario);
                     break;
                 case 0:
                     break;
