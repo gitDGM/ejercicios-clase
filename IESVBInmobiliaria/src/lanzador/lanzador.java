@@ -94,7 +94,7 @@ public class lanzador {
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    db.insertarCliente(
+                    db.insertarEmpleado(
                             introducirCadena("Introduce el nombre del empleado:"),
                             introducirCadena("Introduce los apellidos del empleado:"),
                             introducirCadena("Introduce el DNI del empleado:"),
@@ -102,7 +102,7 @@ public class lanzador {
                     );
                     break;
                 case 2:
-                    db.eliminarCliente(
+                    db.eliminarEmpleado(
                             introducirCadena("Introduce el DNI del empleado:")
                     );
                     break;
