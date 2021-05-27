@@ -42,6 +42,9 @@ public class lanzador {
                 case 4:
                     gestionarMovimientos();
                     break;
+                case 5:
+                    menuConsultas();
+                    break;
                 case 0:
                     break;
                 default:
@@ -119,15 +122,14 @@ public class lanzador {
         int opcion;
         do {
             System.out.println("##########################");
-            System.out.println("1.- Insertar casa");
-            System.out.println("2.- Insertar piso");
-            System.out.println("3.- Eliminar vivienda");
+            System.out.println("1.- Insertar vivienda");
+            System.out.println("2.- Eliminar vivienda");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
-                    db.insertarCasa(
+                    db.insertarVivienda(
                             introducirCadena("Introduce la referencia catastral de la vivienda:"),
                             introducirCadena("Introduce la direccion de la vivienda:"),
                             introducirCadena("Introduce la localidad de la vivienda:"),
@@ -138,17 +140,6 @@ public class lanzador {
                     );
                     break;
                 case 2:
-                    db.insertarPiso(
-                            introducirCadena("Introduce la referencia catastral de la vivienda:"),
-                            introducirCadena("Introduce la direccion de la vivienda:"),
-                            introducirCadena("Introduce la localidad de la vivienda:"),
-                            introducirCadena("Introduce el pais de la vivienda:"),
-                            introducirNumeroDouble("Introduce el precio de la vivienda:"),
-                            elegir("Introduce si es duplex o no (S/N):"),
-                            introducirCadena("Introduce el DNI del propietario:")
-                    );
-                    break;
-                case 3:
                     db.eliminarVivienda(
                             introducirCadena("Introduce la referencia catastral de la vivienda:")
                     );
@@ -177,6 +168,52 @@ public class lanzador {
                             introducirCadena("Introduce el DNI del empleado:"),
                             introducirCadena("Introduce la referencia catastral de la vivienda:")
                     );
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.err.println("ERROR: Opción inválida.");
+                    break;
+            }
+        } while (opcion != 0);
+    }
+
+    static void menuConsultas() {
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("1.- Listar todos los clientes");
+            System.out.println("2.- Buscar un cliente");
+            System.out.println("3.- Listar todos los empleados");
+            System.out.println("4.- Buscar un empleado");
+            System.out.println("5.- Listar todas las viviendas");
+            System.out.println("6.- Buscar una vivienda");
+            System.out.println("7.- Listar las viviendas de un cliente.");
+            System.out.println("8.- Listar todos los movimientos");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
+                    db.listarClientes();
+                    break;
+                case 2:
+                    db.listarCliente(introducirCadena("Introduce el DNI del cliente:"));
+                    break;
+                case 3:
+                    db.listarEmpleados();
+                    break;
+                case 4:
+                    db.listarEmpleado(introducirCadena("Introduce el DNI del empleado:"));
+                    break;
+                case 5:
+                    db.listarViviendas();
+                    break;
+                case 6:
+                    db.listarVivienda(introducirCadena("Introduce la referencia catastral de la vivienda:"));
+                    break;
+                case 7:
+                    db.listarVivienda(introducirCadena("Introduce la referencia catastral de la vivienda:"));
                     break;
                 case 0:
                     break;

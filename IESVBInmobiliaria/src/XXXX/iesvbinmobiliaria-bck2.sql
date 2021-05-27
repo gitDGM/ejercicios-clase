@@ -137,6 +137,7 @@ CREATE TABLE `viviendas` (
   `localidad` varchar(100) NOT NULL,
   `pais` varchar(100) NOT NULL,
   `precio` double(10,2) NOT NULL,
+  `duplex` tinyint(1) DEFAULT NULL,
   `numPlantas` int(11) DEFAULT NULL,
   `idPropietario` int(11) NOT NULL,
   PRIMARY KEY (`idVivienda`),
@@ -151,7 +152,7 @@ CREATE TABLE `viviendas` (
 
 LOCK TABLES `viviendas` WRITE;
 /*!40000 ALTER TABLE `viviendas` DISABLE KEYS */;
-INSERT INTO `viviendas` VALUES (1,'aaaaa1','aaaaa','aaaaa','aaaa',5000.00,2,3),(3,'aaaa5','adgagag','adgag','agadga',5000.00,3,1);
+INSERT INTO `viviendas` VALUES (1,'aaaaa1','aaaaa','aaaaa','aaaa',5000.00,NULL,2,3),(3,'aaaa5','adgagag','adgag','agadga',5000.00,NULL,3,1);
 /*!40000 ALTER TABLE `viviendas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -164,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-27 16:09:44
+-- Dump completed on 2021-05-27 16:44:16
