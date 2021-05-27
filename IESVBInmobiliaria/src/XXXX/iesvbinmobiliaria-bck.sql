@@ -30,7 +30,7 @@ CREATE TABLE `clientes` (
   `telefono` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `dni` (`dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Diego','Gómez Moreno','45139962R','123456789'),(2,'45139962K','adgadg','agadgagd','aga'),(3,'Diego','adgag','0001','asdgadg');
+INSERT INTO `clientes` VALUES (1,'Diego','Gómez Moreno','45139962R','123456789'),(2,'45139962K','adgadg','agadgagd','aga'),(3,'Diego','adgag','0001','asdgadg'),(4,'adgadga','adgag','45139962H','dgagga');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,7 @@ UNLOCK TABLES;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`alumno`@`localhost`*/ /*!50003 TRIGGER update_venta 
 AFTER INSERT ON ventas 
-FOR EACH ROW	
+FOR EACH ROW
 UPDATE viviendas 
 SET idPropietario = NEW.idComprador
 WHERE idVivienda = NEW.idVivienda */;;
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-27 16:09:44
+-- Dump completed on 2021-05-27 17:15:22
