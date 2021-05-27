@@ -204,16 +204,27 @@ public class lanzador {
                     db.listarEmpleados();
                     break;
                 case 4:
-                    db.listarEmpleado(introducirCadena("Introduce el DNI del empleado:"));
+                    db.listarEmpleado(
+                            introducirCadena("Introduce el DNI del empleado:")
+                    );
                     break;
                 case 5:
                     db.listarViviendas();
                     break;
                 case 6:
-                    db.listarVivienda(introducirCadena("Introduce la referencia catastral de la vivienda:"));
+                    db.listarVivienda(
+                            introducirCadena("Introduce la referencia catastral de la vivienda:")
+                    );
                     break;
                 case 7:
-                    db.listarVivienda(introducirCadena("Introduce la referencia catastral de la vivienda:"));
+                    db.listarViviendasPropietario(
+                            introducirCadena("Introduce el DNI del propietario:")
+                    );
+                    break;
+                case 8:
+                    db.listarViviendasPropietario(
+                            introducirCadena("Introduce el DNI del propietario:")
+                    );
                     break;
                 case 0:
                     break;

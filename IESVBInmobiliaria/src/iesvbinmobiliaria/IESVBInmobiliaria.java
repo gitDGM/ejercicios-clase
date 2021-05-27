@@ -191,7 +191,7 @@ public class IESVBInmobiliaria {
                 System.out.printf("%-15s%-30s%-20s%-15s%-15s%-18s%-20s%-30s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3], dataRegistro[4], dataRegistro[5], dataRegistro[6], dataRegistro[7]);
             }
         } else {
-            System.err.println("ATENCIÓN: Actualmente no hay registros de empleados.");
+            System.err.println("ATENCIÓN: Actualmente no hay registros de viviendas.");
         }
     }
 
@@ -207,12 +207,12 @@ public class IESVBInmobiliaria {
                 System.out.printf("%-15s%-30s%-20s%-15s%-15s%-18s%-20s%-30s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3], dataRegistro[4], dataRegistro[5], dataRegistro[6], dataRegistro[7]);
             }
         } else {
-            System.err.println("ATENCIÓN: Actualmente no existe ese empleado.");
+            System.err.println("ATENCIÓN: Actualmente no existe ninguna vivienda con esa referencia catastral.");
         }
     }
 
     public void listarViviendasPropietario(String dni) {
-        String query = "SELECT idVivienda, referencia_catastral, direccion, localidad, pais, precio, numPlantas, clientes.dni FROM viviendas INNER JOIN clientes ON viviendas.idPropietario = clientes.idCliente WHERE idPropietario = (SELECT idCliente FROM cliente WHERE dni = '" + dni + "');";
+        String query = "SELECT idVivienda, referencia_catastral, direccion, localidad, pais, precio, numPlantas, clientes.dni FROM viviendas INNER JOIN clientes ON viviendas.idPropietario = clientes.idCliente WHERE idPropietario = (SELECT idCliente FROM clientes WHERE dni = '" + dni + "');";
 
         ArrayList<String> data = db.ejecutarObtener(query);
 
@@ -223,7 +223,23 @@ public class IESVBInmobiliaria {
                 System.out.printf("%-15s%-30s%-20s%-15s%-15s%-18s%-20s%-30s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3], dataRegistro[4], dataRegistro[5], dataRegistro[6], dataRegistro[7]);
             }
         } else {
-            System.err.println("ATENCIÓN: Actualmente no existe ese empleado.");
+            System.err.println("ATENCIÓN: Actualmente no tenemos ninguna vivienda vinculada a ese propietario.");
+        }
+    }
+
+    public void listarMovimientos() {
+        String query = "SELECT * FROM movimientos;";
+
+        ArrayList<String> data = db.ejecutarObtener(query);
+
+        if (!data.isEmpty()) {
+            System.out.printf("%-15s%-30s%-20s%-20s\n", "ID Movimiento", "DNI Comprador", "DNI Empleado", "Referencia Catastral");
+            for (int i = 0; i < data.size(); i++) {
+                String[] dataRegistro = data.get(i).split(";");
+                System.out.printf("%-15s%-30s%-20s%-20s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3]);
+            }
+        } else {
+            System.err.println("ATENCIÓN: Actualmente no tenemos ninguna vivienda vinculada a ese propietario.");
         }
     }
     // FIN CONSULTAS
