@@ -228,7 +228,7 @@ public class IESVBInmobiliaria {
     }
 
     public void listarMovimientos() {
-        String query = "SELECT * FROM movimientos;";
+        String query = "SELECT idVenta, clientes.dni, empleados.dni, viviendas.referencia_catastral FROM ventas INNER JOIN clientes ON ventas.idComprador = clientes.idCliente INNER JOIN empleados ON ventas.idEmpleado = empleados.idEmpleado INNER JOIN viviendas ON ventas.idVivienda = viviendas.idVivienda;";
 
         ArrayList<String> data = db.ejecutarObtener(query);
 

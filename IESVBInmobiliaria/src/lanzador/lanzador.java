@@ -222,9 +222,7 @@ public class lanzador {
                     );
                     break;
                 case 8:
-                    db.listarViviendasPropietario(
-                            introducirCadena("Introduce el DNI del propietario:")
-                    );
+                    db.listarMovimientos();
                     break;
                 case 0:
                     break;
