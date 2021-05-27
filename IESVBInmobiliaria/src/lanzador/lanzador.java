@@ -45,6 +45,9 @@ public class lanzador {
                 case 5:
                     menuConsultas();
                     break;
+                case 6:
+                    menuInformes();
+                    break;
                 case 0:
                     break;
                 default:
@@ -223,6 +226,26 @@ public class lanzador {
                     break;
                 case 8:
                     db.listarMovimientos();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.err.println("ERROR: Opción inválida.");
+                    break;
+            }
+        } while (opcion != 0);
+    }
+
+    static void menuInformes() {
+        int opcion;
+        do {
+            System.out.println("##########################");
+            System.out.println("1.- Informe de todos los movimientos");
+            System.out.println("0.- Salir");
+            System.out.println("##########################");
+            opcion = introducirNumero("Elige una opción:");
+            switch(opcion) {
+                case 1:
                     break;
                 case 0:
                     break;
