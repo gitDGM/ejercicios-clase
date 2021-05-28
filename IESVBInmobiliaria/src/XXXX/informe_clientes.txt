@@ -1,0 +1,6 @@
+ID Cliente     Nombre         Apellidos           DNI        Teléfono   
+1              Diego          Gómez Moreno        45139962R  123456789  
+2              45139962K      adgadg              agadgagd   aga        
+3              Diego          adgag               0001       asdgadg    
+4              adgadga        adgag               45139962H  dgagga     
+5              Pablo          Gómez               36378092G  12415      

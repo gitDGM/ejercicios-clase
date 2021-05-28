@@ -63,7 +63,7 @@ public class lanzador {
         do {
             System.out.println("##########################");
             System.out.println("1.- Insertar cliente");
-            System.out.println("2.- Eliminar cliente");
+            // System.out.println("2.- Eliminar cliente");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -77,9 +77,12 @@ public class lanzador {
                     );
                     break;
                 case 2:
+                    /*
+                    // COMENTADO POR POSIBLE FALLO AL VISUALIZAR VENTAS DESPUÉS DE BORRAR
                     db.eliminarCliente(
                             introducirCadena("Introduce el DNI del cliente:")
                     );
+                    */
                     break;
                 case 0:
                     break;
@@ -95,7 +98,7 @@ public class lanzador {
         do {
             System.out.println("##########################");
             System.out.println("1.- Insertar empleado");
-            System.out.println("2.- Eliminar empleado");
+            // System.out.println("2.- Eliminar empleado");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -109,9 +112,12 @@ public class lanzador {
                     );
                     break;
                 case 2:
+                    /*
+                    // COMENTADO POR POSIBLE FALLO AL VISUALIZAR VENTAS DESPUÉS DE BORRAR
                     db.eliminarEmpleado(
                             introducirCadena("Introduce el DNI del empleado:")
                     );
+                    */
                     break;
                 case 0:
                     break;
@@ -127,7 +133,7 @@ public class lanzador {
         do {
             System.out.println("##########################");
             System.out.println("1.- Insertar vivienda");
-            System.out.println("2.- Eliminar vivienda");
+            // System.out.println("2.- Eliminar vivienda");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
@@ -144,9 +150,12 @@ public class lanzador {
                     );
                     break;
                 case 2:
+                    /*
+                    // COMENTADO POR POSIBLE FALLO AL VISUALIZAR VENTAS DESPUÉS DE BORRAR
                     db.eliminarVivienda(
                             introducirCadena("Introduce la referencia catastral de la vivienda:")
                     );
+                    */
                     break;
                 case 0:
                     break;
@@ -301,7 +310,7 @@ public class lanzador {
                 numero = sc.nextInt();
                 noValido = false;
             } catch (InputMismatchException ex) {
-                System.err.println("Debe ser un número decimal.");
+                System.err.println("Debe ser un número entero.");
                 noValido = true;
                 sc.next();
             }

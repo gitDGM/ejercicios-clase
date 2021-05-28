@@ -1,0 +1,3 @@
+ID Vivienda    Referencia Catastral          Dirección           Localidad      Pais           Precio            Número de plantas   DNI del Propietario 
+1              aaaaa1                        aaaaa               aaaaa          aaaa           5000.00           2                   0001                
+3              aaaa5                         adgagag             adgag          agadga         5000.00           3                   45139962R           

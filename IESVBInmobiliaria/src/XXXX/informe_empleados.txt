@@ -1,0 +1,3 @@
+ID Empleado    Nombre         Apellidos           DNI        Teléfono   
+1              Diego          Gómez               45139962R  2151512512 
+2              Diego          adgaga              36378092G  512515     
