@@ -382,4 +382,11 @@ public class IESVBInmobiliaria {
         }
     }
     // FIN INFORMES
+
+    // INICIO VERIFICAR
+    public boolean existePropietario(String dni) {
+
+        return true;
+    }
+    // FIN VERIFICAR
 }

@@ -5,6 +5,7 @@
  */
 package lanzador;
 
+import Helpers.Comprobar;
 import iesvbinmobiliaria.IESVBInmobiliaria;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -71,7 +72,7 @@ public class lanzador {
                     db.insertarCliente(
                             introducirCadena("Introduce el nombre del cliente:"),
                             introducirCadena("Introduce los apellidos del cliente:"),
-                            introducirCadena("Introduce el DNI del cliente:"),
+                            verificarDNI(introducirCadena("Introduce el DNI del cliente:")),
                             introducirCadena("Introduce el teléfono del cliente:")
                     );
                     break;
@@ -103,7 +104,7 @@ public class lanzador {
                     db.insertarEmpleado(
                             introducirCadena("Introduce el nombre del empleado:"),
                             introducirCadena("Introduce los apellidos del empleado:"),
-                            introducirCadena("Introduce el DNI del empleado:"),
+                            verificarDNI(introducirCadena("Introduce el DNI del empleado:")),
                             introducirCadena("Introduce el teléfono del empleado:")
                     );
                     break;
@@ -139,7 +140,7 @@ public class lanzador {
                             introducirCadena("Introduce el pais de la vivienda:"),
                             introducirNumeroDouble("Introduce el precio de la vivienda:"),
                             introducirNumero("Introduce el número de pisos de la vivienda:"),
-                            introducirCadena("Introduce el DNI del propietario:")
+                            verificarDNI(introducirCadena("Introduce el DNI del propietario:"))
                     );
                     break;
                 case 2:
@@ -167,8 +168,8 @@ public class lanzador {
             switch(opcion) {
                 case 1:
                     db.insertarVenta(
-                            introducirCadena("Introduce el DNI del cliente:"),
-                            introducirCadena("Introduce el DNI del empleado:"),
+                            verificarDNI(introducirCadena("Introduce el DNI del cliente:")),
+                            verificarDNI(introducirCadena("Introduce el DNI del empleado:")),
                             introducirCadena("Introduce la referencia catastral de la vivienda:")
                     );
                     break;
@@ -274,6 +275,20 @@ public class lanzador {
         System.out.println(msg);
 
         return sc.nextLine();
+    }
+
+    static String verificarDNI(String dni) {
+        boolean valido = Comprobar.verificarDNI(dni);
+
+        while (!valido) {
+            if (!valido) {
+                System.err.println("ERROR: El DNI es inválido.");
+            }
+            dni = introducirCadena("Introduce un DNI válido:");
+            valido = Comprobar.verificarDNI(dni);
+        }
+
+        return dni;
     }
 
     static int introducirNumero(String msg) {
