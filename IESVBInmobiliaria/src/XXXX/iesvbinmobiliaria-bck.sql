@@ -37,12 +37,6 @@ CREATE TABLE `clientes` (
 -- Dumping data for table `clientes`
 --
 
-LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Diego','Gómez Moreno','45139962R','123456789'),(2,'45139962K','adgadg','agadgagd','aga'),(3,'Diego','adgag','0001','asdgadg'),(4,'adgadga','adgag','45139962H','dgagga');
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
-UNLOCK TABLES;
-
 --
 -- Table structure for table `empleados`
 --
@@ -64,13 +58,6 @@ CREATE TABLE `empleados` (
 --
 -- Dumping data for table `empleados`
 --
-
-LOCK TABLES `empleados` WRITE;
-/*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
-INSERT INTO `empleados` VALUES (1,'Diego','Gómez','45139962R','2151512512');
-/*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
-UNLOCK TABLES;
-
 --
 -- Table structure for table `ventas`
 --
@@ -97,11 +84,6 @@ CREATE TABLE `ventas` (
 -- Dumping data for table `ventas`
 --
 
-LOCK TABLES `ventas` WRITE;
-/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
-INSERT INTO `ventas` VALUES (1,3,1,3),(2,1,1,3),(3,3,1,1);
-/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -148,12 +130,6 @@ CREATE TABLE `viviendas` (
 --
 -- Dumping data for table `viviendas`
 --
-
-LOCK TABLES `viviendas` WRITE;
-/*!40000 ALTER TABLE `viviendas` DISABLE KEYS */;
-INSERT INTO `viviendas` VALUES (1,'aaaaa1','aaaaa','aaaaa','aaaa',5000.00,2,3),(3,'aaaa5','adgagag','adgag','agadga',5000.00,3,1);
-/*!40000 ALTER TABLE `viviendas` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
