@@ -76,14 +76,16 @@ public class IESVBInmobiliaria {
     }
 
     public void insertarVivienda(String referenciaCatastral, String direccion, String localidad, String pais, double precio, int numPlantas, String dniPropietario) {
-        String query = "SELECT * FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
+        String queryVivienda = "SELECT * FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
+        String queryPropietario = "SELECT * FROM clientes WHERE dni = '" + dniPropietario + "';";
 
-        ArrayList<String> data = db.ejecutarObtener(query);
+        ArrayList<String> dataVivienda = db.ejecutarObtener(queryVivienda);
+        ArrayList<String> dataPropietario = db.ejecutarObtener(queryPropietario);
 
-        if (data.isEmpty()) {
+        if (dataVivienda.isEmpty() && !dataPropietario.isEmpty()) {
             db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", " + numPlantas + ", (SELECT idCliente FROM clientes WHERE dni = '" + dniPropietario + "'));");
         } else {
-            System.err.println("ERROR: No es posible añadir esta vivienda, ya existe una vivienda con esa referencia catastral.");
+            System.err.println("ERROR: No es posible añadir esta vivienda, ya existe una vivienda con esa referencia catastral o no existe ningún cliente con ese DNI..");
         }
     }
 
@@ -383,10 +385,4 @@ public class IESVBInmobiliaria {
     }
     // FIN INFORMES
 
-    // INICIO VERIFICAR
-    public boolean existePropietario(String dni) {
-
-        return true;
-    }
-    // FIN VERIFICAR
 }
