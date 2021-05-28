@@ -1,4 +1,0 @@
-ID Movimiento  DNI Comprador                 DNI Empleado        Referencia Catastral
-3              0001                          45139962R           aaaaa1              
-1              0001                          45139962R           aaaa5               
-2              45139962R                     45139962R           aaaa5               
