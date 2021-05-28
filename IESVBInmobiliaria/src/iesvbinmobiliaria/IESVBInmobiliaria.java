@@ -6,6 +6,10 @@
 package iesvbinmobiliaria;
 
 import Conexion.Conexion;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +19,7 @@ import java.util.ArrayList;
 public class IESVBInmobiliaria {
 
     private final Conexion db;
+    private final static String RUTA = "src/XXXX/";
 
     public IESVBInmobiliaria(String bbdd) {
         db = new Conexion(bbdd);
@@ -244,4 +249,137 @@ public class IESVBInmobiliaria {
     }
     // FIN CONSULTAS
 
+    // INICIO INFORMES
+    public void generarInformeMovimientos() {
+        File fichero = new File(RUTA + "informe_movimientos.txt");
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+
+        try {
+            ArrayList<String> data = db.ejecutarObtener("SELECT idVenta, clientes.dni, empleados.dni, viviendas.referencia_catastral FROM ventas INNER JOIN clientes ON ventas.idComprador = clientes.idCliente INNER JOIN empleados ON ventas.idEmpleado = empleados.idEmpleado INNER JOIN viviendas ON ventas.idVivienda = viviendas.idVivienda;");
+
+            filewriter = new FileWriter(fichero);
+            escritor = new PrintWriter(filewriter);
+            escritor.printf("%-15s%-30s%-20s%-20s\n", "ID Movimiento", "DNI Comprador", "DNI Empleado", "Referencia Catastral");
+            if (!data.isEmpty()) {
+                for (int i = 0; i < data.size(); i++) {
+                    String[] dataRegistro = data.get(i).split(";");
+                    escritor.printf("%-15s%-30s%-20s%-20s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3]);
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) {
+                    filewriter.close();
+                }
+                if (escritor != null) {
+                    escritor.close();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
+
+    public void generarInformeClientes() {
+        File fichero = new File(RUTA + "informe_clientes.txt");
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+
+        try {
+            ArrayList<String> data = db.ejecutarObtener("SELECT * FROM clientes;");
+
+            filewriter = new FileWriter(fichero);
+            escritor = new PrintWriter(filewriter);
+            escritor.printf("%-15s%-15s%-20s%-11s%-11s\n", "ID Cliente", "Nombre", "Apellidos", "DNI", "Teléfono");
+            if (!data.isEmpty()) {
+                for (int i = 0; i < data.size(); i++) {
+                    String[] dataRegistro = data.get(i).split(";");
+                    escritor.printf("%-15s%-15s%-20s%-11s%-11s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3], dataRegistro[4]);
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) {
+                    filewriter.close();
+                }
+                if (escritor != null) {
+                    escritor.close();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
+
+    public void generarInformeEmpleados() {
+        File fichero = new File(RUTA + "informe_empleados.txt");
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+
+        try {
+            ArrayList<String> data = db.ejecutarObtener("SELECT * FROM empleados;");
+
+            filewriter = new FileWriter(fichero);
+            escritor = new PrintWriter(filewriter);
+            escritor.printf("%-15s%-15s%-20s%-11s%-11s\n", "ID Empleado", "Nombre", "Apellidos", "DNI", "Teléfono");
+            if (!data.isEmpty()) {
+                for (int i = 0; i < data.size(); i++) {
+                    String[] dataRegistro = data.get(i).split(";");
+                    escritor.printf("%-15s%-15s%-20s%-11s%-11s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3], dataRegistro[4]);
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) {
+                    filewriter.close();
+                }
+                if (escritor != null) {
+                    escritor.close();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
+
+    public void generarInformeViviendas() {
+        File fichero = new File(RUTA + "informe_viviendas.txt");
+        FileWriter filewriter = null;
+        PrintWriter escritor = null;
+
+        try {
+            ArrayList<String> data = db.ejecutarObtener("SELECT idVivienda, referencia_catastral, direccion, localidad, pais, precio, numPlantas, clientes.dni FROM viviendas INNER JOIN clientes ON viviendas.idPropietario = clientes.idCliente;");
+
+            filewriter = new FileWriter(fichero);
+            escritor = new PrintWriter(filewriter);
+            escritor.printf("%-15s%-30s%-20s%-15s%-15s%-18s%-20s%-20s\n", "ID Vivienda", "Referencia Catastral", "Dirección", "Localidad", "Pais", "Precio", "Número de plantas", "DNI del Propietario");
+            if (!data.isEmpty()) {
+                for (int i = 0; i < data.size(); i++) {
+                    String[] dataRegistro = data.get(i).split(";");
+                    escritor.printf("%-15s%-30s%-20s%-15s%-15s%-18s%-20s%-20s\n", dataRegistro[0], dataRegistro[1], dataRegistro[2], dataRegistro[3], dataRegistro[4], dataRegistro[5], dataRegistro[6], dataRegistro[7]);
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (filewriter != null) {
+                    filewriter.close();
+                }
+                if (escritor != null) {
+                    escritor.close();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
+    // FIN INFORMES
 }

@@ -241,11 +241,24 @@ public class lanzador {
         do {
             System.out.println("##########################");
             System.out.println("1.- Informe de todos los movimientos");
+            System.out.println("2.- Informe de todos los clientes");
+            System.out.println("3.- Informe de todos los empleados");
+            System.out.println("4.- Informe de todas las viviendas");
             System.out.println("0.- Salir");
             System.out.println("##########################");
             opcion = introducirNumero("Elige una opción:");
             switch(opcion) {
                 case 1:
+                    db.generarInformeMovimientos();
+                    break;
+                case 2:
+                    db.generarInformeClientes();
+                    break;
+                case 3:
+                    db.generarInformeEmpleados();
+                    break;
+                case 4:
+                    db.generarInformeViviendas();
                     break;
                 case 0:
                     break;
