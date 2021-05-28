@@ -37,6 +37,11 @@ CREATE TABLE `clientes` (
 -- Dumping data for table `clientes`
 --
 
+LOCK TABLES `clientes` WRITE;
+/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `empleados`
 --
@@ -58,6 +63,12 @@ CREATE TABLE `empleados` (
 --
 -- Dumping data for table `empleados`
 --
+
+LOCK TABLES `empleados` WRITE;
+/*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
+/*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `ventas`
 --
@@ -84,6 +95,10 @@ CREATE TABLE `ventas` (
 -- Dumping data for table `ventas`
 --
 
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -130,6 +145,11 @@ CREATE TABLE `viviendas` (
 --
 -- Dumping data for table `viviendas`
 --
+
+LOCK TABLES `viviendas` WRITE;
+/*!40000 ALTER TABLE `viviendas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `viviendas` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -140,4 +160,4 @@ CREATE TABLE `viviendas` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-27 17:15:22
+-- Dump completed on 2021-05-28 19:10:46
