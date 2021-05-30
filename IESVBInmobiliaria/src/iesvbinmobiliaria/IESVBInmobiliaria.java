@@ -85,7 +85,7 @@ public class IESVBInmobiliaria {
         if (dataVivienda.isEmpty() && !dataPropietario.isEmpty()) {
             db.ejecutarModificar("INSERT INTO viviendas VALUES (NULL, '" + referenciaCatastral + "', '" + direccion + "', '" + localidad + "', '" + pais + "', " + precio + ", " + numPlantas + ", (SELECT idCliente FROM clientes WHERE dni = '" + dniPropietario + "'));");
         } else {
-            System.err.println("ERROR: No es posible añadir esta vivienda, ya existe una vivienda con esa referencia catastral o no existe ningún cliente con ese DNI..");
+            System.err.println("ERROR: No es posible añadir esta vivienda, ya existe una vivienda con esa referencia catastral o no existe ningún cliente con ese DNI.");
         }
     }
 

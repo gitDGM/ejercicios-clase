@@ -146,7 +146,7 @@ public class lanzador {
                             introducirCadena("Introduce el pais de la vivienda:"),
                             introducirNumeroDouble("Introduce el precio de la vivienda:"),
                             introducirNumero("Introduce el número de pisos de la vivienda:"),
-                            verificarDNI(introducirCadena("Introduce el DNI del propietario:"))
+                            introducirCadena("Introduce el DNI del propietario:")
                     );
                     break;
                 case 2:
