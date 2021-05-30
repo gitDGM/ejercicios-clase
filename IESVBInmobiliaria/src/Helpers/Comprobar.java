@@ -11,6 +11,7 @@ package Helpers;
  */
 public class Comprobar {
 
+    // Función para comprobar que es un número
     public static boolean isNumeric(String data) {
         try {
             Integer.parseInt(data);
@@ -20,6 +21,7 @@ public class Comprobar {
         }
     }
 
+    // Función para verificar un dni
     public static boolean verificarDNI(String dni) {
         String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
 

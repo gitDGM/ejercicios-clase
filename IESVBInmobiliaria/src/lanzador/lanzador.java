@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class lanzador {
 
     private static final IESVBInmobiliaria db = new IESVBInmobiliaria("iesvbinmobiliaria");
+    // Función main
     public static void main(String[] args) {
         int opcion;
         do {
@@ -57,7 +58,8 @@ public class lanzador {
             }
         } while (opcion != 0);
     }
-
+    
+    // Función para el menu de clientes
     static void gestionarClientes() {
         int opcion;
         do {
@@ -93,6 +95,7 @@ public class lanzador {
         } while (opcion != 0);
     }
 
+    // Función para el menu de empleados
     static void gestionarEmpleados() {
         int opcion;
         do {
@@ -128,6 +131,7 @@ public class lanzador {
         } while (opcion != 0);
     }
 
+    // Función para el menu de viviendas
     static void gestionarViviendas() {
         int opcion;
         do {
@@ -166,6 +170,7 @@ public class lanzador {
         } while (opcion != 0);
     }
 
+    // Función para el menu de movimientos
     static void gestionarMovimientos() {
         int opcion;
         do {
@@ -191,6 +196,7 @@ public class lanzador {
         } while (opcion != 0);
     }
 
+    // Función para el menu de consultas
     static void menuConsultas() {
         int opcion;
         do {
@@ -246,6 +252,7 @@ public class lanzador {
         } while (opcion != 0);
     }
 
+    // Función para el menu de informes
     static void menuInformes() {
         int opcion;
         do {
@@ -279,6 +286,7 @@ public class lanzador {
         } while (opcion != 0);
     }
 
+    // Función para introducir una cadena
     static String introducirCadena(String msg) {
         Scanner sc = new Scanner(System.in);
         System.out.println(msg);
@@ -286,6 +294,7 @@ public class lanzador {
         return sc.nextLine();
     }
 
+    // Función para verificar un DNI
     static String verificarDNI(String dni) {
         boolean valido = Comprobar.verificarDNI(dni);
 
@@ -300,6 +309,7 @@ public class lanzador {
         return dni;
     }
 
+    // Función para introducir un número entero
     static int introducirNumero(String msg) {
         Scanner sc = new Scanner(System.in);
         int numero = 0;
@@ -319,6 +329,7 @@ public class lanzador {
         return numero;
     }
 
+    // Función para introducir un número decimal
     static double introducirNumeroDouble(String msg) {
         Scanner sc = new Scanner(System.in);
         double numero = 0;
@@ -338,6 +349,7 @@ public class lanzador {
         return numero;
     }
 
+    // Función para devolver un boolean
     static boolean elegir(String msg) {
         Scanner sc = new Scanner(System.in);
         boolean opcion = true;

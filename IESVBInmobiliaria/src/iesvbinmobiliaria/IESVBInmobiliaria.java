@@ -27,6 +27,8 @@ public class IESVBInmobiliaria {
     }
 
     // INICIO GESTION
+    
+    // Método para insertar clientes en la base de datos
     public void insertarCliente(String nombre, String apellidos, String dni, String telefono) {
         String query = "SELECT * FROM clientes WHERE dni = '" + dni + "';";
 
@@ -39,6 +41,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para eliminar clientes en la base de datos
     public void eliminarCliente(String dni) {
         String query = "SELECT * FROM clientes WHERE dni = '" + dni + "';";
 
@@ -51,6 +54,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para insertar empleados en la base de datos
     public void insertarEmpleado(String nombre, String apellidos, String dni, String telefono) {
         String query = "SELECT * FROM empleados WHERE dni = '" + dni + "';";
 
@@ -63,6 +67,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para eliminar empleados en la base de datos
     public void eliminarEmpleado(String dni) {
         String query = "SELECT * FROM empleados WHERE dni = '" + dni + "';";
 
@@ -75,6 +80,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para insertar vivienda en la base de datos
     public void insertarVivienda(String referenciaCatastral, String direccion, String localidad, String pais, double precio, int numPlantas, String dniPropietario) {
         String queryVivienda = "SELECT * FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
         String queryPropietario = "SELECT * FROM clientes WHERE dni = '" + dniPropietario + "';";
@@ -89,6 +95,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para eliminar vivienda en la base de datos
     public void eliminarVivienda(String referenciaCatastral) {
         String query = "SELECT * FROM viviendas WHERE referencia_catastral = '" + referenciaCatastral + "';";
 
@@ -101,6 +108,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para insertar ventas en la base de datos
     public void insertarVenta(String dniComprador, String dniEmpleado, String referenciaCatastral) {
         String queryComprador = "SELECT idCliente FROM clientes WHERE dni = '" + dniComprador + "';";
         String queryEmpleado = "SELECT idEmpleado FROM empleados WHERE dni = '" + dniEmpleado + "';";
@@ -122,6 +130,8 @@ public class IESVBInmobiliaria {
     // FIN GESTION
 
     // INICIO CONSULTAS
+    
+    // Método para mostrar los clientes de la base de datos
     public void listarClientes() {
         String query = "SELECT * FROM clientes;";
 
@@ -138,6 +148,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar un cliente de la base de datos pasando el dni.
     public void listarCliente(String dni) {
         String query = "SELECT * FROM clientes WHERE dni = '" + dni + "';";
 
@@ -154,6 +165,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar los empleados de la base de datos
     public void listarEmpleados() {
         String query = "SELECT * FROM empleados;";
 
@@ -170,6 +182,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar los empleados de la base de datos pasando el dni.
     public void listarEmpleado(String dni) {
         String query = "SELECT * FROM empleados WHERE dni = '" + dni + "';";
 
@@ -186,6 +199,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar las viviendas de la base de datos
     public void listarViviendas() {
         String query = "SELECT idVivienda, referencia_catastral, direccion, localidad, pais, precio, numPlantas, clientes.dni FROM viviendas INNER JOIN clientes ON viviendas.idPropietario = clientes.idCliente;";
 
@@ -202,6 +216,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar las viviendas de la base de datos pasando la referencia catastral.
     public void listarVivienda(String referenciaCatastral) {
         String query = "SELECT idVivienda, referencia_catastral, direccion, localidad, pais, precio, numPlantas, clientes.dni FROM viviendas INNER JOIN clientes ON viviendas.idPropietario = clientes.idCliente WHERE referencia_catastral = '" + referenciaCatastral + "';";
 
@@ -218,6 +233,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar las viviendas de la base de datos pasando el dni del propietario
     public void listarViviendasPropietario(String dni) {
         String query = "SELECT idVivienda, referencia_catastral, direccion, localidad, pais, precio, numPlantas, clientes.dni FROM viviendas INNER JOIN clientes ON viviendas.idPropietario = clientes.idCliente WHERE idPropietario = (SELECT idCliente FROM clientes WHERE dni = '" + dni + "');";
 
@@ -234,6 +250,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para mostrar los movimientos de la base de datos
     public void listarMovimientos() {
         String query = "SELECT idVenta, clientes.dni, empleados.dni, viviendas.referencia_catastral FROM ventas INNER JOIN clientes ON ventas.idComprador = clientes.idCliente INNER JOIN empleados ON ventas.idEmpleado = empleados.idEmpleado INNER JOIN viviendas ON ventas.idVivienda = viviendas.idVivienda;";
 
@@ -252,6 +269,8 @@ public class IESVBInmobiliaria {
     // FIN CONSULTAS
 
     // INICIO INFORMES
+    
+    // Método para generar informe de los movimientos
     public void generarInformeMovimientos() {
         File fichero = new File(RUTA + "informe_movimientos.txt");
         FileWriter filewriter = null;
@@ -285,6 +304,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para generar informe de los clientes
     public void generarInformeClientes() {
         File fichero = new File(RUTA + "informe_clientes.txt");
         FileWriter filewriter = null;
@@ -318,6 +338,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para generar informe de los empleados
     public void generarInformeEmpleados() {
         File fichero = new File(RUTA + "informe_empleados.txt");
         FileWriter filewriter = null;
@@ -351,6 +372,7 @@ public class IESVBInmobiliaria {
         }
     }
 
+    // Método para generar informe de las viviendas
     public void generarInformeViviendas() {
         File fichero = new File(RUTA + "informe_viviendas.txt");
         FileWriter filewriter = null;

@@ -14,10 +14,10 @@ import java.util.ArrayList;
  */
 public class Conexion {
 
-    private String servidor;
-    private String bbdd;
-    private String user;
-    private String password;
+    private final String servidor;
+    private final String bbdd;
+    private final String user;
+    private final String password;
     private Connection conexionBD;
     private Statement declaracionBD;
 
@@ -98,21 +98,4 @@ public class Conexion {
     public String getPassword() {
         return password;
     }
-
-    public void setServidor(String servidor) {
-        this.servidor = servidor;
-    }
-
-    public void setBbdd(String bbdd) {
-        this.bbdd = bbdd;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }
