@@ -1,0 +1,2 @@
+
+GRANT ALL PRIVILEGES ON *.* TO 'alumno'@'localhost' IDENTIFIED BY 'P@ssw0rd';
