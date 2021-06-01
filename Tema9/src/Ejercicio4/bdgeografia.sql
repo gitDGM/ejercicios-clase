@@ -31,25 +31,25 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
 DELETE FROM `comunidad`;
 /*!40000 ALTER TABLE `comunidad` DISABLE KEYS */;
 INSERT INTO `comunidad` (`id_comunidad`, `nombre`, `id_capital`) VALUES
-	(NULL, 'Galicia', 3096),
-	(NULL, 'La Rioja', 5383),
-	(NULL, 'Extremadura', 5936),
-	(NULL, 'Castilla y León', 4458),
-	(NULL, 'Asturias', 3221),
-	(NULL, 'Cantabria', 6300),
-	(NULL, 'País Vasco', 6570),
-	(NULL, 'Navarra', 6787),
-	(NULL, 'Aragón', 7137),
-	(NULL, 'Cataluña', 7597),
-	(NULL, 'Madrid', 8531),
-	(NULL, 'Castilla La Mancha', 8985),
-	(NULL, 'Andalucía', 10093),
-	(NULL, 'Comunidad Valenciana', 11951),
-	(NULL, 'Región de Murcia', 12030),
-	(NULL, 'Canarias', 12138),
-	(NULL, 'Baleares', 12341),
-	(NULL, 'Ceuta', 12400),
-	(NULL, 'Melilla', 12402);
+	(NULL, 'Galicia', 232),
+	(NULL, 'La Rioja', 2518),
+	(NULL, 'Extremadura', 2905),
+	(NULL, 'Castilla y León', 1593),
+	(NULL, 'Asturias', 357),
+	(NULL, 'Cantabria', 3267),
+	(NULL, 'País Vasco', 3536),
+	(NULL, 'Navarra', 3753),
+	(NULL, 'Aragón', 4102),
+	(NULL, 'Cataluña', 4561),
+	(NULL, 'Madrid', 5492),
+	(NULL, 'Castilla La Mancha', 5944),
+	(NULL, 'Andalucía', 6598),
+	(NULL, 'Comunidad Valenciana', 7802),
+	(NULL, 'Región de Murcia', 7846),
+	(NULL, 'Canarias', 7931),
+	(NULL, 'Baleares', 7990),
+	(NULL, 'Ceuta', 8016),
+	(NULL, 'Melilla', 8017);
 /*!40000 ALTER TABLE `comunidad` ENABLE KEYS */;
 
 -- Volcando estructura para tabla bdgeografia.localidad
